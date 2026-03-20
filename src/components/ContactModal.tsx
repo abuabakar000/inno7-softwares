@@ -1,0 +1,126 @@
+"use client";
+
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+
+interface ContactModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+function ContactInput({ label, placeholder, required = false }: { label: string; placeholder: string; required?: boolean }) {
+  return (
+    <div className="group relative flex flex-col gap-2">
+      <span className="text-[12px] font-medium text-zinc-500 uppercase tracking-tight">
+        {label}{required && "*"}
+      </span>
+      <input
+        type="text"
+        placeholder={placeholder}
+        className="bg-transparent border-b border-black py-1.5 text-base md:text-lg lg:text-xl font-bold tracking-tighter uppercase placeholder:text-zinc-200 focus:outline-none focus:border-black transition-colors w-full"
+      />
+    </div>
+  );
+}
+
+export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Prevent scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
+  if (!mounted) return null;
+
+  return createPortal(
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="fixed inset-0 z-[140] bg-black/60 backdrop-blur-sm"
+          />
+
+          {/* Modal Panel */}
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", damping: 30, stiffness: 300 }}
+            className="fixed inset-y-0 right-0 z-[150] w-full md:w-[55%] bg-white text-black flex flex-col shadow-[-20px_0_50px_rgba(0,0,0,0.2)] overflow-y-auto"
+          >
+            {/* Header */}
+            <div className="flex justify-between items-start p-6 md:p-10">
+              <div className="flex flex-col">
+                <h2 className="text-[10px] md:text-[12px] font-bold leading-tight tracking-tight uppercase">
+                  START SIMPLE —<br />
+                  JUST WRITE TO US
+                </h2>
+              </div>
+
+              <button
+                onClick={onClose}
+                className="group flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase hover:opacity-60 transition-opacity"
+              >
+                CLOSE
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
+
+            {/* Form Content */}
+            <div className="flex-1 flex flex-col justify-center w-full px-6 md:px-12 pb-12">
+              <div className="flex flex-col gap-8">
+                <ContactInput label="(Name)" placeholder="SIRIUS BLACK" />
+                <ContactInput label="(Phone)" placeholder="+1 312 340 0323" required />
+                <ContactInput label="(Email)" placeholder="SIRIUSBLACK@MAIL.COM" />
+                
+                <div className="flex flex-col gap-2">
+                  <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
+                    (Your Message)
+                  </span>
+                  <textarea
+                    placeholder="A BRIEF ABOUT YOUR PROJECT..."
+                    rows={1}
+                    className="bg-transparent border-b border-black py-1.5 text-base md:text-lg lg:text-xl font-bold tracking-tighter uppercase placeholder:text-zinc-200 focus:outline-none focus:border-black transition-colors w-full resize-none min-h-[60px]"
+                  />
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex items-center gap-4 mt-4">
+                  <button className="bg-black text-white px-10 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-xl">
+                    Send Message
+                  </button>
+                  <button className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl group">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>,
+    document.body
+  );
+}
