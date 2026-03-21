@@ -90,7 +90,7 @@ function ServiceTile({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group relative border-b border-white/10 transition-all duration-500 overflow-hidden ${isOpen ? "bg-white/[0.03] py-8" : "hover:bg-white/[0.01]"
+      className={`group relative border-b border-white/10 transition-all duration-500 overflow-hidden ${isOpen ? "bg-white/[0.03] py-6 md:py-10" : "hover:bg-white/[0.01]"
         }`}
     >
       {/* Background Glow Effect */}
@@ -106,92 +106,138 @@ function ServiceTile({
       {/* Header */}
       <div
         onClick={onClick}
-        className="relative z-10 flex items-center justify-between py-8 cursor-pointer px-4 transition-all"
+        className="relative z-10 flex items-center justify-between py-6 md:py-8 cursor-pointer px-4 transition-all"
       >
-        <div className="flex items-center gap-8">
-          <div className={`w-10 h-10 flex items-center justify-center transition-transform duration-500 ${isOpen ? "rotate-90" : ""}`}>
+        <div className="flex items-center gap-4 md:gap-8">
+          <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-500 ${isOpen ? "rotate-180" : ""}`}>
             <svg
-              width="32"
-              height="32"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
+              className="md:w-8 md:h-8"
             >
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
+              {isOpen ? (
+                <polyline points="6 9 12 15 18 9" />
+              ) : (
+                <>
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </>
+              )}
             </svg>
           </div>
-          <h3 className={`font-light tracking-tight transition-all duration-300 uppercase ${isOpen ? "text-xl md:text-2xl text-zinc-500" : "text-2xl md:text-4xl text-white opacity-100"}`}>
+          <h3 className={`font-light tracking-tight transition-all duration-300 uppercase ${isOpen ? "text-xl md:text-2xl text-white" : "text-xl md:text-4xl text-white/40"}`}>
             {service.title}
           </h3>
         </div>
 
-        <div className="flex items-center gap-6">
-          <span className="text-lg md:text-xl font-mono opacity-40">
+        <div className="flex items-center gap-4 md:gap-8">
+          <span className="text-xl md:text-2xl font-light opacity-60">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <div className={`h-px bg-white/20 transition-all duration-500 ${isOpen ? "w-24" : "w-12"}`} />
+          <div className="flex items-center gap-2 md:gap-3">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <motion.div
+                key={i}
+                animate={isOpen ? {
+                  height: [16, 24, 16],
+                  opacity: [0.2, 0.5, 0.2],
+                } : {
+                  height: 16,
+                  opacity: 0.1,
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  delay: i * 0.1,
+                  ease: "easeInOut"
+                }}
+                className="w-[1px] bg-white shrink-0"
+              />
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Expanded Content */}
       <div
-        className={`relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 transition-all duration-700 ease-in-out ${isOpen ? "max-h-[1200px] opacity-100 pb-12" : "max-h-0 opacity-0 pointer-events-none"
+        className={`relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 px-4 transition-all duration-700 ease-in-out ${isOpen ? "max-h-[1500px] opacity-100 pb-12" : "max-h-0 opacity-0 pointer-events-none"
           }`}
       >
-        {/* Left: Sub-services */}
-        <div className="flex flex-col justify-between">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+        {/* Mobile View Inspiration Stack */}
+        <div className="flex flex-col gap-8 md:hidden">
+          {/* Main Image */}
+          <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden border border-white/10">
+            <Image
+              src={service.image1}
+              alt={service.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Repeated Title */}
+          <h4 className="text-2xl font-medium tracking-tight text-white uppercase">
+            {service.title}
+          </h4>
+
+          {/* Sub-services Grid */}
+          <div className="grid grid-cols-1 gap-y-5">
             {service.subServices.map((sub) => (
-              <div key={sub} className="flex items-center gap-3 group/sub cursor-pointer">
-                <div className="w-1.5 h-1.5 rounded-full border border-white/40 group-hover/sub:bg-white transition-colors" />
-                <span className="text-lg opacity-60 group-hover/sub:opacity-100 transition-opacity">
+              <div key={sub} className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full border border-white/40 mt-2 shrink-0" />
+                <span className="text-lg font-light text-white/70">
                   {sub}
                 </span>
               </div>
             ))}
           </div>
 
-          <div className="mt-16 flex items-center gap-4">
-            <Link href={service.link || "#"} className="block">
-              <button className="bg-white text-black px-8 py-4 rounded-full text-sm font-bold hover:scale-105 active:scale-95 transition-all uppercase tracking-widest cursor-pointer">
-                View Service Details
-              </button>
-            </Link>
-            <button className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all group/arrow">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="19" y1="12" x2="5" y2="12" />
-                <polyline points="12 19 5 12 12 5" />
-              </svg>
+          <Link href={service.link || "#"} className="mt-4">
+            <button className="bg-white text-black w-full py-5 rounded-full text-xs font-black uppercase tracking-widest">
+              View Service Details
             </button>
+          </Link>
+        </div>
+
+        {/* Desktop View (Maintain current structure or refine slightly) */}
+        <div className="hidden md:flex flex-col justify-between h-full py-4">
+          <div className="grid grid-cols-2 gap-x-12 gap-y-8">
+            {service.subServices.slice(0, 4).map((sub) => (
+              <div key={sub} className="flex items-center gap-4 group/sub cursor-pointer">
+                <div className="w-2 h-2 rounded-full border border-white/40 group-hover/sub:bg-white transition-colors" />
+                <span className="text-xl opacity-60 group-hover/sub:opacity-100 transition-opacity">
+                  {sub}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-auto pt-16 flex items-center gap-4">
+            <Link href={service.link || "#"}>
+              <MagneticButton>
+                <button className="bg-white text-black px-12 py-6 rounded-full text-sm font-bold hover:scale-105 active:scale-95 transition-all uppercase tracking-widest cursor-pointer">
+                  View Full Service
+                </button>
+              </MagneticButton>
+            </Link>
           </div>
         </div>
 
-        {/* Right: Images */}
-        <div className="relative flex justify-end gap-6 h-[280px] md:h-[350px]">
-          <div className="relative w-[70%] h-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl transform hover:-translate-y-2 transition-transform duration-500">
+        <div className="hidden md:flex relative justify-end h-[450px]">
+          <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl group/image">
             <Image
               src={service.image1}
-              alt={`${service.title} Mockup 1`}
+              alt="Mockup"
               fill
-              className="object-cover opacity-80"
+              className="object-cover opacity-90 transition-transform duration-700 group-hover/image:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <div className="absolute bottom-6 left-6">
-              <span className="text-[10px] font-bold tracking-widest uppercase opacity-60">Featured Project</span>
-            </div>
-          </div>
-          <div className="relative w-[50%] h-[85%] rounded-3xl overflow-hidden border border-white/10 shadow-2xl transform translate-x-4 -translate-y-4 hover:translate-y-0 transition-transform duration-500 mt-auto">
-            <Image
-              src={service.image2}
-              alt={`${service.title} Mockup 2`}
-              fill
-              className="object-cover opacity-60"
-            />
-            <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
           </div>
         </div>
       </div>
@@ -200,7 +246,7 @@ function ServiceTile({
 }
 
 export default function Home() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const { openContact } = useContact();
 
@@ -357,13 +403,43 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <main className="relative flex flex-col justify-center min-h-screen pt-20 px-6 md:px-12 overflow-hidden">
+      <main className="relative flex flex-col justify-center min-h-screen pt-20 px-0 md:px-12 overflow-hidden">
+        {/* Mobile-Only Social Proof at Top (Inspiration Aligned) */}
+        <div className="flex md:hidden items-center gap-5 px-6 mb-10">
+          <div className="flex -space-x-4">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="w-12 h-12 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center overflow-hidden relative"
+              >
+                <Image
+                  src={`/client${i}.png`}
+                  alt={`Client ${i}`}
+                  fill
+                  className="px-1 object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col gap-1">
+            <div className="flex gap-0.5 text-red-600">
+              {[1, 2, 3, 4, 5].map((s) => (
+                <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+              ))}
+            </div>
+            <p className="text-[12px] opacity-80 font-medium tracking-tight whitespace-nowrap">Trusted by 150+ clients</p>
+          </div>
+        </div>
+
         <div className="flex flex-col">
-          <div className="flex items-center gap-10 md:gap-16 lg:gap-24">
-            <h1 className="text-[16vw] sm:text-[13vw] lg:text-[13vw] font-thin leading-[0.85] tracking-[-0.02em] uppercase whitespace-nowrap">
+          {/* Main Typography Area */}
+          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-16 lg:gap-24 px-6 md:px-0">
+            <h1 className="text-[12vw] md:text-[13vw] font-thin leading-[0.85] tracking-[-0.04em] uppercase whitespace-nowrap">
               SAAS. APP.
             </h1>
-            <div className="relative w-[30vw] h-[18vw] md:w-[22vw] md:h-[13vw] lg:w-[18vw] lg:h-[10vw] overflow-hidden shadow-2xl border border-white/5 mt-2 md:mt-4 lg:mt-6">
+            <div className="hidden md:block relative w-[22vw] h-[13vw] lg:w-[18vw] lg:h-[10vw] overflow-hidden shadow-2xl border border-white/5 mt-2 md:mt-4 lg:mt-6">
               <video
                 src="/hero.mp4"
                 autoPlay
@@ -374,15 +450,47 @@ export default function Home() {
               />
             </div>
           </div>
-          <h1 className="text-[16vw] sm:text-[13vw] lg:text-[13vw] font-thin leading-[0.85] tracking-[-0.02em] uppercase">
+          <h1 className="text-[12vw] md:text-[13vw] font-thin leading-[0.85] tracking-[-0.04em] uppercase px-6 md:px-0 mb-8">
             WEB SOLUTION
           </h1>
+
+          {/* Mobile-Only Video and CTAs */}
+          <div className="md:hidden space-y-12">
+            <div className="relative w-full aspect-video overflow-hidden shadow-2xl bg-zinc-900">
+              <video
+                src="/hero.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            <div className="flex items-center gap-3 px-6 pb-12">
+              <button
+                onClick={openContact}
+                className="bg-white text-black px-10 py-6 rounded-full text-xs font-bold uppercase tracking-tight hover:scale-105 active:scale-95 transition-all shadow-xl whitespace-nowrap"
+              >
+                DISCUSS THE PROJECT
+              </button>
+              <button
+                onClick={openContact}
+                className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl shrink-0"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12" />
+                  <polyline points="12 19 5 12 12 5" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="mt-20 flex flex-col md:flex-row items-start md:items-end justify-between gap-12 pb-12 transition-all">
-          {/* Social Proof */}
-          <div className="flex flex-col gap-4">
+        {/* Bottom Section - Responsive Visibility */}
+        <div className="mt-20 flex flex-col md:flex-row items-start md:items-end justify-between gap-12 pb-12 transition-all px-6 md:px-0">
+          {/* Social Proof (Desktop only now) */}
+          <div className="hidden md:flex flex-col gap-4">
             <div className="flex -space-x-3">
               {[1, 2, 3, 4].map((i) => (
                 <div
@@ -408,8 +516,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Description */}
-          <div className="max-w-md md:text-right">
+          {/* Description - Hiding on smaller screens per user request */}
+          <div className="max-w-md md:text-right hidden md:block">
             <p className="text-lg md:text-xl font-medium leading-tight opacity-80">
               We develop online stores, CRM systems, SaaS solutions, and app platforms – integrating AI into processes and business solutions.
             </p>
@@ -419,11 +527,11 @@ export default function Home() {
 
       {/* Portfolio Section */}
       <section className="py-24 px-6 md:px-12 bg-black border-t border-white/10">
-        <div className="flex items-center gap-4 md:gap-8 mb-24 overflow-hidden">
+        <div className="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-8 mb-16 md:mb-24 overflow-hidden">
           <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tighter whitespace-nowrap">
             WE ARE
           </h2>
-          <div className="relative w-[18vw] h-[10vw] md:w-[15vw] md:h-[8vw] overflow-hidden shadow-2xl rotate-[-2deg] bg-zinc-900 border border-white/10 shrink-0">
+          <div className="relative w-[30vw] h-[18vw] md:w-[15vw] md:h-[8vw] overflow-hidden shadow-2xl rotate-[-2deg] bg-zinc-900 border border-white/10 shrink-0">
             <video
               src="/hero.mp4"
               autoPlay
@@ -438,10 +546,10 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
           {/* Project 1 */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="flex flex-col group"
@@ -470,10 +578,10 @@ export default function Home() {
 
           {/* Project 2 */}
           <motion.div
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col group md:mt-16"
+            className="flex flex-col group mt-0 md:mt-16"
           >
             <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 mb-6">
               <Image
@@ -499,10 +607,10 @@ export default function Home() {
 
           {/* Project 3 */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: -20 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col group md:-mt-12"
+            className="flex flex-col group mt-0 md:-mt-12"
           >
             <div className="relative aspect-[4/5] overflow-hidden bg-zinc-900 mb-6">
               <Image
@@ -527,7 +635,7 @@ export default function Home() {
 
           {/* Project 4 (Placeholder) */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="flex flex-col group"
@@ -548,10 +656,10 @@ export default function Home() {
 
           {/* Project 5 (Placeholder) */}
           <motion.div
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col group md:mt-16"
+            className="flex flex-col group mt-0 md:mt-16"
           >
             <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900/50 mb-6 border border-white/5 flex items-center justify-center">
               <span className="text-zinc-700 text-[10px] font-bold uppercase tracking-widest">Image Coming Soon</span>
@@ -569,10 +677,10 @@ export default function Home() {
 
           {/* Project 6 (Placeholder) */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: -20 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col group md:-mt-12"
+            className="flex flex-col group mt-0 md:-mt-12"
           >
             <div className="relative aspect-[4/5] overflow-hidden bg-zinc-900/50 mb-6 border border-white/5 flex items-center justify-center">
               <span className="text-zinc-700 text-[10px] font-bold uppercase tracking-widest">Image Coming Soon</span>
@@ -591,8 +699,8 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-32 px-6 md:px-12 bg-black border-t border-white/10">
-        <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight mb-20 opacity-90 leading-none">
+      <section className="py-16 md:py-32 px-6 md:px-12 bg-black border-t border-white/10">
+        <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight mb-10 md:mb-20 opacity-90 leading-none">
           SERVICES
         </h2>
 
@@ -640,18 +748,18 @@ export default function Home() {
             style={{ opacity: aiTextOpacity }}
             className="max-w-lg mt-auto lg:mt-0"
           >
-            <div className="mb-8">
-              <h3 className="text-white text-xl md:text-4xl font-thin tracking-tight">
+            <div className="mb-12">
+              <h3 className="text-white text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight mb-6 leading-none">
                 AI Tools:
               </h3>
-              <p className="text-zinc-500 text-xl md:text-4xl font-light tracking-tight leading-tight">
+              <p className="text-zinc-500 text-[6.5vw] md:text-3xl font-light tracking-tight leading-tight space-y-1">
                 Content Writing.<br />
                 Image Generation.<br />
                 Optimization.
               </p>
             </div>
 
-            <h4 className="text-white text-lg md:text-3xl font-light tracking-tight mb-8 leading-snug">
+            <h4 className="text-white text-[9vw] md:text-3xl font-thin tracking-tight mb-12 leading-[0.9] uppercase">
               More Solutions for the<br />
               Uniqueness of Your Business
             </h4>
@@ -659,17 +767,17 @@ export default function Home() {
             <div className="flex items-center gap-4">
               <button
                 onClick={openContact}
-                className="bg-white text-black px-10 py-5 rounded-full text-xs font-black uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-xl"
+                className="bg-white text-black px-10 py-6 rounded-full text-xs font-bold uppercase tracking-tight hover:scale-105 active:scale-95 transition-all shadow-xl whitespace-nowrap"
               >
-                Discuss the Project
+                DISCUSS THE PROJECT
               </button>
               <button
                 onClick={openContact}
-                className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl"
+                className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl shrink-0"
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12" />
+                  <polyline points="12 19 5 12 12 5" />
                 </svg>
               </button>
             </div>
@@ -768,7 +876,7 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="py-32 px-6 md:px-12 bg-black flex flex-col lg:flex-row gap-20">
         {/* Left: Sidebar */}
-        <div className="lg:w-1/3">
+        <div className="hidden lg:block lg:w-1/3">
           <div className="bg-zinc-900/40  p-12 flex flex-col justify-between min-h-[450px] border border-white/5 shadow-2xl">
             <div>
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 relative">
