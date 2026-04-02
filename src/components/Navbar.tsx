@@ -14,12 +14,9 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { name: "PORTFOLIO +", href: "/" },
+  { name: "PORTFOLIO +", href: "/portfolio" },
   { name: "SERVICES +", href: "/" },
-  { name: "TECHNOLOGIES +", href: "/" },
-  { name: "ABOUT", href: "/" },
-  { name: "AWARDS & REVIEWS", href: "/" },
-  { name: "BLOG", href: "/" },
+  { name: "ABOUT", href: "/about" },
   { name: "CONTACT US", href: "/contact" },
 ];
 
@@ -54,17 +51,17 @@ export default function Navbar() {
           <span className="text-[10px] tracking-[0.2em] text-white/60">SOFTWARE</span>
         </Link>
 
-        {/* Desktop Links - Hidden on Mobile */}
-        <div className="hidden lg:flex items-center gap-8 text-[11px] font-bold tracking-wider">
+        {/* Desktop Links - Now a cohesive centered group */}
+        <div className="hidden lg:flex flex-1 items-center justify-center gap-14 text-[13px] font-bold tracking-[0.15em]">
           {navLinks.map((link) => (
             <div 
               key={link.name}
               onMouseEnter={() => handleMouseEnter(link.name)}
-              className="relative py-2"
+              className="relative py-2 group"
             >
               <Link 
                 href={link.href} 
-                className={`text-white hover:text-white/60 transition-colors uppercase ${isServicesOpen && link.name === "SERVICES +" ? "text-white/60" : ""}`}
+                className={`text-white hover:text-red-500 transition-colors uppercase ${isServicesOpen && link.name === "SERVICES +" ? "text-red-500" : ""}`}
               >
                 {link.name}
               </Link>

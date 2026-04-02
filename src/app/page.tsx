@@ -8,6 +8,8 @@ import Navbar from "@/components/Navbar";
 import MagneticButton from "@/components/MagneticButton";
 import Footer from "@/components/Footer";
 import { useContact } from "@/context/ContactContext";
+import ProjectCard from "@/components/ProjectCard";
+import CTASection from "@/components/CTASection";
 
 interface Service {
   title: string;
@@ -545,156 +547,58 @@ export default function Home() {
             PROUD
           </h2>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
-          {/* Project 1 */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col group"
-          >
-            <div className="relative aspect-[16/11] overflow-hidden bg-zinc-900 mb-6">
-              <Image
-                src="/portfolio_project_1_1773957776150.png"
-                alt="EUDUCO Project"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-            </div>
-            <div className="flex justify-between items-start border-t border-white/10 pt-4">
-              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter">EUDUCO</h3>
-              <div className="text-right">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-white mb-1">Distribution company</p>
-                <div className="flex flex-col text-[8px] uppercase tracking-widest text-zinc-500 font-bold opacity-60">
-                  <span>UX/UI Design</span>
-                  <span>Front end</span>
-                  <span>Back end</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <ProjectCard
+            title="EUDUCO"
+            category="Distribution company"
+            tags={["UX/UI Design", "Front end", "Back end"]}
+            image="/portfolio_project_1_1773957776150.png"
+            aspectRatio="aspect-[16/11]"
+          />
 
-          {/* Project 2 */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col group mt-0 md:mt-16"
-          >
-            <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 mb-6">
-              <Image
-                src="/portfolio_project_2_1773957793433.png"
-                alt="WISH FLOWERS Project"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-            </div>
-            <div className="flex justify-between items-start border-t border-white/10 pt-4">
-              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter">WISH FLOWERS</h3>
-              <div className="text-right">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-white mb-1">Flower delivery</p>
-                <div className="flex flex-col text-[8px] uppercase tracking-widest text-zinc-500 font-bold opacity-60">
-                  <span>UX/UI Design</span>
-                  <span>Front end</span>
-                  <span>Back end</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <ProjectCard
+            title="WISH FLOWERS"
+            category="Flower delivery"
+            tags={["UX/UI Design", "Front end", "Back end"]}
+            image="/portfolio_project_2_1773957793433.png"
+            aspectRatio="aspect-[3/4]"
+            className="mt-0 md:mt-16"
+          />
 
-          {/* Project 3 */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col group mt-0 md:-mt-12"
-          >
-            <div className="relative aspect-[4/5] overflow-hidden bg-zinc-900 mb-6">
-              <Image
-                src="/portfolio_project_3_1773957812597.png"
-                alt="BASE1 Project"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-            </div>
-            <div className="flex justify-between items-start border-t border-white/10 pt-4">
-              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter">BASE1</h3>
-              <div className="text-right">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-white mb-1">Website</p>
-                <div className="flex flex-col text-[8px] uppercase tracking-widest text-zinc-500 font-bold opacity-60">
-                  <span>UX/UI Design</span>
-                  <span>Front end</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <ProjectCard
+            title="BASE1"
+            category="Website"
+            tags={["UX/UI Design", "Front end"]}
+            image="/portfolio_project_3_1773957812597.png"
+            aspectRatio="aspect-[4/5]"
+            className="mt-0 md:-mt-12"
+          />
 
-          {/* Project 4 (Placeholder) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col group"
-          >
-            <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900/50 mb-6 border border-white/5 flex items-center justify-center">
-              <span className="text-zinc-700 text-[10px] font-bold uppercase tracking-widest">Image Coming Soon</span>
-            </div>
-            <div className="flex justify-between items-start border-t border-white/10 pt-4">
-              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-zinc-600">Project Alpha</h3>
-              <div className="text-right">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-1">Coming Soon</p>
-                <div className="flex flex-col text-[8px] uppercase tracking-widest text-zinc-500 font-bold opacity-40">
-                  <span>Development</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <ProjectCard
+            title="Project Alpha"
+            category="Coming Soon"
+            tags={["Development"]}
+            aspectRatio="aspect-[16/10]"
+            isPlaceholder
+          />
 
-          {/* Project 5 (Placeholder) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col group mt-0 md:mt-16"
-          >
-            <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900/50 mb-6 border border-white/5 flex items-center justify-center">
-              <span className="text-zinc-700 text-[10px] font-bold uppercase tracking-widest">Image Coming Soon</span>
-            </div>
-            <div className="flex justify-between items-start border-t border-white/10 pt-4">
-              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-zinc-600">Project Beta</h3>
-              <div className="text-right">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-1">Coming Soon</p>
-                <div className="flex flex-col text-[8px] uppercase tracking-widest text-zinc-500 font-bold opacity-40">
-                  <span>Branding</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <ProjectCard
+            title="Project Beta"
+            category="Coming Soon"
+            tags={["Branding"]}
+            aspectRatio="aspect-[3/4]"
+            className="mt-0 md:mt-16"
+            isPlaceholder
+          />
 
-          {/* Project 6 (Placeholder) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col group mt-0 md:-mt-12"
-          >
-            <div className="relative aspect-[4/5] overflow-hidden bg-zinc-900/50 mb-6 border border-white/5 flex items-center justify-center">
-              <span className="text-zinc-700 text-[10px] font-bold uppercase tracking-widest">Image Coming Soon</span>
-            </div>
-            <div className="flex justify-between items-start border-t border-white/10 pt-4">
-              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-zinc-600">Project Gamma</h3>
-              <div className="text-right">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-1">Coming Soon</p>
-                <div className="flex flex-col text-[8px] uppercase tracking-widest text-zinc-500 font-bold opacity-40">
-                  <span>UI/UX</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <ProjectCard
+            title="Project Gamma"
+            category="Coming Soon"
+            tags={["UI/UX"]}
+            aspectRatio="aspect-[4/5]"
+            className="mt-0 md:-mt-12"
+            isPlaceholder
+          />
         </div>
       </section>
 
@@ -926,58 +830,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-40 px-6 md:px-12 bg-black flex flex-col items-center justify-center text-center overflow-hidden">
-        <div className="max-w-6xl w-full">
-          <div className="flex flex-col items-center gap-2">
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-              <h2 className="text-[10vw] md:text-[7vw] font-thin leading-[0.9] tracking-tight uppercase">
-                LET&apos;S MOVE
-              </h2>
-              <div className="relative w-[15vw] h-[8vw] md:w-[10vw] md:h-[6vw] overflow-hidden  shadow-2xl">
-                <video
-                  src="/hero.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <h2 className="text-[10vw] md:text-[7vw] font-thin leading-[0.9] tracking-tight uppercase">
-              THE WORLD TOGETHER
-            </h2>
-          </div>
-
-          {/* Exotic Magnetic CTA */}
-          <div className="mt-24 flex items-center justify-center">
-            <MagneticButton>
-              <button className="group relative flex items-center bg-white rounded-full p-2 pl-12 pr-2 overflow-hidden transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]">
-                {/* Rolling Text Container */}
-                <div className="relative h-6 overflow-hidden mr-6">
-                  <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-1/2">
-                    <span className="text-black text-lg font-bold uppercase tracking-[0.2em] h-6 flex items-center">
-                      Become a client
-                    </span>
-                    <span className="text-black text-lg font-bold uppercase tracking-[0.2em] h-6 flex items-center">
-                      Let&apos;s start
-                    </span>
-                  </div>
-                </div>
-
-                {/* Single Animated Arrow */}
-                <div className="relative w-14 h-14 bg-black rounded-full flex items-center justify-center overflow-hidden">
-                  <div className="transition-transform duration-500 ease-out group-hover:translate-x-1">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </div>
-                </div>
-              </button>
-            </MagneticButton>          </div>
-        </div>
-      </section>
+      <CTASection />
 
       <Footer />
     </div>
