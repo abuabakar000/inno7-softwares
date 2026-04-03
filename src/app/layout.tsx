@@ -11,6 +11,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Redstone Software | High-end Solutions",
   description: "We develop online stores, CRM systems, SaaS solutions, and app platforms.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 import { ContactProvider } from "@/context/ContactContext";

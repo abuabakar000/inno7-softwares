@@ -17,7 +17,7 @@ const socialLinks = [
 function ContactInput({ label, placeholder, required = false }: { label: string; placeholder: string; required?: boolean }) {
   return (
     <div className="flex flex-col gap-4 group">
-      <span className="text-[12px] font-medium text-zinc-500 tracking-tight">
+      <span className="text-[12px] font-medium text-zinc-400 tracking-tight">
         ({label}){required && "*"}
       </span>
       <input
@@ -67,7 +67,7 @@ export default function ContactPage() {
               <div className="flex flex-col gap-12">
                 {/* Email Section */}
                 <div className="flex flex-col gap-4 group/item">
-                  <span className="text-[12px] font-medium text-zinc-500 uppercase tracking-[0.2em]">
+                  <span className="text-[12px] font-medium text-zinc-400 uppercase tracking-[0.2em]">
                     (Email)
                   </span>
                   <div className="flex flex-col gap-2">
@@ -83,7 +83,7 @@ export default function ContactPage() {
 
                 {/* Phone Section */}
                 <div className="flex flex-col gap-4 group/item">
-                  <span className="text-[12px] font-medium text-zinc-500 uppercase tracking-[0.2em]">
+                  <span className="text-[12px] font-medium text-zinc-400 uppercase tracking-[0.2em]">
                     (Phone)
                   </span>
                   <a href="tel:+17867447141" className="text-xl md:text-2xl font-thin tracking-tighter uppercase text-white/90 hover:text-white transition-all duration-500">
@@ -115,7 +115,7 @@ export default function ContactPage() {
             <ContactInput label="Email" placeholder="SIRIUSBLACK@MAIL.COM" />
 
             <div className="flex flex-col gap-4 pt-4">
-              <span className="text-[12px] font-medium text-zinc-500 uppercase tracking-tight">
+              <span className="text-[12px] font-medium text-zinc-400 uppercase tracking-tight">
                 (Your Message)
               </span>
               <textarea

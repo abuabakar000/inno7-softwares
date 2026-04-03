@@ -88,7 +88,7 @@ export default function AboutPage() {
         {/* Bottom Section - Adjusted Typography & Magnetic CTA */}
         <div className="mt-12 md:mt-20 flex flex-col md:flex-row items-start md:items-end justify-between gap-12 pb-12 transition-all px-6 md:px-0">
           <div className="max-w-4xl">
-            <p className="text-2xl md:text-3xl font-light opacity-60 leading-tight uppercase tracking-tight">
+            <p className="text-2xl md:text-3xl font-light text-zinc-400 leading-tight uppercase tracking-tight">
               We fuse AI with web to create unfair digital advantage, delivering systems built to think and win.
             </p>
           </div>
@@ -99,8 +99,8 @@ export default function AboutPage() {
       <section className="pt-12 pb-32 md:py-32 px-6 md:px-12 bg-black border-t border-white/5">
         <div className="max-w-7xl mx-auto">
           {/* Centered Heading - Final Mobile Calibration */}
-          <div className="text-center mb-20">
-            <h2 className="text-[8.5vw] md:text-[5.5vw] font-thin uppercase tracking-tight leading-[0.95] opacity-90 mx-auto max-w-7xl px-4 md:px-0">
+          <div className="text-left mb-20">
+            <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight leading-[0.95] opacity-90 px-4 md:px-0">
               WEB SOLUTION DEVELOPMENT <br className="hidden md:block" /> FOR YOUR BUSINESS
             </h2>
           </div>
@@ -119,7 +119,7 @@ export default function AboutPage() {
               </div>
               <div className="space-y-3 text-left">
                 <h3 className="text-3xl md:text-3xl font-thin uppercase tracking-tight">AUDIT</h3>
-                <p className="text-[15px] md:text-lg font-light opacity-60 leading-relaxed max-w-sm md:max-w-md">
+                <p className="text-[15px] md:text-lg font-light text-zinc-400 leading-relaxed max-w-sm md:max-w-md">
                   Cohesive digital audits that enrich every aspect of your business logic.
                 </p>
               </div>
@@ -137,7 +137,7 @@ export default function AboutPage() {
               </div>
               <div className="space-y-3 text-left">
                 <h3 className="text-3xl md:text-3xl font-thin uppercase tracking-tight">DEVELOPMENT</h3>
-                <p className="text-[15px] md:text-lg font-light opacity-60 leading-relaxed max-w-sm md:max-w-md">
+                <p className="text-[15px] md:text-lg font-light text-zinc-400 leading-relaxed max-w-sm md:max-w-md">
                   Maximum functionality and enjoyment in every line of code we ship.
                 </p>
               </div>
@@ -155,7 +155,7 @@ export default function AboutPage() {
               </div>
               <div className="space-y-3 text-left">
                 <h3 className="text-3xl md:text-3xl font-thin uppercase tracking-tight">DESIGN</h3>
-                <p className="text-[15px] md:text-lg font-light opacity-60 leading-relaxed max-w-sm md:max-w-md">
+                <p className="text-[15px] md:text-lg font-light text-zinc-400 leading-relaxed max-w-sm md:max-w-md">
                   Stunning interfaces tailored to your brand identity and user engagement.
                 </p>
               </div>
@@ -173,7 +173,7 @@ export default function AboutPage() {
               </div>
               <div className="space-y-3 text-left">
                 <h3 className="text-3xl md:text-3xl font-thin uppercase tracking-tight">SUPPORT</h3>
-                <p className="text-[15px] md:text-lg font-light opacity-60 leading-relaxed max-w-sm md:max-w-md">
+                <p className="text-[15px] md:text-lg font-light text-zinc-400 leading-relaxed max-w-sm md:max-w-md">
                   Ongoing maintenance to keep your digital solutions performing flawlessly.
                 </p>
               </div>
@@ -192,7 +192,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-20">
-            <h2 className="text-[9vw] md:text-[5.5vw] font-thin uppercase tracking-tight leading-[0.95] text-white">
+            <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight leading-[0.95] opacity-90 text-white">
               MORE PROJECTS
             </h2>
             
@@ -263,7 +263,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           {/* Section Heading - Balanced for White BG */}
           <div className="text-left mb-32">
-            <h2 className="text-[9vw] md:text-[5.5vw] font-thin uppercase tracking-tight leading-[0.95] text-black">
+            <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight leading-[0.95] opacity-90 text-black">
               SOLUTION IMPLEMENTATION PROCESS. <br className="hidden md:block" /> DEPLOYMENT WITHOUT CHAOS
             </h2>
           </div>

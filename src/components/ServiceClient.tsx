@@ -21,6 +21,7 @@ import Footer from '@/components/Footer';
 import AgencyButton from '@/components/AgencyButton';
 import ProjectSection from '@/components/ProjectSection';
 import FAQSection from '@/components/FAQSection';
+import CTASection from '@/components/CTASection';
 import { useContact } from '@/context/ContactContext';
 import { ServiceData } from '@/data/services';
 
@@ -51,7 +52,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
       <main className="pt-32 pb-20">
         {/* Section 1: Header */}
         <section className="px-6 md:px-12 mb-32">
-          <h1 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tighter mb-16 whitespace-pre-line">
+          <h1 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight opacity-90 mb-16 whitespace-pre-line">
             {data.title}
           </h1>
 
@@ -63,7 +64,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
             </div>
 
             <div className="lg:pl-15">
-              <p className="text-xl md:text-2xl font-base leading-tight opacity-90 max-w-xl">
+              <p className="text-xl md:text-2xl font-base leading-tight text-zinc-400 max-w-xl">
                 {data.heroDescription}
               </p>
             </div>
@@ -76,7 +77,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
             <h2 className="text-2xl md:text-4xl font-thin mb-10 tracking-tight leading-tight text-white uppercase">
               {data.specializationHeading}
             </h2>
-            <p className="text-lg md:text-xl font-normal mb-16 tracking-tight text-white">
+            <p className="text-lg md:text-xl font-normal mb-16 tracking-tight text-zinc-400">
               {data.specializationText}
             </p>
 
@@ -102,7 +103,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
                 <h3 className="text-xl font-bold uppercase mb-6 tracking-tight leading-tight">
                   {step.title}
                 </h3>
-                <p className="text-sm opacity-60 leading-relaxed font-medium">
+                <p className="text-sm text-zinc-400 leading-relaxed font-medium">
                   {step.description}
                 </p>
               </div>
@@ -151,7 +152,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
                   <h3 className="text-2xl font-bold uppercase mb-8 tracking-tight leading-tight whitespace-pre-line text-black">
                     {cap.title}
                   </h3>
-                  <p className="text-[15px] text-black leading-relaxed font-normal mt-auto opacity-80 group-hover:opacity-100 transition-opacity">
+                  <p className="text-[15px] text-zinc-400 leading-relaxed font-normal mt-auto group-hover:text-black transition-opacity">
                     {cap.description}
                   </p>
                 </div>
@@ -176,35 +177,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
           faqs={data.faqs}
         />
 
-        {/* Section 7: Let's Move Together */}
-        <section className="py-40 px-6 md:px-12 bg-black flex flex-col items-center justify-center text-center overflow-hidden border-t border-white/10">
-          <div className="max-w-6xl w-full">
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-                <h2 className="text-[10vw] md:text-[8vw] font-thin leading-none tracking-tight uppercase">
-                  LET&apos;S MOVE
-                </h2>
-                <div className="relative w-[15vw] h-[8vw] md:w-[10vw] md:h-[6vw] overflow-hidden shadow-2xl">
-                  <video
-                    src="/hero.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              <h2 className="text-[10vw] md:text-[8vw] font-thin leading-none tracking-tight uppercase">
-                THE WORLD TOGETHER
-              </h2>
-            </div>
-
-            <div className="mt-24 flex items-center justify-center">
-              <AgencyButton text="BECOME A CLIENT" onClick={openContact} />
-            </div>
-          </div>
-        </section>
+        <CTASection />
       </main>
 
       <Footer />

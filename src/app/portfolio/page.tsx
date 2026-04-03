@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ProjectCard from '@/components/ProjectCard';
@@ -166,20 +167,18 @@ export default function PortfolioPage() {
       <main className="pt-48 pb-24 px-6 md:px-12">
         {/* WE ARE PROUD Header */}
         <div className="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-8 mb-16 md:mb-24 overflow-hidden">
-          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tighter whitespace-nowrap">
+          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
             WE ARE
           </h2>
-          <div className="relative w-[30vw] h-[18vw] md:w-[15vw] md:h-[8vw] overflow-hidden shadow-2xl rotate-[-2deg] bg-zinc-900 border border-white/5 shrink-0">
-            <video
-              src="/hero.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
+          <div className="relative w-[30vw] h-[18vw] md:w-[15vw] md:h-[8vw] overflow-hidden shadow-2xl bg-zinc-900 border border-white/5 shrink-0">
+            <Image
+              src="/inn7-light.svg"
+              alt="Inno7 Logo"
+              fill
+              className="object-cover"
             />
           </div>
-          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tighter whitespace-nowrap">
+          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
             PROUD
           </h2>
         </div>
@@ -239,7 +238,7 @@ export default function PortfolioPage() {
         {/* TECHNOLOGIES Section (Bento Grid) */}
         <section className="mt-48 group/main" onMouseMove={handleMouseMove}>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
-            <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tighter opacity-90 leading-none">
+            <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight opacity-90 leading-none">
               TECHNOLOGIES
             </h2>
           </div>

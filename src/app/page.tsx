@@ -60,7 +60,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         </div>
       </div>
       <div className={`relative z-10 px-4 overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-40 pb-8" : "max-h-0"}`}>
-        <p className="text-[15px] md:text-base text-zinc-400/80 leading-relaxed max-w-2xl">
+        <p className="text-[15px] md:text-base text-zinc-400 leading-relaxed max-w-2xl">
           {answer}
         </p>
       </div>
@@ -133,13 +133,13 @@ function ServiceTile({
               )}
             </svg>
           </div>
-          <h3 className={`font-light tracking-tight transition-all duration-300 uppercase ${isOpen ? "text-xl md:text-2xl text-white" : "text-xl md:text-4xl text-white/40"}`}>
+          <h3 className={`font-light tracking-tight transition-all duration-300 uppercase ${isOpen ? "text-xl md:text-2xl text-white" : "text-xl md:text-4xl text-zinc-400"}`}>
             {service.title}
           </h3>
         </div>
 
         <div className="flex items-center gap-4 md:gap-8">
-          <span className="text-xl md:text-2xl font-light opacity-60">
+          <span className="text-xl md:text-2xl font-light text-zinc-400">
             {String(index + 1).padStart(2, "0")}
           </span>
           <div className="flex items-center gap-2 md:gap-3">
@@ -193,7 +193,7 @@ function ServiceTile({
             {service.subServices.map((sub) => (
               <div key={sub} className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full border border-white/40 mt-2 shrink-0" />
-                <span className="text-lg font-light text-white/70">
+                <span className="text-lg font-light text-zinc-400">
                   {sub}
                 </span>
               </div>
@@ -211,7 +211,7 @@ function ServiceTile({
             {service.subServices.slice(0, 4).map((sub) => (
               <div key={sub} className="flex items-center gap-4 group/sub cursor-pointer">
                 <div className="w-2 h-2 rounded-full border border-white/40 group-hover/sub:bg-white transition-colors" />
-                <span className="text-xl opacity-60 group-hover/sub:opacity-100 transition-opacity">
+                <span className="text-xl text-zinc-400 group-hover/sub:text-white transition-opacity">
                   {sub}
                 </span>
               </div>
@@ -254,7 +254,7 @@ export default function Home() {
   const testimonials = [
     {
       image: "/testimonial-mockup.png",
-      quote: "REDSTONE delivered an exceptional website representing the client's business and services. The site was user-friendly, visually appealing, and well-planned. The team's responsibility and cooperation in meeting all requirements with precision were remarkable...",
+      quote: "REDSTONE delivered an exceptional website representin team's responsibility and cooperation in meeting all requirements with precision were remarkable...",
       author: "Olena Dubkova",
       role: "Marketing Specialist, UAM Power",
       stat: "400+",
@@ -423,7 +423,7 @@ export default function Home() {
                 </svg>
               ))}
             </div>
-            <p className="text-[12px] opacity-80 font-medium tracking-tight whitespace-nowrap">Trusted by 150+ clients</p>
+            <p className="text-[12px] text-zinc-400 font-medium tracking-tight whitespace-nowrap">Trusted by 150+ clients</p>
           </div>
         </div>
 
@@ -492,13 +492,13 @@ export default function Home() {
                   <span key={s}>★</span>
                 ))}
               </div>
-              <p className="text-sm opacity-60 font-medium tracking-wide">Trusted by clients</p>
+              <p className="text-sm text-zinc-400 font-medium tracking-wide">Trusted by clients</p>
             </div>
           </div>
 
           {/* Description - Hiding on smaller screens per user request */}
           <div className="max-w-md md:text-right hidden md:block">
-            <p className="text-lg md:text-xl font-medium leading-tight opacity-80">
+            <p className="text-lg md:text-xl font-medium leading-tight text-zinc-400">
               We develop online stores, CRM systems, SaaS solutions, and app platforms – integrating AI into processes and business solutions.
             </p>
           </div>
@@ -508,20 +508,18 @@ export default function Home() {
       {/* Portfolio Section */}
       <section className="py-24 px-6 md:px-12 bg-black border-t border-white/10">
         <div className="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-8 mb-16 md:mb-24 overflow-hidden">
-          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tighter whitespace-nowrap">
+          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
             WE ARE
           </h2>
-          <div className="relative w-[30vw] h-[18vw] md:w-[15vw] md:h-[8vw] overflow-hidden shadow-2xl rotate-[-2deg] bg-zinc-900 border border-white/10 shrink-0">
-            <video
-              src="/hero.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
+          <div className="relative w-[30vw] h-[18vw] md:w-[15vw] md:h-[8vw] overflow-hidden shadow-2xl bg-zinc-900 border border-white/10 shrink-0">
+            <Image
+              src="/inn7-light.svg"
+              alt="Inno7 Logo"
+              fill
+              className="object-cover"
             />
           </div>
-          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tighter whitespace-nowrap">
+          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
             PROUD
           </h2>
         </div>
@@ -625,19 +623,19 @@ export default function Home() {
         </div>
 
         {/* Content Right */}
-        <div className="w-full lg:w-1/2 lg:ml-auto px-6 md:px-12 lg:px-20 z-20 py-24 lg:py-0">
+        <div className="w-full lg:w-1/2 lg:ml-auto px-6 md:px-12 lg:px-20 z-20 py-24 lg:py-16">
           <motion.div
             style={{ opacity: aiTextOpacity }}
-            className="max-w-lg mt-auto lg:mt-0"
+            className="max-w-lg mt-auto lg:mt-0 lg:-translate-y-8"
           >
-            <div className="mb-4">
-              <h3 className="text-white text-[9vw] md:text-[7.5vw] font-thin uppercase tracking-tight  leading-none">
+            <div className="mb-10">
+              <h3 className="text-white text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight leading-none opacity-90">
                 AI Tools
               </h3>
             </div>
 
-            <h4 className="text-white text-[7vw] md:text-2xl font-normal tracking-tight mb-12 leading-[1.2] uppercase max-w-2xl">
-              Precision-engineered software solutions and disruptive AI-integrated ecosystems meticulously tailored to the absolute uniqueness and vision of your business.
+            <h4 className="text-zinc-400 text-[5.5vw] md:text-xl font-normal tracking-tight mb-16 leading-[1.4] uppercase max-w-2xl">
+              Precision-engineered <span className="text-white">software solutions</span> and disruptive <span className="text-white">AI-integrated ecosystems</span> meticulously tailored to the absolute uniqueness and vision of your business. We build <span className="text-white">intelligent architectures</span> that <span className="text-white">automate complexity</span>, accelerate performance, and scale with your growth, ensuring a <span className="text-white">future-proof competitive advantage</span> through state-of-the-art machine learning integration.
             </h4>
 
             <div className="flex items-center gap-4">
@@ -648,88 +646,88 @@ export default function Home() {
       </section>
 
       {/* Testimonial & Stats Section moved from before AI Section */}
-      <section className="py-16 px-6 md:px-12 bg-black overflow-hidden relative">
+      <section className="py-24 px-6 md:px-12 bg-black overflow-hidden relative border-t border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 mb-16">
-            {/* Left: Mockup Card */}
-            <div className="w-full lg:w-[48%] relative group">
-              <div className="relative aspect-[1.4/1] overflow-hidden shadow-2xl transition-all duration-700 border border-white/5 mx-auto max-w-lg lg:max-w-none bg-zinc-900/50">
+          <div className="flex flex-col lg:flex-row lg:items-stretch gap-16 lg:gap-24">
+            {/* Left: Project Preview Card */}
+            <div className="w-full lg:w-[45%] relative group">
+              <div className="relative aspect-[1.1/1] overflow-hidden shadow-3xl bg-zinc-900 border border-white/10 rounded-2xl h-full">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={testimonialIndex}
-                    initial={{ opacity: 0, scale: 1.05, filter: "blur(5px)" }}
-                    animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                    exit={{ opacity: 0, scale: 0.95, filter: "blur(5px)" }}
-                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className="absolute inset-0"
                   >
                     <Image
                       src={testimonials[testimonialIndex].image}
-                      alt="Client Project Mockup"
+                      alt="Project Preview"
                       fill
-                      className="object-cover"
+                      className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700"
                     />
                   </motion.div>
                 </AnimatePresence>
-                <div className="absolute inset-0 bg-gradient-to-tr from-zinc-950/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
 
-            {/* Right: Testimonial & Stat */}
-            <div className="w-full lg:w-[52%] lg:pl-16 flex flex-col justify-center">
+            {/* Right: Testimonial Card */}
+            <div className="w-full lg:w-[55%] flex flex-col justify-between py-2">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={testimonialIndex}
-                  initial={{ opacity: 0, x: 10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="relative"
                 >
-                  <div className="text-red-600 text-[100px] font-serif leading-none h-[40px] overflow-visible mb-0 flex items-start">
-                    <span className="-translate-y-6">“</span>
+                  {/* Minimalist Quote Mark */}
+                  <div className="absolute -top-12 -left-8 text-zinc-900 text-[180px] font-serif leading-none select-none -z-10 opacity-20">
+                    “
                   </div>
-                  <p className="text-sm font-light text-zinc-100 leading-relaxed tracking-tight mb-6 max-w-sm">
+
+                  <p className="text-xl md:text-2xl font-light text-zinc-400 leading-relaxed tracking-tight mb-8 max-w-2xl relative z-10">
                     {testimonials[testimonialIndex].quote}
                   </p>
-                  <div className="flex items-center gap-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.01em]">
-                    <span className="text-white">{testimonials[testimonialIndex].author}</span>
-                    <span className="text-zinc-700">|</span>
-                    <span className="text-zinc-500 font-sm">{testimonials[testimonialIndex].role}</span>
+
+                  <div className="flex flex-col gap-2">
+                    <span className="text-sm font-medium uppercase tracking-[0.3em] text-white">
+                      {testimonials[testimonialIndex].author}
+                    </span>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-600">
+                      {testimonials[testimonialIndex].role}
+                    </span>
                   </div>
                 </motion.div>
               </AnimatePresence>
 
-              <div className="mt-14">
-                <h3 className="text-4xl md:text-6xl tracking-tighter text-white mb-2 font-thin">
-                  100%
-                </h3>
-                <p className="text-[10px] md:text-xs font-bold uppercase text-zinc-600/80 tracking-widest">
-                  Satisfied Clients
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom: Progress Loader */}
-          <div className="pt-8 relative">
-            <div className="flex items-center justify-center gap-4 max-w-sm mx-auto">
-              {[0, 1, 2].map((idx) => (
-                <div
-                  key={idx}
-                  onClick={() => setTestimonialIndex(idx)}
-                  className="flex-1 h-[2px] bg-zinc-800 cursor-pointer overflow-hidden relative group"
-                >
-                  {testimonialIndex === idx && (
-                    <motion.div
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      transition={{ duration: 5, ease: "linear" }}
-                      className="absolute inset-0 bg-red-600 origin-left"
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              {/* High-Impact Stats */}
+              <div className="pt-10 border-t border-white/5 md:flex items-end gap-12">
+                <div>
+                  <h3 className="text-[12vw] md:text-[8vw] font-thin tracking-tight text-white leading-none mb-4">
+                    100%
+                  </h3>
+                  <p className="text-[10px] md:text-xs font-bold uppercase text-zinc-500 tracking-[0.4em]">
+                    Satisfied Clients
+                  </p>
                 </div>
-              ))}
+
+                {/* Pagination Indicators - Minimalist Style */}
+                <div className="mt-12 md:mt-0 flex gap-4 ml-auto pb-4">
+                  {testimonials.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setTestimonialIndex(idx)}
+                      className="group flex flex-col gap-2"
+                    >
+                      <div className={`h-[1px] transition-all duration-500 ${testimonialIndex === idx ? 'w-12 bg-white' : 'w-6 bg-white/20 group-hover:bg-white/40'}`} />
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -737,21 +735,23 @@ export default function Home() {
 
       {/* FAQ Section */}
       <section className="py-32 px-6 md:px-12 bg-black flex flex-col lg:flex-row gap-20">
-        {/* Left: Sidebar */}
         <div className="hidden lg:block lg:w-1/3 group">
           <div className="relative h-full">
-            {/* Ambient Glow Mask */}
             <div className="absolute inset-0 bg-white/2 rounded-[2rem] -z-10 group-hover:bg-white/5 transition-colors duration-700" />
-            
+
             <div className="bg-white/[0.03] backdrop-blur-3xl p-12 flex flex-col justify-between min-h-[450px] border border-white/10 rounded-[2rem] shadow-2xl transition-all duration-700 group-hover:border-white/20">
               <div>
                 <div className="relative mb-12">
-                  {/* Subtle Logo Shine */}
                   <div className="absolute -inset-4 bg-white/5 rounded-full blur-2xl group-hover:bg-white/10 transition-colors duration-700" />
-                  
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center relative z-10 shadow-xl transition-transform duration-700 group-hover:scale-110">
-                    <span className="text-black text-2xl font-black italic tracking-tighter">R</span>
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-red-600 rounded-full mt-2 ml-2" />
+
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center relative z-10 shadow-xl transition-transform duration-700 group-hover:scale-110 overflow-hidden p-3">
+                    <Image 
+                      src="/logo-faq.png" 
+                      alt="FAQ Logo" 
+                      width={64} 
+                      height={64} 
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
 
