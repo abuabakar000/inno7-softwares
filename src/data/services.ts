@@ -1,0 +1,286 @@
+import { PenTool, Monitor, Code2, Settings, Users, Database, Percent, Globe, Briefcase, Rocket, Shield, Activity, Cpu, Layout, Smartphone, Lock, Eye } from 'lucide-react';
+
+export type ServiceCapability = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
+export type ServiceStep = {
+  num: string;
+  title: string;
+  description: string;
+};
+
+export type ServiceFAQ = {
+  q: string;
+  a: string;
+};
+
+export type ServiceData = {
+  slug: string;
+  title: string;
+  heroDescription: string;
+  specializationHeading: string;
+  specializationText: string;
+  ctaText: string;
+  whySectionTitle: string;
+  steps: ServiceStep[];
+  capabilities: ServiceCapability[];
+  project: {
+    title: string;
+    subtitle: string;
+    description: string;
+    image: string;
+    tag: string;
+  };
+  faqs: ServiceFAQ[];
+};
+
+export const SERVICES_DATA: Record<string, ServiceData> = {
+  'ai-integration': {
+    slug: 'ai-integration',
+    title: 'AI\nIntegration',
+    heroDescription: 'We empower your business with cutting-edge Artificial Intelligence integrated directly into your core workflows. From Large Language Models to predictive analytics, we turn data into your most valuable asset.',
+    specializationHeading: 'AI System Integration and Development Case Studies for Clients',
+    specializationText: 'Our agency, Redstone, specializes in cognitive engineering, creating intelligent systems and providing AI-driven business transformations. We build AI solutions tailored to your operational goals to effectively automate processes, enhance decision-making, and drive innovation. Our goal is to ensure your enterprise becomes an intelligent leader in its field.',
+    ctaText: 'UNLEASH AI POWER',
+    whySectionTitle: 'THE COMPETITIVE EDGE OF ARTIFICIAL INTELLIGENCE',
+    steps: [
+      { num: '01', title: 'Process Automation', description: 'Identify and automate repetitive cognitive tasks, freeing up your human capital for creative problem-solving and high-level strategy.' },
+      { num: '02', title: 'Predictive Analytics', description: 'Move from reactive to proactive. Leverage machine learning models to forecast trends, customer behavior, and potential operational bottlenecks.' },
+      { num: '03', title: 'Natural Language', description: 'Implement state-of-the-art LLMs to understand and generate human-like text, powering advanced search, content generation, and customer support.' },
+      { num: '04', title: 'Data Monetization', description: 'Unlock the hidden value in your unstructured data. AI helps you extract insights and build new revenue streams from Information you already possess.' }
+    ],
+    capabilities: [
+      { icon: 'Users', title: 'LLM\nFinetuning', description: 'We specialize in adapting large-scale base models to your specific domain, ensuring high accuracy and brand-consistent language output.' },
+      { icon: 'Monitor', title: 'Process Automation', description: 'We build intelligent agents that handle complex document processing, automated categorization, and intelligent routing across your enterprise.' },
+      { icon: 'Activity', title: 'Data Insights', description: 'Discover deep patterns in your data using specialized neural networks and machine learning models built for high-dimensional discovery.' },
+      { icon: 'Cpu', title: 'Intelligent Agents', description: 'We deploy advanced conversational AI and support agents that provide personalized, high-context assistance to your users and staff.' }
+    ],
+    project: {
+      title: 'NEURAL SYNC',
+      subtitle: 'AI AUTOMATION',
+      description: 'Integrating advanced LLMs into customer support workflows. Reduced response times by 80% through intelligent ticket routing and automated high-quality drafting, allowing teams to handle 5x more volume with better precision.',
+      image: '/client2.png',
+      tag: 'ARTIFICIAL INTELLIGENCE'
+    },
+    faqs: [
+      { q: "What kind of AI models do you integrate?", a: "We work with state-of-the-art LLMs (like GPT-4 and Claude), computer vision models, and custom predictive analytics systems." },
+      { q: "How do you ensure data privacy when using AI?", a: "We implement secure, private VPC environments and data anonymization layers to ensure your sensitive business data never leaks." },
+      { q: "Can AI help automate our customer support?", a: "Yes, we build intelligent agents that can handle up to 80% of routine inquiries with human-level accuracy and brand-consistent voice." },
+      { q: "Do you provide finetuning for custom data?", a: "Absolutely. We specialize in adapting base models to your specific domain knowledge and proprietary datasets for maximum relevance." },
+      { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
+    ]
+  },
+  'branding-design': {
+    slug: 'branding-design',
+    title: 'Branding and\ndesign',
+    heroDescription: 'We study the site, find all the problem areas and determine how to eliminate them. We analyze competitors in search results and their strategies. We conduct an audit of the available traffic to the site in terms of sources and effectiveness in search engines.',
+    specializationHeading: 'Brand Identity and Design Strategy Case Studies for Clients',
+    specializationText: 'Our agency, Redstone, specializes in brand design development, creating brand styles, and providing full-service branding. We create projects tailored to your goals to effectively compete in the market, enhance your company image, and attract new customers. Our goal is to ensure that the outcome becomes a powerful catalyst for scaling and further business growth.',
+    ctaText: 'DISCUSS THE PROJECT',
+    whySectionTitle: 'WHY DO COMPANIES NEED BRAND IDENTITY?',
+    steps: [
+      { num: '01', title: 'Brand Discovery and Research', description: 'In this initial phase, the design team conducts in-depth research to understand the client\'s brand, its values, target audience, and market positioning. They analyze competitors and industry trends to gather insights and inspiration.' },
+      { num: '02', title: 'Brand Identity Design', description: 'This process involves creating the visual elements that represent the brand\'s identity. The design team works on crafting the logo, color palette, typography, and other visual assets. The goal is to establish a cohesive and memorable brand identity that reflects the brand\'s personality and resonates with the target audience.' },
+      { num: '03', title: 'Brand Collateral Creation', description: 'Brand collateral refers to various materials that reinforce the brand\'s identity across different touchpoints. This process includes designing business cards, letterheads, brochures, packaging, and other promotional materials.' },
+      { num: '04', title: 'Brand Guidelines Development', description: 'Brand guidelines serve as a comprehensive document that outlines how the brand should be presented consistently across all channels. This process involves creating guidelines for logo usage, color specifications, typography rules, image styles, and tone of voice.' }
+    ],
+    capabilities: [
+      { icon: 'Rocket', title: 'Brand\nResearch', description: 'Discover an award-winning team in the USA. Our team of experts uses advanced technologies for software development, web development, branding, digital marketing, and e-commerce. We are inspired to work for the benefit of our clients.' },
+      { icon: 'Eye', title: 'Brand Book Development and Preparation', description: 'At this stage, we prepare the design of the brand book, which forms the individual identity of the company and the brand as a whole. Our design team carefully selects the color palette, typography, and other visual assets. This process requires an understanding of how a potential client perceives the brand.' },
+      { icon: 'Layout', title: 'Creation of Additional Materials', description: 'Brand materials are an extension of the brand identity, yet they enhance brand recognition. These include business cards, brochures, letterheads, flyers, badges, packaging, promotional materials, and more. All of these are tailored to the brand book to create a cohesive and recognizable brand identity.' },
+      { icon: 'Monitor', title: 'Page Scroll Effect', description: 'Our projects shape not only the urban environment but also a lifestyle – bold, modern, and inspiring new achievements. We implement smooth, cinematic transitions that guide the user through the brand story with every scroll.' }
+    ],
+    project: {
+      title: 'CYBER CORE',
+      subtitle: 'BRAND IDENTITY',
+      description: 'Creation of a futuristic visual identity for a high-tech infrastructure provider. We focused on minimalism, high-contrast aesthetics, and modular design systems that work across digital and physical touchpoints.',
+      image: '/portfolio_project_2_1773957793433.png',
+      tag: 'VISUAL IDENTITY'
+    },
+    faqs: [
+      { q: "What is included in a brand identity package?", a: "A full package includes your logo, typography system, color palette, and comprehensive visual guidelines." },
+      { q: "Will I own the full copyrights to the designs?", a: "Absolutely. Once the project is finalized and delivered, you own 100% of the copyrights to all assets." },
+      { q: "How many design concepts do you provide?", a: "We typically present 3 distinct visual directions, then refine the chosen one through structured feedback rounds." },
+      { q: "How do you ensure the brand works across digital platforms?", a: "We test all visual elements across various screens and social platforms to ensure perfect readability and impact." },
+      { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
+    ]
+  },
+  'app-platforms': {
+    slug: 'app-platforms',
+    title: 'App\nPlatforms',
+    heroDescription: 'We develop high-performance mobile applications and cross-platform experiences that put your business directly in your customers\' pockets. From native iOS and Android to modern hybrid solutions, we build for engagement.',
+    specializationHeading: 'Mobile App and Platform Engineering Case Studies for Clients',
+    specializationText: 'Our agency, Redstone, specializes in mobile product engineering, creating native and cross-platform apps and providing seamless digital experiences. We build mobile platforms tailored to your user engagement goals to effectively leverage mobile-first trends, enhance brand loyalty, and drive growth. Our goal is to ensure your app becomes a powerful tool for your users.',
+    ctaText: 'LAUNCH YOUR APP',
+    whySectionTitle: 'WHY DOES YOUR BUSINESS NEED A MOBILE PRIORITY?',
+    steps: [
+      { num: '01', title: 'Ubiquitous Presence', description: 'Be where your customers are. A dedicated mobile platform ensures your brand is accessible anytime, anywhere, with just a single tap.' },
+      { num: '02', title: 'Native Performance', description: 'We leverage hardware-level capabilities and OS-specific optimizations to deliver lightning-fast, butter-smooth experiences that hybrid web apps can\'t match.' },
+      { num: '03', title: 'Push Engagement', description: 'Drive retention and re-engagement through intelligent push notifications and real-time updates that keep your users coming back to your platform.' },
+      { num: '04', title: 'Offline Capability', description: 'Provide value even without an internet connection. Our apps are built to handle offline states gracefully, syncing data seamlessly when connectivity returns.' }
+    ],
+    capabilities: [
+      { icon: 'Smartphone', title: 'iOS &\nAndroid', description: 'We develop high-quality applications for both major mobile operating systems, ensuring broad market reach and platform-specific excellence.' },
+      { icon: 'Lock', title: 'UX Optimization', description: 'Our mobile designers focus on ergonomics and thumb-friendly interactions, creating intuitive interfaces that feel natural and effortless to use.' },
+      { icon: 'Database', title: 'API Integration', description: 'We build seamless connections between your mobile app and backend services, ensuring real-time data synchronization and feature parity.' },
+      { icon: 'Rocket', title: 'Performance', description: 'We optimize every frame and network request, providing the snappy, responsive feel that mobile users have come to expect as a standard for quality.' }
+    ],
+    project: {
+      title: 'VIBE DASH',
+      subtitle: 'MOBILE APP',
+      description: 'A high-performance iOS and Android application for local community engagement. Features real-time geo-tracking, social integration, and offline-first data sync.',
+      image: '/client1.png',
+      tag: 'MOBILE APP'
+    },
+    faqs: [
+      { q: "Do you build native or cross-platform apps?", a: "We build both. We'll help you choose the best approach (Swift/Kotlin or Flutter/React Native) based on your goals." },
+      { q: "Will the app be available on both major stores?", a: "Yes, we handle the entire submission and approval process for both the Apple App Store and Google Play Store." },
+      { q: "How do you handle app updates and maintenance?", a: "We provide ongoing support to ensure your app remains compatible with the latest OS versions and device hardware." },
+      { q: "Can the app function without an internet connection?", a: "Yes, we specialize in building offline-first applications that sync data seamlessly once connectivity is restored." },
+      { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
+    ]
+  },
+  'crm-systems': {
+    slug: 'crm-systems',
+    title: 'CRM\nSystems',
+    heroDescription: 'We design and implement custom CRM solutions that streamline your sales, marketing, and support operations. Our data-driven platforms empower your team with actionable insights and automated workflows.',
+    specializationHeading: 'Custom CRM and Operational Flow Case Studies for Clients',
+    specializationText: 'Our agency, Redstone, specializes in custom CRM development, creating integrated management platforms and providing data-driven solutions. We build tools tailored to your business logic to effectively manage your customer relationships, enhance team productivity, and drive revenue. Our goal is to ensure your operations become a powerful engine for scaling.',
+    ctaText: 'OPTIMIZE YOUR FLOW',
+    whySectionTitle: 'WHY DOES YOUR BUSINESS NEED A CUSTOM CRM?',
+    steps: [
+      { num: '01', title: 'Centralized Data', description: 'Break down information silos by bringing all your customer data into a single, unified platform that serves as your single source of truth.' },
+      { num: '02', title: 'Automated Workflows', description: 'Eliminate manual tasks with custom automation that handles lead routing, email follow-ups, and data entry, allowing your team to focus on high-value activities.' },
+      { num: '03', title: 'Advanced Analytics', description: 'Gain deep insights into your business performance with custom dashboards and reporting tools that highlight trends and opportunities.' },
+      { num: '04', title: 'Seamless Integrations', description: 'Connect your CRM with the tools you already use, ensuring smooth data flow across your entire tech stack—from ERPs to marketing platforms.' }
+    ],
+    capabilities: [
+      { icon: 'Users', title: 'Data\nIntegration', description: 'We build specialized data pipelines that connect all your business units, ensuring a 360-degree view of every customer interaction.' },
+      { icon: 'Layout', title: 'Pipeline Management', description: 'Optimize your sales funnel with custom pipeline visualizations and tracking tools that help your team close deals faster and more effectively.' },
+      { icon: 'Activity', title: 'Reporting and BI', description: 'Turn your data into decisions with powerful Business Intelligence tools integrated directly into your custom CRM environment.' },
+      { icon: 'Settings', title: 'Workflow Automation', description: 'We automate repetitive processes, from lead generation and scoring to contract renewals and customer support ticketing.' }
+    ],
+    project: {
+      title: 'NUXT FLOW',
+      subtitle: 'SaaS CRM',
+      description: 'A custom-built CRM system for real-estate management. Automated lead tracking, intelligent reminders, and deep analytics integration to optimize sales performance.',
+      image: '/client3.png',
+      tag: 'ENTERPRISE'
+    },
+    faqs: [
+      { q: "Can you migrate data from our existing CRM?", a: "Yes, we handle complex data migrations from legacy systems, ensuring data integrity and zero downtime." },
+      { q: "Do you provide training for our sales team?", a: "Absolutely. We provide comprehensive onboarding sessions and documentation to ensure your team is productive from day one." },
+      { q: "Is the CRM custom-built or platform-based?", a: "We build both fully custom CRMs and highly-specialized integrations on top of platforms like Salesforce and HubSpot." },
+      { q: "Can the CRM integrate with our marketing tools?", a: "Yes, we specialize in building seamless connections between your CRM and marketing automation platforms." },
+      { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
+    ]
+  },
+  'ecommerce-stores': {
+    slug: 'ecommerce-stores',
+    title: 'E-commerce\nStores',
+    heroDescription: 'We build high-conversion digital storefronts that turn browsers into loyal customers. From custom headless commerce to powerful Shopify integrations, we provide the tools to scale your retail business globally.',
+    specializationHeading: 'E-commerce Store and Retail Logic Case Studies for Clients',
+    specializationText: 'Our agency, Redstone, specializes in commerce engineering, creating high-performance online stores and providing full-service retail solutions. We build e-commerce platforms tailored to your sales goals to effectively increase conversions, enhance customer journeys, and drive growth. Our goal is to ensure your store becomes a powerful revenue engine.',
+    ctaText: 'BOOST YOUR SALES',
+    whySectionTitle: 'DRIVING REVENUE THROUGH SEAMLESS COMMERCE',
+    steps: [
+      { num: '01', title: 'Conversion Optimization', description: 'We analyze user behavior and optimize the shopping journey—from discovery to checkout—ensuring the lowest friction and highest possible conversion rates.' },
+      { num: '02', title: 'Headless Integration', description: 'Decouple your frontend from the backend to provide lightning-fast, highly-customized commerce experiences across every device and channel.' },
+      { num: '03', title: 'Secure Payments', description: 'We integrate robust, PCI-compliant payment gateways that support multi-currency, local payment methods, and seamless one-click checkouts.' },
+      { num: '04', title: 'Global Logistics', description: 'Our platforms integrate with advanced shipping and inventory management systems, providing real-time tracking and efficient order fulfillment.' }
+    ],
+    capabilities: [
+      { icon: 'Rocket', title: 'Commerce\nAudit', description: 'We audit your existing store for performance, SEO, and conversion bottlenecks, providing a strategic roadmap for growth.' },
+      { icon: 'Code2', title: 'Headless Commerce', description: 'We implement headless platforms using Shopify Plus or BigCommerce APIs, giving you complete frontend freedom and better performance.' },
+      { icon: 'Layout', title: 'Inventory Tracking', description: 'We build real-time inventory synchronization across multiple warehouses and sales channels, ensuring accurate stock levels at all times.' },
+      { icon: 'Shield', title: 'SEO & Marketing', description: 'Our e-commerce stores are built with advanced SEO features and marketing automation tools integrated to drive organic traffic and sales.' }
+    ],
+    project: {
+      title: 'VELVET BOX',
+      subtitle: 'LUXURY RETAIL',
+      description: 'A headless Shopify Plus store for a premium jewelry brand. Focused on high-fidelity animations, seamless checkout, and global multi-currency support, resulting in a 35% increase in conversion rates.',
+      image: '/client3.png',
+      tag: 'LUXURY E-COMMERCE'
+    },
+    faqs: [
+      { q: "Which e-commerce platforms do you support?", a: "We specialize in Shopify Plus, BigCommerce, and custom headless solutions using Stripe and MedusaJS." },
+      { q: "How do you optimize for high conversion rates?", a: "We use a data-driven approach, focusing on site speed, friction-less checkout, and persuasive UX design patterns." },
+      { q: "Can you integrate custom payment gateways?", a: "Yes, we build secure integrations for all major providers including Stripe, Adyen, and specialized regional payment methods." },
+      { q: "Is headless commerce better for my business?", a: "If you need maximum performance and complete design freedom across multiple channels, headless is usually the superior choice." },
+      { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
+    ]
+  },
+  'saas-solutions': {
+    slug: 'saas-solutions',
+    title: 'SaaS\nSolutions',
+    heroDescription: 'We architect and build scalable Software-as-a-Service platforms that solve complex business challenges. From multi-tenant infrastructure to flexible subscription management, we provide the technical foundation for your digital product.',
+    specializationHeading: 'SaaS Product and Scalable Platform Case Studies for Clients',
+    specializationText: 'Our agency, Redstone, specializes in SaaS product engineering, creating multi-tenant platforms and providing scalable digital solutions. We build architectures tailored to your growth strategy to effectively serve your global user base, enhance operational efficiency, and drive recurring revenue. Our goal is to ensure your SaaS becomes a powerful industry leader.',
+    ctaText: 'SCALE YOUR VISION',
+    whySectionTitle: 'THE POWER OF A SCALABLE SAAS MODEL',
+    steps: [
+      { num: '01', title: 'Multi-tenant Architecture', description: 'Serve thousands of customers from a single code base with isolated data environments, ensuring maximum resource efficiency and simplified maintenance.' },
+      { num: '02', title: 'Subscription Engines', description: 'Implement flexible pricing tiers, automated billing, and usage-based models that adapt to your customers\' needs and maximize your LTV.' },
+      { num: '03', title: 'Global Scalability', description: 'Our SaaS platforms are designed for high availability and low latency across the globe, leveraging edge computing and robust cloud infrastructure.' },
+      { num: '04', title: 'API-First Approach', description: 'Enable your customers and partners to build on top of your platform with comprehensive API ecosystems and developer tools.' }
+    ],
+    capabilities: [
+      { icon: 'Rocket', title: 'Product\nStrategy', description: 'We help you define your MVP, map the product roadmap, and identify the core value propositions that will drive SaaS growth.' },
+      { icon: 'Layout', title: 'Architecture Design', description: 'Our architects design multi-tenant systems with robust security, high performance, and seamless data isolation for every customer.' },
+      { icon: 'Monitor', title: 'Subscription Models', description: 'We implement complex billing logic and automated subscription management that scales with your user base and pricing experiments.' },
+      { icon: 'Settings', title: 'API Ecosystems', description: 'Extend your reach by building secure, well-documented REST or GraphQL APIs that allow for third-party integrations and developer innovation.' }
+    ],
+    project: {
+      title: 'REVENUE SKY',
+      subtitle: 'FINTECH PLATFORM',
+      description: 'A multi-tenant billing engine for subscription-based businesses. Scalable architecture handling millions of transactions with real-time reporting and fraud detection.',
+      image: '/client4.png',
+      tag: 'FINTECH'
+    },
+    faqs: [
+      { q: "How do you handle multi-tenant data security?", a: "We implement robust data isolation layers at both the application and database levels to ensure customer privacy." },
+      { q: "Can the platform scale to millions of users?", a: "Yes, our SaaS architectures are built on top of auto-scaling cloud infrastructure designed for global growth." },
+      { q: "Do you support custom subscription models?", a: "We can implement anything from simple tiers to complex usage-based billing and enterprise contract management." },
+      { q: "Can we integrate third-party APIs into the SaaS?", a: "Absolutely. We build API-first platforms that are designed for seamless integration with external services." },
+      { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
+    ]
+  },
+  'website-development': {
+    slug: 'website-development',
+    title: 'Website\nDevelopment',
+    heroDescription: 'We engineer scalable, high-performance digital solutions tailored to your business needs. From modern frontend frameworks to robust backend architectures, we ensure your web presence is fast, secure, and future-proof.',
+    specializationHeading: 'Website Development and Creation Case Studies for Clients',
+    specializationText: 'Our agency, Redstone, specializes in advanced web engineering, creating custom digital platforms and providing full-stack development. We build projects optimized for speed and conversion to effectively compete in the digital landscape, enhance your online presence, and drive business logic. Our goal is to ensure your platform becomes a robust engine for growth.',
+    ctaText: 'START YOUR PROJECT',
+    whySectionTitle: 'WHY DO COMPANIES NEED CUSTOM DEVELOPMENT?',
+    steps: [
+      { num: '01', title: 'Scalable Architecture', description: 'We design systems that grow with your business. Our modular approach ensures that adding new features or handling increased traffic is seamless and efficient.' },
+      { num: '02', title: 'Frontend Excellence', description: 'Using cutting-edge frameworks like React and Next.js, we create immersive, responsive, and blazing-fast user interfaces that delight and engage.' },
+      { num: '03', title: 'Robust Backend Systems', description: 'Our backend solutions are built for security and reliability, handling complex data operations and business logic with precision and performance.' },
+      { num: '04', title: 'Performance Optimization', description: 'Speed is critical. We optimize every aspect of your site—from code delivery to asset loading—to ensure the best possible Core Web Vitals and user satisfaction.' }
+    ],
+    capabilities: [
+      { icon: 'Rocket', title: 'Technical\nAudit', description: 'We analyze your existing infrastructure to identify bottlenecks and security vulnerabilities, providing a roadmap for modernization and optimization.' },
+      { icon: 'Code2', title: 'Frontend Engineering', description: 'We build highly interactive and responsive user interfaces using modern JavaScript frameworks, ensuring a seamless experience across all devices.' },
+      { icon: 'Database', title: 'Backend Development', description: 'Our backend developers create secure, performant, and scalable server-side logic and database schemas to power your digital products.' },
+      { icon: 'Globe', title: 'Cloud and DevOps', description: 'We implement automated deployment pipelines and cloud infrastructure to ensure your application is always available and easily updated.' }
+    ],
+    project: {
+      title: 'MINT 21',
+      subtitle: 'A AWARDS',
+      description: 'We developed a landing page to promote a new collection of remarkable coins. The page featured a bright and attractive design, customer testimonials, and a focus on product safety. The result was increased sales of the new coins and an expanded customer base.',
+      image: '/portfolio_project_1_1773957776150.png',
+      tag: 'ONLINE STORE'
+    },
+    faqs: [
+      { q: "How long does it take to develop a custom website?", a: "A typical project takes 4-12 weeks depending on complexity, features, and the speed of feedback cycles." },
+      { q: "Which technologies do you use for development?", a: "We specialize in high-performance stacks including React, Next.js, Node.js, and modern cloud architectures." },
+      { q: "Is the website SEO-friendly from day one?", a: "Yes, we build every site with a mobile-first, SEO-ready foundation to ensure high visibility from launch." },
+      { q: "Do you provide ongoing maintenance?", a: "We offer several maintenance and support packages to keep your platform updated, secure, and running smoothly." },
+      { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
+    ]
+  }
+};

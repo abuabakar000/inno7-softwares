@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ProjectCard from '@/components/ProjectCard';
-import MagneticButton from '@/components/MagneticButton';
 import CTASection from '@/components/CTASection';
 import { motion } from 'framer-motion';
 

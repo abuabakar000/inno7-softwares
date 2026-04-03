@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import MagneticButton from "./MagneticButton";
+import AgencyButton from "./AgencyButton";
 import MegaMenu from "./MegaMenu";
 import MobileNav from "./MobileNav";
 import { useContact } from "@/context/ContactContext";
@@ -70,14 +70,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:block">
-          <MagneticButton>
-            <button 
-              onClick={openContact}
-              className="bg-white text-black px-6 py-2.5 text-[12px] font-bold hover:bg-zinc-200 transition-all block"
-            >
-              LET&apos;S TALK
-            </button>
-          </MagneticButton>
+          <AgencyButton text="LET'S TALK" onClick={openContact} size="sm" />
         </div>
       </nav>
 

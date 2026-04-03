@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import AgencyButton from '@/components/AgencyButton';
 
 interface ProjectSectionProps {
   projectTitle: string;
@@ -20,58 +21,52 @@ export default function ProjectSection({
   tag
 }: ProjectSectionProps) {
   return (
-    <section className="px-6 md:px-12 py-32 border-t border-white/10 bg-black overflow-hidden">
-      <h2 className="text-[10vw] md:text-[5vw] font-thin uppercase leading-none tracking-tighter mb-20 text-white">
-        OUR PROJECTS
-      </h2>
-
-      <div className="relative w-full bg-[#0a0a0a] border border-white/5 rounded-[2rem] overflow-hidden p-8 md:p-16">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 items-center">
-          {/* Left Side: Info */}
-          <div className="flex flex-col h-full justify-between py-4">
-            <div>
-              <div className="flex items-baseline gap-4 mb-8">
-                <h3 className="text-4xl md:text-5xl font-light uppercase tracking-tighter text-white">
-                  {projectTitle}
-                </h3>
-
-              </div>
-
-              <p className="text-md md:text-lg text-zinc-400 font-base max-w-xl mb-12">
-                {description}
-              </p>
-            </div>
-
-            <div className="mt-auto">
-              <button className="group flex items-center gap-3 bg-white text-black px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-transform hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
-                PROJECT REVIEW
-                <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center transition-transform group-hover:translate-x-1">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </div>
-              </button>
-            </div>
+    <section className="px-6 md:px-12 pt-20 pb-40 md:py-40 border-t border-white/10 bg-black overflow-hidden group">
+      <div className="relative w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] lg:grid-rows-[auto_1fr] gap-6 lg:gap-y-12 lg:gap-x-24 items-start">
+          {/* 1. Heading (Leading on Mobile and Desktop) */}
+          <div className="order-1 lg:col-start-1 lg:row-start-1">
+            <h3 className="text-5xl md:text-7xl lg:text-8xl font-thin uppercase leading-[0.9] tracking-tighter text-white mb-4 lg:mb-5 transition-transform duration-700 group-hover:translate-x-2">
+              {projectTitle}
+            </h3>
           </div>
 
-          {/* Right Side: Mockup */}
-          <div className="relative group">
-            <div className="relative aspect-[16/11] bg-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl border border-white/10">
+          {/* 2. Image Showcase (Second on Mobile, Second Column on Desktop) */}
+          <div className="relative overflow-hidden group/image perspective-1000 order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2">
+            <div className="relative aspect-[16/10] bg-[#0a0a0a] rounded-sm overflow-hidden border border-white/5 shadow-2xl">
               <Image
                 src={image}
                 alt={projectTitle}
                 fill
-                className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                className="object-cover opacity-70 scale-100 group-hover/image:scale-110 group-hover/image:opacity-100 transition-all duration-[1500ms] cubic-bezier(0.16, 1, 0.3, 1)"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-
-              {/* Tag Badge */}
-
+              <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-white/5 opacity-60 pointer-events-none" />
+              
+              {/* Bottom detail indicator */}
+              <div className="absolute bottom-10 left-10 overflow-hidden">
+                <div className="flex items-center gap-3 translate-y-full group-hover/image:translate-y-0 transition-transform duration-700 delay-100">
+                  <div className="w-8 h-[1px] bg-white/40" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">Details</span>
+                </div>
+              </div>
             </div>
 
-            {/* Subtle glow behind mockup */}
-            <div className="absolute -inset-4 bg-white/5 blur-3xl rounded-full -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+            {/* Ambient decorative elements */}
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-white/5 blur-[100px] rounded-full opacity-0 group-hover/image:opacity-100 transition-opacity duration-1000" />
+            <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-white/5 blur-[100px] rounded-full opacity-0 group-hover/image:opacity-100 transition-opacity duration-1000" />
+          </div>
+
+          {/* 3. Description & CTA (Third on Mobile, Below Heading on Desktop) */}
+          <div className="flex flex-col h-full justify-start order-3 lg:col-start-1 lg:row-start-2">
+            <div className="mb-12">
+              <p className="text-lg md:text-xl text-white/60 font-light max-w-xl leading-relaxed">
+                {description}
+              </p>
+            </div>
+
+            <div className="mt-8">
+              <AgencyButton text="PROJECT REVIEW" href="#" />
+            </div>
           </div>
         </div>
       </div>

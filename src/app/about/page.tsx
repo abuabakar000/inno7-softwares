@@ -6,7 +6,7 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { PenTool, Monitor, Code2, Settings } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import MagneticButton from "@/components/MagneticButton";
+import AgencyButton from "@/components/AgencyButton";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import CTASection from "@/components/CTASection";
@@ -180,33 +180,9 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Centered Become a Client Button - Scaled down */}
+          {/* Centered Become a Client Button */}
           <div className="flex justify-center mt-12">
-            <MagneticButton>
-              <button
-                onClick={() => document.dispatchEvent(new CustomEvent('openContact'))}
-                className="group relative flex items-center bg-white rounded-full p-1.5 pl-8 pr-1.5 overflow-hidden transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_50px_rgba(255,255,255,0.15)]"
-              >
-                <div className="relative h-5 overflow-hidden mr-5">
-                  <div className="flex flex-col transition-transform duration-500 group-hover:-translate-y-1/2">
-                    <span className="text-black text-[11px] font-bold uppercase tracking-[0.25em] h-5 flex items-center">
-                      Become a client
-                    </span>
-                    <span className="text-black text-[11px] font-bold uppercase tracking-[0.25em] h-5 flex items-center">
-                      Let&apos;s start
-                    </span>
-                  </div>
-                </div>
-                <div className="relative w-11 h-11 bg-black rounded-full flex items-center justify-center overflow-hidden">
-                  <div className="transition-transform duration-500 group-hover:translate-x-0.5">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </div>
-                </div>
-              </button>
-            </MagneticButton>
+            <AgencyButton text="BECOME A CLIENT" onClick={() => document.dispatchEvent(new CustomEvent('openContact'))} />
           </div>
         </div>
       </section>
@@ -221,19 +197,7 @@ export default function AboutPage() {
             </h2>
             
             <div className="hidden md:flex">
-              <Link href="/portfolio">
-                <MagneticButton>
-                  <div className="group flex items-center gap-4 bg-white rounded-full px-8 py-4 transition-transform hover:scale-105 active:scale-95">
-                    <span className="text-black text-[10px] font-bold uppercase tracking-[0.2em]">Show more projects</span>
-                    <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center transition-transform group-hover:rotate-[-45deg]">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                      </svg>
-                    </div>
-                  </div>
-                </MagneticButton>
-              </Link>
+              <AgencyButton text="SHOW MORE PROJECTS" href="/portfolio" />
             </div>
           </div>
 
@@ -289,19 +253,7 @@ export default function AboutPage() {
 
           {/* Mobile CTA - Visible only on small screens */}
           <div className="flex md:hidden justify-center mt-12">
-            <Link href="/portfolio">
-              <MagneticButton>
-                <div className="group flex items-center gap-4 bg-white rounded-full px-8 py-4 transition-transform hover:scale-105 active:scale-95">
-                  <span className="text-black text-[10px] font-bold uppercase tracking-[0.2em]">Show more projects</span>
-                  <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center transition-transform group-hover:rotate-[-45deg]">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </div>
-                </div>
-              </MagneticButton>
-            </Link>
+            <AgencyButton text="SHOW MORE PROJECTS" href="/portfolio" />
           </div>
         </div>
       </section>

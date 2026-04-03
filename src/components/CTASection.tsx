@@ -1,6 +1,6 @@
 'use client';
 
-import MagneticButton from './MagneticButton';
+import AgencyButton from './AgencyButton';
 
 export default function CTASection() {
   return (
@@ -33,31 +33,7 @@ export default function CTASection() {
 
         {/* Exotic Magnetic CTA Button */}
         <div className="mt-20 flex items-center justify-center">
-          <MagneticButton>
-            <button className="group relative flex items-center bg-white rounded-full p-2 pl-12 pr-2 overflow-hidden transition-all duration-500 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]">
-              {/* Rolling Text Container */}
-              <div className="relative h-6 overflow-hidden mr-6">
-                <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-1/2">
-                  <span className="text-black text-lg font-bold uppercase tracking-[0.2em] h-6 flex items-center">
-                    Become a client
-                  </span>
-                  <span className="text-black text-lg font-bold uppercase tracking-[0.2em] h-6 flex items-center">
-                    Let&apos;s start
-                  </span>
-                </div>
-              </div>
-
-              {/* Single Animated Arrow */}
-              <div className="relative w-14 h-14 bg-black rounded-full flex items-center justify-center overflow-hidden">
-                <div className="transition-transform duration-500 ease-out group-hover:translate-x-1">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                  </svg>
-                </div>
-              </div>
-            </button>
-          </MagneticButton>
+          <AgencyButton text="BECOME A CLIENT" onClick={() => document.dispatchEvent(new CustomEvent('openContact'))} />
         </div>
       </div>
     </section>

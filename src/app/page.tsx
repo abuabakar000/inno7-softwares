@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
-import MagneticButton from "@/components/MagneticButton";
+import AgencyButton from "@/components/AgencyButton";
 import Footer from "@/components/Footer";
 import { useContact } from "@/context/ContactContext";
 import ProjectCard from "@/components/ProjectCard";
@@ -200,11 +200,9 @@ function ServiceTile({
             ))}
           </div>
 
-          <Link href={service.link || "#"} className="mt-4">
-            <button className="bg-white text-black w-full py-5 rounded-full text-xs font-black uppercase tracking-widest">
-              View Service Details
-            </button>
-          </Link>
+          <div className="mt-4">
+            <AgencyButton text="View Service Details" href={service.link} className="w-full justify-between" />
+          </div>
         </div>
 
         {/* Desktop View (Maintain current structure or refine slightly) */}
@@ -221,13 +219,7 @@ function ServiceTile({
           </div>
 
           <div className="mt-auto pt-16 flex items-center gap-4">
-            <Link href={service.link || "#"}>
-              <MagneticButton>
-                <button className="bg-white text-black px-12 py-6 rounded-full text-sm font-bold hover:scale-105 active:scale-95 transition-all uppercase tracking-widest cursor-pointer">
-                  View Full Service
-                </button>
-              </MagneticButton>
-            </Link>
+            <AgencyButton text="View Full Service" href={service.link} />
           </div>
         </div>
 
@@ -468,23 +460,9 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
             </div>
-            
-            <div className="flex items-center gap-3 px-6 pb-12">
-              <button
-                onClick={openContact}
-                className="bg-white text-black px-10 py-6 rounded-full text-xs font-bold uppercase tracking-tight hover:scale-105 active:scale-95 transition-all shadow-xl whitespace-nowrap"
-              >
-                DISCUSS THE PROJECT
-              </button>
-              <button
-                onClick={openContact}
-                className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl shrink-0"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="19" y1="12" x2="5" y2="12" />
-                  <polyline points="12 19 5 12 12 5" />
-                </svg>
-              </button>
+
+            <div className="flex items-center gap-3 px-6 pb-12 w-full">
+              <AgencyButton text="DISCUSS THE PROJECT" onClick={openContact} className="w-full" />
             </div>
           </div>
         </div>
@@ -652,38 +630,18 @@ export default function Home() {
             style={{ opacity: aiTextOpacity }}
             className="max-w-lg mt-auto lg:mt-0"
           >
-            <div className="mb-12">
-              <h3 className="text-white text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight mb-6 leading-none">
-                AI Tools:
+            <div className="mb-4">
+              <h3 className="text-white text-[9vw] md:text-[7.5vw] font-thin uppercase tracking-tight  leading-none">
+                AI Tools
               </h3>
-              <p className="text-zinc-500 text-[6.5vw] md:text-3xl font-light tracking-tight leading-tight space-y-1">
-                Content Writing.<br />
-                Image Generation.<br />
-                Optimization.
-              </p>
             </div>
 
-            <h4 className="text-white text-[9vw] md:text-3xl font-thin tracking-tight mb-12 leading-[0.9] uppercase">
-              More Solutions for the<br />
-              Uniqueness of Your Business
+            <h4 className="text-white text-[7vw] md:text-2xl font-normal tracking-tight mb-12 leading-[1.2] uppercase max-w-2xl">
+              Precision-engineered software solutions and disruptive AI-integrated ecosystems meticulously tailored to the absolute uniqueness and vision of your business.
             </h4>
 
             <div className="flex items-center gap-4">
-              <button
-                onClick={openContact}
-                className="bg-white text-black px-10 py-6 rounded-full text-xs font-bold uppercase tracking-tight hover:scale-105 active:scale-95 transition-all shadow-xl whitespace-nowrap"
-              >
-                DISCUSS THE PROJECT
-              </button>
-              <button
-                onClick={openContact}
-                className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl shrink-0"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="19" y1="12" x2="5" y2="12" />
-                  <polyline points="12 19 5 12 12 5" />
-                </svg>
-              </button>
+              <AgencyButton text="DISCUSS THE PROJECT" onClick={openContact} />
             </div>
           </motion.div>
         </div>
@@ -780,31 +738,32 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="py-32 px-6 md:px-12 bg-black flex flex-col lg:flex-row gap-20">
         {/* Left: Sidebar */}
-        <div className="hidden lg:block lg:w-1/3">
-          <div className="bg-zinc-900/40  p-12 flex flex-col justify-between min-h-[450px] border border-white/5 shadow-2xl">
-            <div>
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 relative">
-                <span className="text-black text-3xl font-black italic tracking-tighter">R</span>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-red-600 rounded-full mt-2 ml-2" />
-              </div>
-              <h2 className="text-4xl font-light tracking-tight text-white mb-4">
-                Let&apos;s talk
-              </h2>
-            </div>
+        <div className="hidden lg:block lg:w-1/3 group">
+          <div className="relative h-full">
+            {/* Ambient Glow Mask */}
+            <div className="absolute inset-0 bg-white/2 rounded-[2rem] -z-10 group-hover:bg-white/5 transition-colors duration-700" />
+            
+            <div className="bg-white/[0.03] backdrop-blur-3xl p-12 flex flex-col justify-between min-h-[450px] border border-white/10 rounded-[2rem] shadow-2xl transition-all duration-700 group-hover:border-white/20">
+              <div>
+                <div className="relative mb-12">
+                  {/* Subtle Logo Shine */}
+                  <div className="absolute -inset-4 bg-white/5 rounded-full blur-2xl group-hover:bg-white/10 transition-colors duration-700" />
+                  
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center relative z-10 shadow-xl transition-transform duration-700 group-hover:scale-110">
+                    <span className="text-black text-2xl font-black italic tracking-tighter">R</span>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-red-600 rounded-full mt-2 ml-2" />
+                  </div>
+                </div>
 
-            <div className="flex items-center gap-3">
-              <button 
-                onClick={openContact}
-                className="bg-white text-black px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 active:scale-95 transition-all"
-              >
-                Book a call
-              </button>
-              <button className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all group/faq">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="19" y1="12" x2="5" y2="12" />
-                  <polyline points="12 19 5 12 12 5" />
-                </svg>
-              </button>
+                <h2 className="text-5xl md:text-6xl font-thin tracking-tighter text-white/90 leading-[0.9] uppercase mb-6 group-hover:text-white transition-colors duration-700">
+                  LET&apos;S<br />TALK
+                </h2>
+                <div className="w-12 h-[1px] bg-white/20 group-hover:w-20 transition-all duration-700" />
+              </div>
+
+              <div className="flex items-center gap-3">
+                <AgencyButton text="BOOK A CALL" onClick={openContact} />
+              </div>
             </div>
           </div>
         </div>

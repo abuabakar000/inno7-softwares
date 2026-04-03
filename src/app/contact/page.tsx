@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Instagram, Facebook, Beaker, Globe, Mail, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AgencyButton from "@/components/AgencyButton";
 import { useContact } from "@/context/ContactContext";
 
 const socialLinks = [
@@ -58,34 +59,47 @@ export default function ContactPage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full lg:w-1/3 bg-zinc-900/30 p-10 md:p-14 rounded-sm border border-white/5"
+            className="w-full lg:w-1/3 group relative overflow-hidden"
           >
-            <div className="flex flex-col gap-8 mb-16">
-              <div className="flex flex-col gap-2">
-                <a href="mailto:office@redstone.software" className="text-base md:text-lg font-light hover:opacity-60 transition-opacity">
-                  office@redstone.software
-                </a>
-                <a href="mailto:support@redstone.software" className="text-base md:text-lg font-light hover:opacity-60 transition-opacity">
-                  support@redstone.software
-                </a>
+            {/* Glassmorphic Card */}
+            <div className="bg-white/[0.03] backdrop-blur-3xl p-10 md:p-14 rounded-[2rem] border border-white/10 shadow-2xl transition-all duration-700 group-hover:border-white/20">
+              
+              <div className="flex flex-col gap-12">
+                {/* Email Section */}
+                <div className="flex flex-col gap-4 group/item">
+                  <span className="text-[12px] font-medium text-zinc-500 uppercase tracking-[0.2em]">
+                    (Email)
+                  </span>
+                  <div className="flex flex-col gap-2">
+                    <a href="mailto:office@redstone.software" className="text-[13px] md:text-base font-normal tracking-tight uppercase text-white/90 hover:text-white transition-all duration-500">
+                      office@redstone.software
+                    </a>
+                    <a href="mailto:support@redstone.software" className="text-[13px] md:text-base font-normal tracking-tight uppercase text-white/90 hover:text-white transition-all duration-500">
+                      support@redstone.software
+                    </a>
+                  </div>
+                  <div className="w-8 h-[1px] bg-white/20 group-hover/item:w-12 transition-all duration-500" />
+                </div>
+
+                {/* Phone Section */}
+                <div className="flex flex-col gap-4 group/item">
+                  <span className="text-[12px] font-medium text-zinc-500 uppercase tracking-[0.2em]">
+                    (Phone)
+                  </span>
+                  <a href="tel:+17867447141" className="text-xl md:text-2xl font-thin tracking-tighter uppercase text-white/90 hover:text-white transition-all duration-500">
+                    +1 786 744 7141
+                  </a>
+                  <div className="w-8 h-[1px] bg-white/20 group-hover/item:w-12 transition-all duration-500" />
+                </div>
+
+                {/* Branding Accent */}
+                <div className="pt-8 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
+                   <div className="text-[10px] font-black tracking-[0.5em] text-white uppercase">REDSTONE SOFTWARE</div>
+                </div>
               </div>
 
-              <a href="tel:+17867447141" className="text-base md:text-lg font-light tracking-tight hover:opacity-60 transition-opacity">
-                +1 786 744 7141
-              </a>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex gap-4">
-              {socialLinks.map((social, i) => (
-                <a
-                  key={i}
-                  href={social.href}
-                  className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
-                >
-                  <social.icon size={20} />
-                </a>
-              ))}
+              {/* Background Glow */}
+              <div className="absolute -inset-20 bg-white/[0.02] rounded-full blur-3xl -z-10 group-hover:bg-white/[0.04] transition-colors duration-700" />
             </div>
           </motion.div>
 
@@ -112,13 +126,7 @@ export default function ContactPage() {
             </div>
 
             <div className="pt-8">
-              <button className="bg-white text-black px-12 py-5 rounded-full text-xs font-black uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-2xl flex items-center gap-4 group">
-                Send Message
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </button>
+              <AgencyButton text="SEND MESSAGE" onClick={() => console.log('Sending message...')} />
             </div>
           </motion.div>
         </div>
