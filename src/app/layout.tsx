@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "We develop online stores, CRM systems, SaaS solutions, and app platforms.",
   icons: {
     icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
 

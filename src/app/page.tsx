@@ -261,7 +261,7 @@ export default function Home() {
       statSub: "Satisfied Clients"
     },
     {
-      image: "/testimonial-mockup-2.png",
+      image: "/testimonial-mockup.png",
       quote: "Sitte Agency transformed our digital presence with a stunning, high-performance platform. Their attention to detail and creative direction was exactly what we needed.",
       author: "James Wilson",
       role: "Founder, Peak AI",
@@ -269,7 +269,7 @@ export default function Home() {
       statSub: "Revenue Growth"
     },
     {
-      image: "/testimonial-mockup-3.png",
+      image: "/testimonial-mockup.png",
       quote: "The mobile-first approach and lightning-fast performance has significantly increased our conversion rates. A truly world-class team.",
       author: "Sarah Chen",
       role: "Product Lead, Zenith",
@@ -528,7 +528,7 @@ export default function Home() {
             title="EUDUCO"
             category="Distribution company"
             tags={["UX/UI Design", "Front end", "Back end"]}
-            image="/portfolio_project_1_1773957776150.png"
+            images={["/burg/pic1.png", "/burg/pic2.png", "/burg/pic3.png", "/burg/pic4.jpg"]}
             aspectRatio="aspect-[16/11]"
           />
 
@@ -536,7 +536,7 @@ export default function Home() {
             title="WISH FLOWERS"
             category="Flower delivery"
             tags={["UX/UI Design", "Front end", "Back end"]}
-            image="/portfolio_project_2_1773957793433.png"
+            images={["/burg/pic2.png", "/burg/pic3.png", "/burg/pic4.jpg", "/burg/pic1.png"]}
             aspectRatio="aspect-[3/4]"
             className="mt-0 md:mt-16"
           />
@@ -545,7 +545,7 @@ export default function Home() {
             title="BASE1"
             category="Website"
             tags={["UX/UI Design", "Front end"]}
-            image="/portfolio_project_3_1773957812597.png"
+            images={["/burg/pic3.png", "/burg/pic4.jpg", "/burg/pic1.png", "/burg/pic2.png"]}
             aspectRatio="aspect-[4/5]"
             className="mt-0 md:-mt-12"
           />

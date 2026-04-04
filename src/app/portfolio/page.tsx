@@ -99,7 +99,7 @@ const projects = [
     title: "EUDUCO",
     category: "Distribution company",
     tags: ["UX/UI Design", "Front end", "Back end"],
-    image: "/portfolio_project_1_1773957776150.png",
+    images: ["/burg/pic1.png", "/burg/pic2.png", "/burg/pic3.png", "/burg/pic4.jpg"],
     aspectRatio: "aspect-[16/11]",
     filterCategory: "CREATIVE"
   },
@@ -107,7 +107,7 @@ const projects = [
     title: "WISH FLOWERS",
     category: "Flower delivery",
     tags: ["UX/UI Design", "Front end", "Back end"],
-    image: "/portfolio_project_2_1773957793433.png",
+    images: ["/burg/pic2.png", "/burg/pic3.png", "/burg/pic4.jpg", "/burg/pic1.png"],
     aspectRatio: "aspect-[3/4]",
     className: "mt-0 md:mt-16",
     filterCategory: "FOOD DELIVERY"
@@ -116,7 +116,7 @@ const projects = [
     title: "BASE1",
     category: "Website",
     tags: ["UX/UI Design", "Front end"],
-    image: "/portfolio_project_3_1773957812597.png",
+    images: ["/burg/pic3.png", "/burg/pic4.jpg", "/burg/pic1.png", "/burg/pic2.png"],
     aspectRatio: "aspect-[4/5]",
     className: "mt-0 md:-mt-12",
     filterCategory: "WEB SOLUTION"
