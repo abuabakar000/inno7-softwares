@@ -104,48 +104,48 @@ const projects = [
     filterCategory: "CREATIVE"
   },
   {
-    title: "WISH FLOWERS",
-    category: "Flower delivery",
-    tags: ["UX/UI Design", "Front end", "Back end"],
-    images: ["/burg/pic2.png", "/burg/pic3.png", "/burg/pic4.jpg", "/burg/pic1.png"],
+    title: "CLEANZO",
+    category: "Cleaning Service",
+    tags: ["UX/UI Design", "Front end", "Brand Identity"],
+    images: ["/cleanzo/thumbnail.png"],
     aspectRatio: "aspect-[3/4]",
     className: "mt-0 md:mt-16",
-    filterCategory: "FOOD DELIVERY"
+    filterCategory: "LANDING PAGE"
   },
   {
-    title: "BASE1",
-    category: "Website",
-    tags: ["UX/UI Design", "Front end"],
-    images: ["/burg/pic3.png", "/burg/pic4.jpg", "/burg/pic1.png", "/burg/pic2.png"],
+    title: "SAASFORGE",
+    category: "SaaS Solutions",
+    tags: ["React.js", "Dashboard UI", "Full Stack Development"],
+    images: ["/saasforge/pic1.png"],
     aspectRatio: "aspect-[4/5]",
     className: "mt-0 md:-mt-12",
     filterCategory: "WEB SOLUTION"
   },
   {
-    title: "Project Alpha",
-    category: "Coming Soon",
-    tags: ["Development"],
+    title: "RESUME AI",
+    category: "AI Productivity",
+    tags: ["Next.js", "GPT-3", "Tailwind CSS"],
+    images: ["/resume-ai/pic1.png"],
     aspectRatio: "aspect-[16/10]",
-    isPlaceholder: true,
-    filterCategory: "NEW PROJECTS"
+    filterCategory: "WEB SOLUTION"
   },
   {
-    title: "Project Beta",
-    category: "Coming Soon",
-    tags: ["Branding"],
+    title: "MINT CARE DENTISTRY",
+    category: "Dentistry",
+    tags: ["UX/UI Design", "Branding", "React"],
+    images: ["/mint-care-dentistry/pic1.webp"],
     aspectRatio: "aspect-[3/4]",
     className: "mt-0 md:mt-16",
-    isPlaceholder: true,
-    filterCategory: "BRANDING"
+    filterCategory: "DENTISTRY"
   },
   {
-    title: "Project Gamma",
-    category: "Coming Soon",
-    tags: ["UI/UX"],
+    title: "PORTFOLIO SITES",
+    category: "Branding",
+    tags: ["Portfolio Design", "Framer Motion", "Landing Page"],
+    images: ["/portfolio-sites/pic1.png"],
     aspectRatio: "aspect-[4/5]",
     className: "mt-0 md:-mt-12",
-    isPlaceholder: true,
-    filterCategory: "ONLINE STORE"
+    filterCategory: "BRANDING"
   }
 ];
 
