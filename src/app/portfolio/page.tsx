@@ -100,7 +100,7 @@ const projects = [
     category: "Distribution company",
     tags: ["UX/UI Design", "Front end", "Back end"],
     images: ["/burg/pic1.png", "/burg/pic2.png", "/burg/pic3.png", "/burg/pic4.jpg"],
-    aspectRatio: "aspect-[16/11]",
+    aspectRatio: "aspect-[4/5]",
     filterCategory: "CREATIVE"
   },
   {
@@ -126,14 +126,14 @@ const projects = [
     category: "AI Productivity",
     tags: ["Next.js", "GPT-3", "Tailwind CSS"],
     images: ["/resume-ai/pic1.png"],
-    aspectRatio: "aspect-[16/10]",
+    aspectRatio: "aspect-[4/5]",
     filterCategory: "WEB SOLUTION"
   },
   {
     title: "MINT CARE DENTISTRY",
     category: "Dentistry",
     tags: ["UX/UI Design", "Branding", "React"],
-    images: ["/mint-care-dentistry/pic1.webp"],
+    images: ["/mint-care-dentistry/pic1.png"],
     aspectRatio: "aspect-[3/4]",
     className: "mt-0 md:mt-16",
     filterCategory: "DENTISTRY"
@@ -146,6 +146,23 @@ const projects = [
     aspectRatio: "aspect-[4/5]",
     className: "mt-0 md:-mt-12",
     filterCategory: "BRANDING"
+  },
+  {
+    title: "DEVCOLLAB",
+    category: "SaaS",
+    tags: ["Collaboration Tool", "Real-time Chat", "Project Management"],
+    images: ["/dev-collab/pic1.png"],
+    aspectRatio: "aspect-[4/5]",
+    filterCategory: "WEB SOLUTION"
+  },
+  {
+    title: "PLUMBER",
+    category: "Local Business",
+    tags: ["Service Website", "Contact Flow", "Local SEO"],
+    images: ["/plumber/pic1.png"],
+    aspectRatio: "aspect-[3/4]",
+    className: "mt-0 md:mt-16",
+    filterCategory: "WEB SOLUTION"
   }
 ];
 
