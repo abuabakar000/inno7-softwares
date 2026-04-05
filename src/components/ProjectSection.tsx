@@ -39,6 +39,7 @@ export default function ProjectSection({
                 alt={projectTitle}
                 fill
                 className="object-cover opacity-70 scale-100 group-hover/image:scale-110 group-hover/image:opacity-100 transition-all duration-[1500ms] cubic-bezier(0.16, 1, 0.3, 1)"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-white/5 opacity-60 pointer-events-none" />
               

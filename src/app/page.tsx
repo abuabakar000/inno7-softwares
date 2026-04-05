@@ -272,7 +272,7 @@ export default function Home() {
       image: "/client4.png",
       quote: "The level of talent and professionalism they bring is exceptional. They integrate seamlessly into workflows and consistently deliver high-quality results. Easily one of the best teams we've worked with.",
       author: "Aleem Minhas",
-      role: "HR at Otoz.ai",
+      role: "Director at Otoz.ai",
       stat: "4.9/5",
       statSub: "User Rating"
     }

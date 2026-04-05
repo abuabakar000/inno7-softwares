@@ -80,6 +80,7 @@ export default function ProjectCard({
                 alt="Project context background"
                 fill
                 className="object-cover"
+                sizes={sizes}
               />
             </div>
           )}

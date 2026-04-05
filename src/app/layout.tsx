@@ -29,6 +29,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} h-full antialiased dark`}
+      suppressHydrationWarning
     >
       <body className="min-h-full bg-black text-white">
         <ContactProvider>

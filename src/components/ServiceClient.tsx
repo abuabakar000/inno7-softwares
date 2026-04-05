@@ -22,6 +22,7 @@ import AgencyButton from '@/components/AgencyButton';
 import ProjectSection from '@/components/ProjectSection';
 import FAQSection from '@/components/FAQSection';
 import CTASection from '@/components/CTASection';
+import Image from 'next/image';
 import { useContact } from '@/context/ContactContext';
 import { ServiceData } from '@/data/services';
 
@@ -58,9 +59,14 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
             <div className="relative aspect-video bg-zinc-900 border border-white/10 overflow-hidden group">
-              <div className="absolute inset-0 flex items-center justify-center text-zinc-700 font-black uppercase tracking-widest text-xs">
-                {/* Image Placeholder */}
-              </div>
+              <Image 
+                src={data.heroImage}
+                alt={data.title}
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 50vw"
+                priority
+              />
             </div>
 
             <div className="lg:pl-15">
