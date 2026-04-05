@@ -14,82 +14,47 @@ export const serviceCategories = [
   {
     title: "WEBSITE DEVELOPMENT",
     href: "/services/website-development",
-    subLinks: [
-      "Next.js Development",
-      "Node.js Backend",
-      "React Applications",
-      "Vue.js Platforms",
-      "Angular Solutions",
-      "WordPress Systems"
-    ]
+    subLinks: ["Next.js Development", "Node.js Backend", "React Applications"]
   },
   {
     title: "BRANDING AND DESIGN",
     href: "/services/branding-design",
-    subLinks: [
-      "Logo and Guidelines",
-      "Landing Page Design",
-      "E-commerce UI/UX",
-      "Website Redesign",
-      "Visual Identity",
-      "Typography Systems"
-    ]
+    subLinks: ["Logo and Guidelines", "Landing Page Design", "Visual Identity"]
   },
   {
     title: "CRM SYSTEMS",
     href: "/services/crm-systems",
-    subLinks: [
-      "Real Estate CRMs",
-      "Sales Automation",
-      "Data Migration",
-      "HubSpot Integration",
-      "Salesforce Setup",
-      "Custom Enterprise"
-    ]
+    subLinks: ["Real Estate CRMs", "Sales Automation", "Data Migration"]
   },
   {
     title: "SaaS SOLUTIONS",
     href: "/services/saas-solutions",
-    subLinks: [
-      "Product Strategy",
-      "Multi-tenant Arch",
-      "Subscription Billing",
-      "Cloud Infrastructure",
-      "API Development",
-      "Scalability Consulting"
-    ]
+    subLinks: ["Product Strategy", "Subscription Billing", "Cloud Infrastructure"]
+  },
+  {
+    title: "AI AGENTS / CHATBOT",
+    href: "/services/ai-agents-chatbot",
+    subLinks: ["LLM Customization", "AI Automation", "Chatbot Systems"]
   },
   {
     title: "APPLICATION DEVELOPMENT",
     href: "/services/app-platforms",
-    subLinks: [
-      "iOS Apps",
-      "Android Apps",
-      "Flutter Cross-platform",
-      "React Native",
-      "Store Optimization",
-      "Mobile Strategy"
-    ]
+    subLinks: ["iOS Apps", "Android Apps", "Native Strategy"]
   },
   {
-    title: "AI INTEGRATION",
-    href: "/services/ai-integration",
-    subLinks: [
-      "LLM Customization",
-      "AI Automation",
-      "Predictive Analytics",
-      "Chatbot Systems"
-    ]
+    title: "WEBSITE SUPPORT",
+    href: "/services/website-support",
+    subLinks: ["Maintenance", "Uptime Monitoring", "Performance Tuning"]
   },
   {
     title: "E-COMMERCE",
     href: "/services/ecommerce-stores",
-    subLinks: [
-      "Shopify Plus",
-      "Headless E-commerce",
-      "Custom Checkout",
-      "Inventory Systems"
-    ]
+    subLinks: ["Shopify Plus", "Headless Commerce", "Custom Checkout"]
+  },
+  {
+    title: "SEO OPTIMIZATION",
+    href: "/services/seo-optimization",
+    subLinks: ["Keyword Strategy", "Technical SEO", "Content Planning"]
   }
 ];
 
@@ -121,7 +86,7 @@ export default function MegaMenu({ isOpen }: MegaMenuProps) {
               <div className="flex flex-col gap-2">
                 <span className="text-[9px] font-bold text-white/40 tracking-widest">{`0${idx + 1}`}</span>
                 <Link href={cat.href} className="block">
-                  <h3 className="text-sm md:text-lg font-thin tracking-tighter text-white/90 group-hover:text-white transition-all duration-500 leading-tight pr-4">
+                  <h3 className="text-sm md:text-base font-thin tracking-tighter text-white/90 group-hover:text-white transition-all duration-500 leading-tight pr-4">
                     {cat.title}
                   </h3>
                   <div className="h-px w-0 group-hover:w-full bg-white/40 transition-all duration-700 mt-2" />
@@ -130,14 +95,6 @@ export default function MegaMenu({ isOpen }: MegaMenuProps) {
               </div>
             </div>
           ))}
-          
-          {/* Support Links */}
-          <div className="flex flex-col gap-6 pt-5">
-            <div className="flex flex-col gap-3">
-              <Link href="/" className="text-[11px] font-bold uppercase text-white/60 hover:text-white transition-colors tracking-widest">SEO OPTIMISATION</Link>
-              <Link href="/" className="text-[11px] font-bold uppercase text-white/60 hover:text-white transition-colors tracking-widest">WEBSITE SUPPORT</Link>
-            </div>
-          </div>
         </div>
 
         {/* Right: New Project Visual */}

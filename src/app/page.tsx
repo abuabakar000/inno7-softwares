@@ -253,26 +253,26 @@ export default function Home() {
 
   const testimonials = [
     {
-      image: "/testimonial-mockup.png",
-      quote: "REDSTONE delivered an exceptional website representin team's responsibility and cooperation in meeting all requirements with precision were remarkable...",
-      author: "Olena Dubkova",
-      role: "Marketing Specialist, UAM Power",
+      image: "/client2.png",
+      quote: "What stood out the most was their decision-making and attention to detail. They don't just build — they think. That made a huge difference in the final product.",
+      author: "Mirza Asif Baig",
+      role: "CEO and Investor Saffran Groups",
       stat: "400+",
       statSub: "Satisfied Clients"
     },
     {
-      image: "/testimonial-mockup.png",
-      quote: "Sitte Agency transformed our digital presence with a stunning, high-performance platform. Their attention to detail and creative direction was exactly what we needed.",
-      author: "James Wilson",
-      role: "Founder, Peak AI",
+      image: "/client3.png",
+      quote: "They operate at a level that clearly exceeds standard expectations. The quality, speed, and insight they bring make them an incredibly valuable partner.",
+      author: "Saffran Labs",
+      role: "CTO at Saffran Labs",
       stat: "150%+",
       statSub: "Revenue Growth"
     },
     {
-      image: "/testimonial-mockup.png",
-      quote: "The mobile-first approach and lightning-fast performance has significantly increased our conversion rates. A truly world-class team.",
-      author: "Sarah Chen",
-      role: "Product Lead, Zenith",
+      image: "/client4.png",
+      quote: "The level of talent and professionalism they bring is exceptional. They integrate seamlessly into workflows and consistently deliver high-quality results. Easily one of the best teams we've worked with.",
+      author: "Aleem Minhas",
+      role: "HR at Otoz.ai",
       stat: "4.9/5",
       statSub: "User Rating"
     }
@@ -348,6 +348,20 @@ export default function Home() {
       link: "/services/saas-solutions",
     },
     {
+      title: "AI Agents / Chatbot",
+      subServices: [
+        "LLM Customization",
+        "AI Automation",
+        "Chatbot Systems",
+        "Agent Deployment",
+        "Voice AI",
+        "Business Logic",
+      ],
+      image1: "/client2.png",
+      image2: "/client4.png",
+      link: "/services/ai-agents-chatbot",
+    },
+    {
       title: "App platforms",
       subServices: [
         "iOS Development",
@@ -362,18 +376,18 @@ export default function Home() {
       link: "/services/app-platforms",
     },
     {
-      title: "AI integration",
+      title: "Website support",
       subServices: [
-        "LLM Customization",
-        "Predictive Analytics",
-        "Chatbot Development",
-        "Automation",
-        "Data Processing",
-        "Machine Learning",
+        "Security Monitoring",
+        "Performance Tuning",
+        "Uptime Management",
+        "Core Updates",
+        "Backup Systems",
+        "Platform Hardening",
       ],
-      image1: "/client2.png",
-      image2: "/client4.png",
-      link: "/services/ai-integration",
+      image1: "/cleanzo/pic2.png",
+      image2: "/cleanzo/pic3.png",
+      link: "/services/website-support",
     },
     {
       title: "E-commerce stores",
@@ -388,6 +402,20 @@ export default function Home() {
       image1: "/client3.png",
       image2: "/client2.png",
       link: "/services/ecommerce-stores",
+    },
+    {
+      title: "SEO optimization",
+      subServices: [
+        "Technical SEO",
+        "Semantic Keyword Research",
+        "Authority Building",
+        "Content Strategy",
+        "Local SEO",
+        "Analytics Tracking",
+      ],
+      image1: "/portfolio-sites/pic2.png",
+      image2: "/portfolio-sites/pic3.png",
+      link: "/services/seo-optimization",
     },
   ];
 
@@ -525,55 +553,61 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
           <ProjectCard
-            title="EUDUCO"
-            category="Distribution company"
-            tags={["UX/UI Design", "Front end", "Back end"]}
+            title="THE GOOD BURGER"
+            category="Restaurant"
+            tags={["React", "UI/UX Design", "Framer Motion"]}
             images={["/burg/pic1.png", "/burg/pic2.png", "/burg/pic3.png", "/burg/pic4.jpg"]}
             aspectRatio="aspect-[4/5]"
+            href="https://the-good-burger.vercel.app/"
           />
 
           <ProjectCard
             title="CLEANZO"
             category="Cleaning Service"
             tags={["UX/UI Design", "Front end", "Brand Identity"]}
-            images={["/cleanzo/thumbnail.png"]}
+            images={["/cleanzo/thumbnail.png", "/cleanzo/pic2.png", "/cleanzo/pic3.png", "/cleanzo/pic4.png"]}
             aspectRatio="aspect-[3/4]"
             className="mt-0 md:mt-16"
+            href="https://cleanzo.vercel.app/"
           />
 
           <ProjectCard
             title="SAASFORGE"
-            category="SaaS Solutions"
-            tags={["React.js", "Dashboard UI", "Full Stack Development"]}
-            images={["/saasforge/pic1.png"]}
+            category="SaaS Development"
+            tags={["Secure Auth", "Online Payments", "SaaS Solutions"]}
+            images={["/saasforge/pic1.png", "/saasforge/pic2.png", "/saasforge/pic3.png", "/saasforge/pic4.png"]}
             aspectRatio="aspect-[4/5]"
             className="mt-0 md:-mt-12"
+            href="http://saas-forge-frontend.vercel.app/"
           />
 
           <ProjectCard
             title="RESUME AI"
-            category="AI Productivity"
-            tags={["Next.js", "GPT-3", "Tailwind CSS"]}
-            images={["/resume-ai/pic1.png"]}
+            category="AI Resume Generator"
+            tags={["Frontend", "AI Integration", "PDF Generation"]}
+            images={["/resume-ai/pic1.png", "/resume-ai/pic2.png", "/resume-ai/pic3.png", "/resume-ai/pic4.jfif"]}
             aspectRatio="aspect-[4/5]"
+            href="https://inn7-softwares.vercel.app/portfolio"
           />
 
           <ProjectCard
             title="MINT CARE DENTISTRY"
-            category="Dentistry"
-            tags={["UX/UI Design", "Branding", "React"]}
-            images={["/mint-care-dentistry/pic1.png"]}
+            category="Dentistry Website"
+            tags={["24/7 Chatbot", "Branding", "Full Stack Development"]}
+            images={["/mint-care-dentistry/pic1.png", "/mint-care-dentistry/pic2.png", "/mint-care-dentistry/pic3.png", "/mint-care-dentistry/pic4.png"]}
             aspectRatio="aspect-[3/4]"
             className="mt-0 md:mt-16"
+            href="https://mint-care-dentistry.vercel.app/"
           />
 
           <ProjectCard
             title="PORTFOLIO SITES"
             category="Branding"
             tags={["Portfolio Design", "Framer Motion", "Landing Page"]}
-            images={["/portfolio-sites/pic1.png"]}
+            images={["/portfolio-sites/pic1.png", "/portfolio-sites/pic2.png", "/portfolio-sites/pic3.png", "/portfolio-sites/pic4.png"]}
             aspectRatio="aspect-[4/5]"
             className="mt-0 md:-mt-12"
+            href="http://ak-portfolio-site.vercel.app/"
           />
         </div>
       </section>
@@ -745,11 +779,11 @@ export default function Home() {
                   <div className="absolute -inset-4 bg-white/5 rounded-full blur-2xl group-hover:bg-white/10 transition-colors duration-700" />
 
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center relative z-10 shadow-xl transition-transform duration-700 group-hover:scale-110 overflow-hidden p-3">
-                    <Image 
-                      src="/logo-faq.png" 
-                      alt="FAQ Logo" 
-                      width={64} 
-                      height={64} 
+                    <Image
+                      src="/logo-faq.png"
+                      alt="FAQ Logo"
+                      width={64}
+                      height={64}
                       className="w-full h-full object-contain"
                     />
                   </div>

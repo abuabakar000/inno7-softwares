@@ -96,73 +96,81 @@ const technologies = [
 
 const projects = [
   {
-    title: "EUDUCO",
-    category: "Distribution company",
-    tags: ["UX/UI Design", "Front end", "Back end"],
+    title: "THE GOOD BURGER",
+    category: "Restaurant",
+    tags: ["React", "UI/UX Design", "Framer Motion"],
     images: ["/burg/pic1.png", "/burg/pic2.png", "/burg/pic3.png", "/burg/pic4.jpg"],
     aspectRatio: "aspect-[4/5]",
-    filterCategory: "CREATIVE"
+    filterCategory: "CREATIVE",
+    href: "https://the-good-burger.vercel.app/"
   },
   {
     title: "CLEANZO",
     category: "Cleaning Service",
     tags: ["UX/UI Design", "Front end", "Brand Identity"],
-    images: ["/cleanzo/thumbnail.png"],
+    images: ["/cleanzo/thumbnail.png", "/cleanzo/pic2.png", "/cleanzo/pic3.png", "/cleanzo/pic4.png"],
     aspectRatio: "aspect-[3/4]",
     className: "mt-0 md:mt-16",
-    filterCategory: "LANDING PAGE"
+    filterCategory: "LANDING PAGE",
+    href: "https://cleanzo.vercel.app/"
   },
   {
     title: "SAASFORGE",
-    category: "SaaS Solutions",
-    tags: ["React.js", "Dashboard UI", "Full Stack Development"],
-    images: ["/saasforge/pic1.png"],
+    category: "Saas Development",
+    tags: ["Secure Auth", "Online Payments", "SaaS Solutions"],
+    images: ["/saasforge/pic1.png", "/saasforge/pic2.png", "/saasforge/pic3.png", "/saasforge/pic4.png"],
     aspectRatio: "aspect-[4/5]",
     className: "mt-0 md:-mt-12",
-    filterCategory: "WEB SOLUTION"
+    filterCategory: "WEB SOLUTION",
+    href: "http://saas-forge-frontend.vercel.app/"
   },
   {
     title: "RESUME AI",
-    category: "AI Productivity",
-    tags: ["Next.js", "GPT-3", "Tailwind CSS"],
-    images: ["/resume-ai/pic1.png"],
+    category: "AI Resume Generator",
+    tags: ["Frontend", "AI Integration", "PDF Generation"],
+    images: ["/resume-ai/pic1.png", "/resume-ai/pic2.png", "/resume-ai/pic3.png", "/resume-ai/pic4.jfif"],
     aspectRatio: "aspect-[4/5]",
-    filterCategory: "WEB SOLUTION"
+    filterCategory: "WEB SOLUTION",
+    href: "https://inn7-softwares.vercel.app/portfolio"
   },
   {
     title: "MINT CARE DENTISTRY",
-    category: "Dentistry",
-    tags: ["UX/UI Design", "Branding", "React"],
-    images: ["/mint-care-dentistry/pic1.png"],
+    category: "Dentistry Website",
+    tags: ["24/7 Chatbot", "Branding", "Full Stack Development"],
+    images: ["/mint-care-dentistry/pic1.png", "/mint-care-dentistry/pic2.png", "/mint-care-dentistry/pic3.png", "/mint-care-dentistry/pic4.png"],
     aspectRatio: "aspect-[3/4]",
     className: "mt-0 md:mt-16",
-    filterCategory: "DENTISTRY"
+    filterCategory: "DENTISTRY",
+    href: "https://mint-care-dentistry.vercel.app/"
   },
   {
     title: "PORTFOLIO SITES",
     category: "Branding",
     tags: ["Portfolio Design", "Framer Motion", "Landing Page"],
-    images: ["/portfolio-sites/pic1.png"],
+    images: ["/portfolio-sites/pic1.png", "/portfolio-sites/pic2.png", "/portfolio-sites/pic3.png", "/portfolio-sites/pic4.png"],
     aspectRatio: "aspect-[4/5]",
     className: "mt-0 md:-mt-12",
-    filterCategory: "BRANDING"
+    filterCategory: "BRANDING",
+    href: "http://ak-portfolio-site.vercel.app/"
   },
   {
     title: "DEVCOLLAB",
     category: "SaaS",
     tags: ["Collaboration Tool", "Real-time Chat", "Project Management"],
-    images: ["/dev-collab/pic1.png"],
+    images: ["/dev-collab/pic1.png", "/dev-collab/pic2.png", "/dev-collab/pic3.png", "/dev-collab/pic4.png"],
     aspectRatio: "aspect-[4/5]",
-    filterCategory: "WEB SOLUTION"
+    filterCategory: "WEB SOLUTION",
+    href: "https://dev-collab-frontend-alpha.vercel.app/"
   },
   {
-    title: "PLUMBER",
-    category: "Local Business",
-    tags: ["Service Website", "Contact Flow", "Local SEO"],
-    images: ["/plumber/pic1.png"],
+    title: "MR DRAINER",
+    category: "Plumbring service",
+    tags: ["Branding", "Contact Flow", "Local SEO"],
+    images: ["/plumber/pic1.png", "/plumber/pic2.png", "/plumber/pic3.png", "/plumber/pic4.png"],
     aspectRatio: "aspect-[3/4]",
     className: "mt-0 md:mt-16",
-    filterCategory: "WEB SOLUTION"
+    filterCategory: "WEB SOLUTION",
+    href: "https://mr-drainer.vercel.app/"
   }
 ];
 

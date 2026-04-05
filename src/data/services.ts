@@ -38,38 +38,38 @@ export type ServiceData = {
 };
 
 export const SERVICES_DATA: Record<string, ServiceData> = {
-  'ai-integration': {
-    slug: 'ai-integration',
-    title: 'AI\nIntegration',
-    heroDescription: 'We empower your business with cutting-edge Artificial Intelligence integrated directly into your core workflows. From Large Language Models to predictive analytics, we turn data into your most valuable asset.',
-    specializationHeading: 'AI System Integration and Development Case Studies for Clients',
-    specializationText: 'Our agency, Redstone, specializes in cognitive engineering, creating intelligent systems and providing AI-driven business transformations. We build AI solutions tailored to your operational goals to effectively automate processes, enhance decision-making, and drive innovation. Our goal is to ensure your enterprise becomes an intelligent leader in its field.',
-    ctaText: 'UNLEASH AI POWER',
-    whySectionTitle: 'THE COMPETITIVE EDGE OF ARTIFICIAL INTELLIGENCE',
+  'ai-agents-chatbot': {
+    slug: 'ai-agents-chatbot',
+    title: 'AI Agents &\nChatbots',
+    heroDescription: 'We empower your business with autonomous AI agents and intelligent chatbots that handle complex interactions, lead qualification, and customer support with human-level precision.',
+    specializationHeading: 'Autonomous Agent Engineering and Conversational AI Case Studies',
+    specializationText: 'Our agency, Redstone, specializes in conversational architecture, creating bespoke AI agents that integrate deeply with your CRM and internal databases. We build solutions tailored to your operational goals to effectively automate customer touchpoints, reduce overhead, and provide 24/7 high-fidelity service. Our goal is to ensure your customer experience becomes a powerful competitive advantage.',
+    ctaText: 'DEPLOY YOUR AGENT',
+    whySectionTitle: 'TRANSFORMING INTERACTION WITH CLOUD-NATIVE AI',
     steps: [
-      { num: '01', title: 'Process Automation', description: 'Identify and automate repetitive cognitive tasks, freeing up your human capital for creative problem-solving and high-level strategy.' },
-      { num: '02', title: 'Predictive Analytics', description: 'Move from reactive to proactive. Leverage machine learning models to forecast trends, customer behavior, and potential operational bottlenecks.' },
-      { num: '03', title: 'Natural Language', description: 'Implement state-of-the-art LLMs to understand and generate human-like text, powering advanced search, content generation, and customer support.' },
-      { num: '04', title: 'Data Monetization', description: 'Unlock the hidden value in your unstructured data. AI helps you extract insights and build new revenue streams from Information you already possess.' }
+      { num: '01', title: 'Intent Mapping', description: 'We map out your customer journeys and identify key points where AI agents can provide immediate value and context-aware assistance.' },
+      { num: '02', title: 'Knowledge Injection', description: 'Your agents are trained on your specific documentation, brand voice, and business rules, ensuring every response is accurate and compliant.' },
+      { num: '03', title: 'Seamless Handoff', description: 'When complex issues arise, our agents gracefully escalate to your human team, providing a full transcript and context for a perfect transition.' },
+      { num: '04', title: 'Continuous Learning', description: 'We implement feedback loops where every interaction helps refine the model, improving accuracy and empathetic resonance over time.' }
     ],
     capabilities: [
-      { icon: 'Users', title: 'LLM\nFinetuning', description: 'We specialize in adapting large-scale base models to your specific domain, ensuring high accuracy and brand-consistent language output.' },
-      { icon: 'Monitor', title: 'Process Automation', description: 'We build intelligent agents that handle complex document processing, automated categorization, and intelligent routing across your enterprise.' },
-      { icon: 'Activity', title: 'Data Insights', description: 'Discover deep patterns in your data using specialized neural networks and machine learning models built for high-dimensional discovery.' },
-      { icon: 'Cpu', title: 'Intelligent Agents', description: 'We deploy advanced conversational AI and support agents that provide personalized, high-context assistance to your users and staff.' }
+      { icon: 'Cpu', title: 'Autonomous\nAgents', description: 'Reason-based agents that can perform multi-step tasks across different software platforms using advanced planning algorithms.' },
+      { icon: 'Users', title: 'Lead Qualification', description: 'Automated 24/7 screening and qualification of inbound prospects, feeding high-intent leads directly into your sales pipeline.' },
+      { icon: 'Activity', title: 'Analytics Dashboard', description: 'Deep visibility into agent performance, conversation sentiment, and common user bottlenecks for data-driven optimization.' },
+      { icon: 'Monitor', title: 'Omnichannel Presence', description: 'Deploy your agents across Web, WhatsApp, Slack, and Discord with a single unified backend for consistent brand logic.' }
     ],
     project: {
-      title: 'NEURAL SYNC',
-      subtitle: 'AI AUTOMATION',
-      description: 'Integrating advanced LLMs into customer support workflows. Reduced response times by 80% through intelligent ticket routing and automated high-quality drafting, allowing teams to handle 5x more volume with better precision.',
-      image: '/client2.png',
-      tag: 'ARTIFICIAL INTELLIGENCE'
+      title: 'MINT CHAT',
+      subtitle: 'AI CONCIERGE',
+      description: 'A custom-trained AI agent for a premium dental network. Handles scheduling, basic medical FAQs, and patient intake, reducing front-desk workload by 65%.',
+      image: '/mint-care-dentistry/pic4.png',
+      tag: 'CONVERSATIONAL AI'
     },
     faqs: [
-      { q: "What kind of AI models do you integrate?", a: "We work with state-of-the-art LLMs (like GPT-4 and Claude), computer vision models, and custom predictive analytics systems." },
-      { q: "How do you ensure data privacy when using AI?", a: "We implement secure, private VPC environments and data anonymization layers to ensure your sensitive business data never leaks." },
-      { q: "Can AI help automate our customer support?", a: "Yes, we build intelligent agents that can handle up to 80% of routine inquiries with human-level accuracy and brand-consistent voice." },
-      { q: "Do you provide finetuning for custom data?", a: "Absolutely. We specialize in adapting base models to your specific domain knowledge and proprietary datasets for maximum relevance." },
+      { q: "How secure is my company data?", a: "We use private VPC environments and never train public models on your proprietary data. Your information remains yours alone." },
+      { q: "Can the chatbot book appointments?", a: "Yes, we build deep integrations with scheduling software like Calendly, Acuity, and custom enterprise calendars." },
+      { q: "Does it understand multiple languages?", a: "Absolutely. Our agents support over 50 languages with native-level proficiency and cultural nuance." },
+      { q: "What happens if the AI makes a mistake?", a: "We implement 'guardrails' and human-in-the-loop systems to ensure sensitive inquiries are always handled with the necessary oversight." },
       { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
     ]
   },
@@ -280,6 +280,76 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { q: "Which technologies do you use for development?", a: "We specialize in high-performance stacks including React, Next.js, Node.js, and modern cloud architectures." },
       { q: "Is the website SEO-friendly from day one?", a: "Yes, we build every site with a mobile-first, SEO-ready foundation to ensure high visibility from launch." },
       { q: "Do you provide ongoing maintenance?", a: "We offer several maintenance and support packages to keep your platform updated, secure, and running smoothly." },
+      { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
+    ]
+  },
+  'website-support': {
+    slug: 'website-support',
+    title: 'Website\nSupport',
+    heroDescription: 'We provide comprehensive, high-priority maintenance and management for your digital assets. From security hardening to performance tuning, we ensure your platform remains a high-performance business tool.',
+    specializationHeading: 'Technical Management and Infrastructure Support Case Studies',
+    specializationText: 'Our agency, Redstone, specializes in boutique support services, providing dedicated attention to the technical health of your website. We offer solutions tailored to your operational uptime goals to effectively mitigate risks, optimize loading speeds, and implement security protocols. Our goal is to ensure your digital core remains unbreakable and consistently performant.',
+    ctaText: 'SECURE YOUR SITE',
+    whySectionTitle: 'THE CRITICAL NEED FOR ACTIVE MAINTENANCE',
+    steps: [
+      { num: '01', title: 'Security Proximity', description: 'We implement daily vulnerability scans and real-time firewall monitoring to detect and neutralize threats before they impact your business operations.' },
+      { num: '02', title: 'Core Updates', description: 'Our team handles the delicate process of updating CMS cores, plugins, and dependencies, ensuring compatibility and stability through rigorous regression testing.' },
+      { num: '03', title: 'Performance Audits', description: 'We conduct monthly deep-dives into your Core Web Vitals, optimizing asset delivery and database queries to ensure elite loading speeds at all times.' },
+      { num: '04', title: 'Backup Redundancy', description: 'Your data is precious. We maintain triple-redundant offsite backups with rapid restoration protocols, ensuring business continuity in any scenario.' }
+    ],
+    capabilities: [
+      { icon: 'Shield', title: 'Security\nHardening', description: 'Elite-level protection for your digital infrastructure, from brute-force mitigation to advanced SSL/TLS management and database encryption.' },
+      { icon: 'Settings', title: 'Uptime Monitoring', description: '24/7 automated monitoring of your site\'s availability, with immediate escalation to our engineering team in the event of any downtime.' },
+      { icon: 'Activity', title: 'Platform Tuning', description: 'Continuous optimization of server resources and cache layers to ensure your platform handles traffic spikes with boutique-level elegance.' },
+      { icon: 'Database', title: 'Content Management', description: 'Dedicated support for large-scale content updates, migration projects, and complex data entry, freeing your team for strategic work.' }
+    ],
+    project: {
+      title: 'SAAS CARE',
+      subtitle: 'TECH SUPPORT',
+      description: 'Ongoing technical management for a multi-million user SaaS platform. Achieved 99.99% uptime and reduced page load times by 40% through infrastructure optimization.',
+      image: '/cleanzo/pic2.png',
+      tag: 'MAINTENANCE'
+    },
+    faqs: [
+      { q: "What is your typical response time?", a: "Our support packages include a 4-hour SLA for critical issues, though we often respond within the hour." },
+      { q: "Do you handle security breaches?", a: "Yes, we specialize in high-stakes recovery and hardening for platforms that have been compromised or are under heavy attack." },
+      { q: "Can you support websites built by other agencies?", a: "Absolutely. We conduct a bridge-audit to understand the codebase and then take over full technical management." },
+      { q: "Do you provide hosting services?", a: "We manage hosting on elite providers like Vercel, AWS, and Google Cloud, ensuring your infrastructure is properly scaled." },
+      { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
+    ]
+  },
+  'seo-optimization': {
+    slug: 'seo-optimization',
+    title: 'SEO\nOptimization',
+    heroDescription: 'We deploy advanced technical SEO and content strategy to dominate search results. From semantic keyword architecture to authority building, we turn search into a high-ROI acquisition channel.',
+    specializationHeading: 'Search Performance and Content Authority Case Studies',
+    specializationText: 'Our agency, Redstone, specializes in search engineering, creating visible digital presences and providing data-driven growth. We build strategies tailored to your market positioning goals to effectively increase organic reach, enhance brand authority, and drive high-intent traffic. Our goal is to ensure your brand becomes the top-of-mind choice in search.',
+    ctaText: 'DOMINATE SEARCH',
+    whySectionTitle: 'WINNING THE BATTLE FOR ORGANIC VISIBILITY',
+    steps: [
+      { num: '01', title: 'Technical Audit', description: 'We perform a 200-point inspection of your site\'s architecture, fixing crawl errors, improving schema markup, and ensuring perfect indexing.' },
+      { num: '02', title: 'Semantic Research', description: 'Beyond simple keywords, we map the entire semantic landscape of your industry to identify high-potential topics that your competitors are missing.' },
+      { num: '03', title: 'Authority Building', description: 'We execute high-fidelity link building and PR outreach to establish your site as a trusted authority in the eyes of major search engines.' },
+      { num: '04', title: 'CTR Optimization', description: 'We optimize every title tag and meta description to maximize click-through rates, turning impressions into active site visitors.' }
+    ],
+    capabilities: [
+      { icon: 'Globe', title: 'Semantic\nArchitecture', description: 'We build content silos that establish deep topical authority, making your site the primary resource for your industry\'s most valuable queries.' },
+      { icon: 'Eye', title: 'Technical SEO', description: 'Elite-level optimization of everything from schema markup to robots.txt and sitemap architecture for perfect search engine communication.' },
+      { icon: 'Activity', title: 'Competitor Analysis', description: 'Real-time monitoring of your competitors\' search movements, allowing us to pivot and stay ahead of changes in the ranking landscape.' },
+      { icon: 'Rocket', title: 'Local Dominance', description: 'Specialized optimization for local maps and proximity-based searches, ensuring you win the business in your immediate geographic area.' }
+    ],
+    project: {
+      title: 'RANK MASTER',
+      subtitle: 'SEO STRATEGY',
+      description: 'Strategic SEO overhaul for an international SaaS brand. Increased organic demo signups by 210% over 6 months through technical repair and semantic content expansion.',
+      image: '/portfolio-sites/pic2.png',
+      tag: 'ORGANIC GROWTH'
+    },
+    faqs: [
+      { q: "How long until we see results from SEO?", a: "SEO is a medium-term play. While technical fixes can show impact in weeks, significant ranking growth typically takes 3-6 months." },
+      { q: "Do you guarantee #1 rankings?", a: "No ethical agency guarantees rankings. We guarantee high-fidelity execution of best practices that maximize your probability of success." },
+      { q: "Do you provide content writing?", a: "Yes, we have specialized technical writers who produce search-optimized content that maintains your premium brand voice." },
+      { q: "How do you handle Google Core Updates?", a: "We build for long-term authority, which typically means our clients see stability or growth during major algorithm shifts." },
       { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
     ]
   }
