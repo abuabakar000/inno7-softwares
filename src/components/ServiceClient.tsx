@@ -50,29 +50,36 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
     <div className="min-h-screen bg-black text-white font-inter selection:bg-white selection:text-black">
       <Navbar />
 
-      <main className="pt-32 pb-20">
-        {/* Section 1: Header */}
-        <section className="px-6 md:px-12 mb-32">
-          <h1 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight opacity-90 mb-16 whitespace-pre-line">
-            {data.title}
-          </h1>
-
-          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
-            <div className="relative aspect-video bg-zinc-900 border border-white/10 overflow-hidden group">
-              <Image 
-                src={data.heroImage}
-                alt={data.title}
-                fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 50vw"
-                priority
-              />
-            </div>
-
-            <div className="lg:pl-15">
-              <p className="text-xl md:text-2xl font-base leading-tight text-zinc-400 max-w-xl">
+      <main className="pt-12 md:pt-20 pb-20">
+        {/* Section 1: Hero */}
+        <section className="px-6 md:px-12 mb-16 md:mb-32 pt-6 md:pt-16 relative overflow-hidden">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-0 items-start">
+            {/* Left: Content (Overlaying) */}
+            <div className="flex flex-col gap-8 order-1 lg:order-1 pt-10 relative z-20">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-thin uppercase leading-[0.9] tracking-tighter text-white whitespace-pre-line reveal-text drop-shadow-2xl">
+                {data.title}
+              </h1>
+              <p className="text-lg md:text-xl font-light leading-relaxed text-white/50 max-w-xl drop-shadow-lg">
                 {data.heroDescription}
               </p>
+              <div className="pt-4">
+                <AgencyButton text={data.ctaText} onClick={openContact} size="md" />
+              </div>
+            </div>
+
+            {/* Right: Circular/Abstract Image (Underlaying) */}
+            <div className="relative aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center order-2 lg:order-2 lg:-ml-32 lg:-mt-10 z-0">
+              <div className="absolute inset-0 bg-white/5 blur-[120px] rounded-full opacity-20" />
+              <div className="relative w-full h-full scale-100 lg:scale-110">
+                <Image 
+                  src={data.heroImage}
+                  alt={data.title}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 40vw"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -124,6 +131,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
           description={data.project.description}
           image={data.project.image}
           tag={data.project.tag}
+          href={data.project.href}
         />
 
         {/* Section 5: Capabilities Grid / Mobile Slider (Swapped) */}
@@ -158,7 +166,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
                   <h3 className="text-2xl font-bold uppercase mb-8 tracking-tight leading-tight whitespace-pre-line text-black">
                     {cap.title}
                   </h3>
-                  <p className="text-[15px] text-zinc-400 leading-relaxed font-normal mt-auto group-hover:text-black transition-opacity">
+                  <p className="text-[15px] text-black leading-relaxed font-normal mt-auto transition-opacity">
                     {cap.description}
                   </p>
                 </div>

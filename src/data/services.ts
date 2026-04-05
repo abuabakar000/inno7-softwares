@@ -34,6 +34,7 @@ export type ServiceData = {
     description: string;
     image: string;
     tag: string;
+    href?: string;
   };
   faqs: ServiceFAQ[];
 };
@@ -42,10 +43,10 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
   'ai-agents-chatbot': {
     slug: 'ai-agents-chatbot',
     title: 'AI Agents &\nChatbots',
-    heroImage: '/images/services/ai-agents.png',
+    heroImage: '/images/services/ai-chatbots.png',
     heroDescription: 'We empower your business with autonomous AI agents and intelligent chatbots that handle complex interactions, lead qualification, and customer support with human-level precision.',
     specializationHeading: 'Autonomous Agent Engineering and Conversational AI Case Studies',
-    specializationText: 'Our agency, Redstone, specializes in conversational architecture, creating bespoke AI agents that integrate deeply with your CRM and internal databases. We build solutions tailored to your operational goals to effectively automate customer touchpoints, reduce overhead, and provide 24/7 high-fidelity service. Our goal is to ensure your customer experience becomes a powerful competitive advantage.',
+    specializationText: 'Our agency, Inn7 Softwares, specializes in conversational architecture, creating bespoke AI agents that integrate deeply with your CRM and internal databases. We build solutions tailored to your operational goals to effectively automate customer touchpoints, reduce overhead, and provide 24/7 high-fidelity service. Our goal is to ensure your customer experience becomes a powerful competitive advantage.',
     ctaText: 'DEPLOY YOUR AGENT',
     whySectionTitle: 'TRANSFORMING INTERACTION WITH CLOUD-NATIVE AI',
     steps: [
@@ -61,11 +62,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: 'Monitor', title: 'Omnichannel Presence', description: 'Deploy your agents across Web, WhatsApp, Slack, and Discord with a single unified backend for consistent brand logic.' }
     ],
     project: {
-      title: 'MINT CHAT',
-      subtitle: 'AI CONCIERGE',
-      description: 'A custom-trained AI agent for a premium dental network. Handles scheduling, basic medical FAQs, and patient intake, reducing front-desk workload by 65%.',
-      image: '/mint-care-dentistry/pic4.png',
-      tag: 'CONVERSATIONAL AI'
+      title: 'RESUME AI',
+      subtitle: 'AI AGENT',
+      description: 'A custom-trained AI platform that automates complex resume building with high-fidelity outputs. We integrated advanced parsing logic and LLM-driven suggestions to ensure every user gets a competitive edge in their job search. The system handles massive datasets with millisecond latency, providing a seamless experience for global users.',
+      image: '/images/related/resume-ai-thumb.png',
+      tag: 'AI INTEGRATION',
+      href: '#'
     },
     faqs: [
       { q: "How secure is my company data?", a: "We use private VPC environments and never train public models on your proprietary data. Your information remains yours alone." },
@@ -81,7 +83,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/branding.png',
     heroDescription: 'We study the site, find all the problem areas and determine how to eliminate them. We analyze competitors in search results and their strategies. We conduct an audit of the available traffic to the site in terms of sources and effectiveness in search engines.',
     specializationHeading: 'Brand Identity and Design Strategy Case Studies for Clients',
-    specializationText: 'Our agency, Redstone, specializes in brand design development, creating brand styles, and providing full-service branding. We create projects tailored to your goals to effectively compete in the market, enhance your company image, and attract new customers. Our goal is to ensure that the outcome becomes a powerful catalyst for scaling and further business growth.',
+    specializationText: 'Our agency, Inn7 Softwares, specializes in brand design development, creating brand styles, and providing full-service branding. We create projects tailored to your goals to effectively compete in the market, enhance your company image, and attract new customers. Our goal is to ensure that the outcome becomes a powerful catalyst for scaling and further business growth.',
     ctaText: 'DISCUSS THE PROJECT',
     whySectionTitle: 'WHY DO COMPANIES NEED BRAND IDENTITY?',
     steps: [
@@ -97,11 +99,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: 'Monitor', title: 'Page Scroll Effect', description: 'Our projects shape not only the urban environment but also a lifestyle – bold, modern, and inspiring new achievements. We implement smooth, cinematic transitions that guide the user through the brand story with every scroll.' }
     ],
     project: {
-      title: 'CYBER CORE',
-      subtitle: 'BRAND IDENTITY',
-      description: 'Creation of a futuristic visual identity for a high-tech infrastructure provider. We focused on minimalism, high-contrast aesthetics, and modular design systems that work across digital and physical touchpoints.',
-      image: '/portfolio_project_2_1773957793433.png',
-      tag: 'VISUAL IDENTITY'
+      title: 'PORTFOLIO SITES',
+      subtitle: 'BRANDING',
+      description: 'Creation of a premium visual identity for high-end portfolio websites. Our approach combined minimalist typography with bold, high-contrast aesthetics to elevate the brand\'s digital presence. We focused on building a modular design system that remains consistent across all touchpoints, from social media to core web experiences.',
+      image: '/images/related/portfolio-sites-thumb.png',
+      tag: 'VISUAL IDENTITY',
+      href: '#'
     },
     faqs: [
       { q: "What is included in a brand identity package?", a: "A full package includes your logo, typography system, color palette, and comprehensive visual guidelines." },
@@ -114,10 +117,10 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
   'app-platforms': {
     slug: 'app-platforms',
     title: 'App\nPlatforms',
-    heroImage: '/images/services/apps.png',
+    heroImage: '/images/services/app.png',
     heroDescription: 'We develop high-performance mobile applications and cross-platform experiences that put your business directly in your customers\' pockets. From native iOS and Android to modern hybrid solutions, we build for engagement.',
     specializationHeading: 'Mobile App and Platform Engineering Case Studies for Clients',
-    specializationText: 'Our agency, Redstone, specializes in mobile product engineering, creating native and cross-platform apps and providing seamless digital experiences. We build mobile platforms tailored to your user engagement goals to effectively leverage mobile-first trends, enhance brand loyalty, and drive growth. Our goal is to ensure your app becomes a powerful tool for your users.',
+    specializationText: 'Our agency, Inn7 Softwares, specializes in mobile product engineering, creating native and cross-platform apps and providing seamless digital experiences. We build mobile platforms tailored to your user engagement goals to effectively leverage mobile-first trends, enhance brand loyalty, and drive growth. Our goal is to ensure your app becomes a powerful tool for your users.',
     ctaText: 'LAUNCH YOUR APP',
     whySectionTitle: 'WHY DOES YOUR BUSINESS NEED A MOBILE PRIORITY?',
     steps: [
@@ -133,11 +136,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: 'Rocket', title: 'Performance', description: 'We optimize every frame and network request, providing the snappy, responsive feel that mobile users have come to expect as a standard for quality.' }
     ],
     project: {
-      title: 'VIBE DASH',
+      title: 'THE GOOD BURGER',
       subtitle: 'MOBILE APP',
-      description: 'A high-performance iOS and Android application for local community engagement. Features real-time geo-tracking, social integration, and offline-first data sync.',
-      image: '/client1.png',
-      tag: 'MOBILE APP'
+      description: 'A high-performance application for a premium restaurant chain featuring real-time ordering and location-based discovery. The app is built on a robust architecture that manages peak-time surges with absolute stability. We focused on reducing friction in the ordering process, resulting in a significant uplift in mobile-driven revenue.',
+      image: '/images/related/burg-thumb.png',
+      tag: 'MOBILE APP',
+      href: '#'
     },
     faqs: [
       { q: "Do you build native or cross-platform apps?", a: "We build both. We'll help you choose the best approach (Swift/Kotlin or Flutter/React Native) based on your goals." },
@@ -153,7 +157,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/crm.png',
     heroDescription: 'We design and implement custom CRM solutions that streamline your sales, marketing, and support operations. Our data-driven platforms empower your team with actionable insights and automated workflows.',
     specializationHeading: 'Custom CRM and Operational Flow Case Studies for Clients',
-    specializationText: 'Our agency, Redstone, specializes in custom CRM development, creating integrated management platforms and providing data-driven solutions. We build tools tailored to your business logic to effectively manage your customer relationships, enhance team productivity, and drive revenue. Our goal is to ensure your operations become a powerful engine for scaling.',
+    specializationText: 'Our agency, Inn7 Softwares, specializes in custom CRM development, creating integrated management platforms and providing data-driven solutions. We build tools tailored to your business logic to effectively manage your customer relationships, enhance team productivity, and drive revenue. Our goal is to ensure your operations become a powerful engine for scaling.',
     ctaText: 'OPTIMIZE YOUR FLOW',
     whySectionTitle: 'WHY DOES YOUR BUSINESS NEED A CUSTOM CRM?',
     steps: [
@@ -169,11 +173,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: 'Settings', title: 'Workflow Automation', description: 'We automate repetitive processes, from lead generation and scoring to contract renewals and customer support ticketing.' }
     ],
     project: {
-      title: 'NUXT FLOW',
+      title: 'SAASFORGE',
       subtitle: 'SaaS CRM',
-      description: 'A custom-built CRM system for real-estate management. Automated lead tracking, intelligent reminders, and deep analytics integration to optimize sales performance.',
-      image: '/client3.png',
-      tag: 'ENTERPRISE'
+      description: 'A custom-built CRM system for specialized multi-tenant management across diverse business units. The platform architecture was designed to support massive data isolation while maintaining high-speed query performance. We implemented an intuitive dashboard that gives administrators a 360-degree view of their entire ecosystem at a single glance.',
+      image: '/images/related/saasforge-thumb.png',
+      tag: 'ENTERPRISE',
+      href: '#'
     },
     faqs: [
       { q: "Can you migrate data from our existing CRM?", a: "Yes, we handle complex data migrations from legacy systems, ensuring data integrity and zero downtime." },
@@ -186,10 +191,10 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
   'ecommerce-stores': {
     slug: 'ecommerce-stores',
     title: 'E-commerce\nStores',
-    heroImage: '/images/services/ecommerce.png',
+    heroImage: '/images/services/ecom.png',
     heroDescription: 'We build high-conversion digital storefronts that turn browsers into loyal customers. From custom headless commerce to powerful Shopify integrations, we provide the tools to scale your retail business globally.',
     specializationHeading: 'E-commerce Store and Retail Logic Case Studies for Clients',
-    specializationText: 'Our agency, Redstone, specializes in commerce engineering, creating high-performance online stores and providing full-service retail solutions. We build e-commerce platforms tailored to your sales goals to effectively increase conversions, enhance customer journeys, and drive growth. Our goal is to ensure your store becomes a powerful revenue engine.',
+    specializationText: 'Our agency, Inn7 Softwares, specializes in commerce engineering, creating high-performance online stores and providing full-service retail solutions. We build e-commerce platforms tailored to your sales goals to effectively increase conversions, enhance customer journeys, and drive growth. Our goal is to ensure your store becomes a powerful revenue engine.',
     ctaText: 'BOOST YOUR SALES',
     whySectionTitle: 'DRIVING REVENUE THROUGH SEAMLESS COMMERCE',
     steps: [
@@ -205,11 +210,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: 'Shield', title: 'SEO & Marketing', description: 'Our e-commerce stores are built with advanced SEO features and marketing automation tools integrated to drive organic traffic and sales.' }
     ],
     project: {
-      title: 'VELVET BOX',
+      title: 'THE GOOD BURGER',
       subtitle: 'LUXURY RETAIL',
-      description: 'A headless Shopify Plus store for a premium jewelry brand. Focused on high-fidelity animations, seamless checkout, and global multi-currency support, resulting in a 35% increase in conversion rates.',
-      image: '/client3.png',
-      tag: 'LUXURY E-COMMERCE'
+      description: 'A high-conversion storefront for a premium restaurant chain with seamless checkout and inventory management. This project highlights our ability to bridge complex physical logistics with a simple, high-fidelity digital shopping journey. The result was a platform that scaled effortlessly across multiple global markets and languages.',
+      image: '/images/related/burg-thumb.png',
+      tag: 'LUXURY E-COMMERCE',
+      href: '#'
     },
     faqs: [
       { q: "Which e-commerce platforms do you support?", a: "We specialize in Shopify Plus, BigCommerce, and custom headless solutions using Stripe and MedusaJS." },
@@ -225,7 +231,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/saas.png',
     heroDescription: 'We architect and build scalable Software-as-a-Service platforms that solve complex business challenges. From multi-tenant infrastructure to flexible subscription management, we provide the technical foundation for your digital product.',
     specializationHeading: 'SaaS Product and Scalable Platform Case Studies for Clients',
-    specializationText: 'Our agency, Redstone, specializes in SaaS product engineering, creating multi-tenant platforms and providing scalable digital solutions. We build architectures tailored to your growth strategy to effectively serve your global user base, enhance operational efficiency, and drive recurring revenue. Our goal is to ensure your SaaS becomes a powerful industry leader.',
+    specializationText: 'Our agency, Inn7 Softwares, specializes in SaaS product engineering, creating multi-tenant platforms and providing scalable digital solutions. We build architectures tailored to your growth strategy to effectively serve your global user base, enhance operational efficiency, and drive recurring revenue. Our goal is to ensure your SaaS becomes a powerful industry leader.',
     ctaText: 'SCALE YOUR VISION',
     whySectionTitle: 'THE POWER OF A SCALABLE SAAS MODEL',
     steps: [
@@ -241,11 +247,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: 'Settings', title: 'API Ecosystems', description: 'Extend your reach by building secure, well-documented REST or GraphQL APIs that allow for third-party integrations and developer innovation.' }
     ],
     project: {
-      title: 'REVENUE SKY',
-      subtitle: 'FINTECH PLATFORM',
-      description: 'A multi-tenant billing engine for subscription-based businesses. Scalable architecture handling millions of transactions with real-time reporting and fraud detection.',
-      image: '/client4.png',
-      tag: 'FINTECH'
+      title: 'SAASFORGE',
+      subtitle: 'SaaS PLATFORM',
+      description: 'A multi-tenant billing engine for subscription-based businesses with global reach. We built a high-scalability ledger system that handles millions of transactions daily with real-time accuracy and fraud prevention measures. The platform was meticulously optimized for enterprise-level reporting and financial compliance.',
+      image: '/images/related/saasforge-thumb.png',
+      tag: 'SaaS SOLUTIONS',
+      href: '#'
     },
     faqs: [
       { q: "How do you handle multi-tenant data security?", a: "We implement robust data isolation layers at both the application and database levels to ensure customer privacy." },
@@ -261,7 +268,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/web-dev.png',
     heroDescription: 'We engineer scalable, high-performance digital solutions tailored to your business needs. From modern frontend frameworks to robust backend architectures, we ensure your web presence is fast, secure, and future-proof.',
     specializationHeading: 'Website Development and Creation Case Studies for Clients',
-    specializationText: 'Our agency, Redstone, specializes in advanced web engineering, creating custom digital platforms and providing full-stack development. We build projects optimized for speed and conversion to effectively compete in the digital landscape, enhance your online presence, and drive business logic. Our goal is to ensure your platform becomes a robust engine for growth.',
+    specializationText: 'Our agency, Inn7 Softwares, specializes in advanced web engineering, creating custom digital platforms and providing full-stack development. We build projects optimized for speed and conversion to effectively compete in the digital landscape, enhance your online presence, and drive business logic. Our goal is to ensure your platform becomes a robust engine for growth.',
     ctaText: 'START YOUR PROJECT',
     whySectionTitle: 'WHY DO COMPANIES NEED CUSTOM DEVELOPMENT?',
     steps: [
@@ -277,11 +284,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: 'Globe', title: 'Cloud and DevOps', description: 'We implement automated deployment pipelines and cloud infrastructure to ensure your application is always available and easily updated.' }
     ],
     project: {
-      title: 'MINT 21',
-      subtitle: 'A AWARDS',
-      description: 'We developed a landing page to promote a new collection of remarkable coins. The page featured a bright and attractive design, customer testimonials, and a focus on product safety. The result was increased sales of the new coins and an expanded customer base.',
-      image: '/portfolio_project_1_1773957776150.png',
-      tag: 'ONLINE STORE'
+      title: 'CLEANZO',
+      subtitle: 'WEB APP',
+      description: 'We developed a high-performance booking platform for premium cleaning services that simplifies the connection between clients and professionals. The system features advanced scheduling algorithms, secure payment processing, and real-time provider tracking. This project highlights our ability to turn complex business logic into a functional UI.',
+      image: '/images/related/cleanzo-thumb.png',
+      tag: 'WEBSITE',
+      href: '#'
     },
     faqs: [
       { q: "How long does it take to develop a custom website?", a: "A typical project takes 4-12 weeks depending on complexity, features, and the speed of feedback cycles." },
@@ -294,10 +302,10 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
   'website-support': {
     slug: 'website-support',
     title: 'Website\nSupport',
-    heroImage: '/images/services/support.png',
+    heroImage: '/images/services/web-support.png',
     heroDescription: 'We provide comprehensive, high-priority maintenance and management for your digital assets. From security hardening to performance tuning, we ensure your platform remains a high-performance business tool.',
     specializationHeading: 'Technical Management and Infrastructure Support Case Studies',
-    specializationText: 'Our agency, Redstone, specializes in boutique support services, providing dedicated attention to the technical health of your website. We offer solutions tailored to your operational uptime goals to effectively mitigate risks, optimize loading speeds, and implement security protocols. Our goal is to ensure your digital core remains unbreakable and consistently performant.',
+    specializationText: 'Our agency, Inn7 Softwares, specializes in boutique support services, providing dedicated attention to the technical health of your website. We offer solutions tailored to your operational uptime goals to effectively mitigate risks, optimize loading speeds, and implement security protocols. Our goal is to ensure your digital core remains unbreakable and consistently performant.',
     ctaText: 'SECURE YOUR SITE',
     whySectionTitle: 'THE CRITICAL NEED FOR ACTIVE MAINTENANCE',
     steps: [
@@ -313,11 +321,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: 'Database', title: 'Content Management', description: 'Dedicated support for large-scale content updates, migration projects, and complex data entry, freeing your team for strategic work.' }
     ],
     project: {
-      title: 'SAAS CARE',
-      subtitle: 'TECH SUPPORT',
-      description: 'Ongoing technical management for a multi-million user SaaS platform. Achieved 99.99% uptime and reduced page load times by 40% through infrastructure optimization.',
-      image: '/cleanzo/pic2.png',
-      tag: 'MAINTENANCE'
+      title: 'CLEANZO',
+      subtitle: 'MAINTENANCE',
+      description: 'Ongoing technical management for a high-traffic cleaning service platform with daily user interaction. Our support ensures 99.99% uptime through rigorous security monitoring and performance tuning. We provide high-priority infrastructure optimization to maintain professional speed and reliability across all digital touchpoints.',
+      image: '/images/related/cleanzo-thumb.png',
+      tag: 'SUPPORT',
+      href: '#'
     },
     faqs: [
       { q: "What is your typical response time?", a: "Our support packages include a 4-hour SLA for critical issues, though we often respond within the hour." },
@@ -333,7 +342,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/seo.png',
     heroDescription: 'We deploy advanced technical SEO and content strategy to dominate search results. From semantic keyword architecture to authority building, we turn search into a high-ROI acquisition channel.',
     specializationHeading: 'Search Performance and Content Authority Case Studies',
-    specializationText: 'Our agency, Redstone, specializes in search engineering, creating visible digital presences and providing data-driven growth. We build strategies tailored to your market positioning goals to effectively increase organic reach, enhance brand authority, and drive high-intent traffic. Our goal is to ensure your brand becomes the top-of-mind choice in search.',
+    specializationText: 'Our agency, Inn7 Softwares, specializes in search engineering, creating visible digital presences and providing data-driven growth. We build strategies tailored to your market positioning goals to effectively increase organic reach, enhance brand authority, and drive high-intent traffic. Our goal is to ensure your brand becomes the top-of-mind choice in search.',
     ctaText: 'DOMINATE SEARCH',
     whySectionTitle: 'WINNING THE BATTLE FOR ORGANIC VISIBILITY',
     steps: [
@@ -349,11 +358,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: 'Rocket', title: 'Local Dominance', description: 'Specialized optimization for local maps and proximity-based searches, ensuring you win the business in your immediate geographic area.' }
     ],
     project: {
-      title: 'RANK MASTER',
+      title: 'PORTFOLIO SITES',
       subtitle: 'SEO STRATEGY',
-      description: 'Strategic SEO overhaul for an international SaaS brand. Increased organic demo signups by 210% over 6 months through technical repair and semantic content expansion.',
-      image: '/portfolio-sites/pic2.png',
-      tag: 'ORGANIC GROWTH'
+      description: 'Strategic SEO overhaul for a high-end portfolio site resulting in 200% growth in organic reach. We deployed advanced technical optimization and a semantic content architecture to establish deep topical authority. This project showcases our ability to deliver long-term visibility for brands in highly competitive creative markets.',
+      image: '/images/related/portfolio-sites-thumb.png',
+      tag: 'SEO OPTIMIZATION',
+      href: '#'
     },
     faqs: [
       { q: "How long until we see results from SEO?", a: "SEO is a medium-term play. While technical fixes can show impact in weeks, significant ranking growth typically takes 3-6 months." },

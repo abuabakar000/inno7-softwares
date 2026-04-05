@@ -9,12 +9,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Redstone Software | High-end Solutions",
-  description: "We develop online stores, CRM systems, SaaS solutions, and app platforms.",
+  title: "Inno7 Softwares | Premium Digital Boutique",
+  description: "Boutique digital agency specializing in high-end software solutions, custom CRM architectures, and premium AI integrations.",
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
 };
 

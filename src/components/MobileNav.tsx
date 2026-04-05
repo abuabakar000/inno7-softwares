@@ -214,7 +214,7 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
 
             {/* Bottom Accent */}
             <div className="text-center mt-auto pt-8">
-              <p className="text-[10px] text-white/30 tracking-widest uppercase mb-4">Redstone Software © 2026</p>
+              <p className="text-[10px] text-white/30 tracking-widest uppercase mb-4">Inn7 Softwares © 2026</p>
               <div className="w-12 h-px bg-white/10 mx-auto" />
             </div>
           </motion.div>
