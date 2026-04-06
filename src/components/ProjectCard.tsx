@@ -73,25 +73,36 @@ export default function ProjectCard({
     });
   }, [allImages]);
 
-  // Hover cycle — only runs after images are confirmed in browser cache
+  // Hover cycle — uses setInterval for perfectly uniform timing
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
   useEffect(() => {
     if (!isHovered || allImages.length <= 1) {
       setCurrentIndex(0);
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      intervalRef.current = null;
       return;
     }
 
-    let timer: NodeJS.Timeout;
+    // Show pic1 for 500ms, then start exact 2s interval
+    const startDelay = setTimeout(() => {
+      setCurrentIndex(1);
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex((prev) => {
+          const next = (prev + 1) % allImages.length;
+          return next === 0 ? 1 : next; // Skip base image during cycling
+        });
+      }, 2000);
+    }, 500);
 
-    const cycleImages = () => {
-      setCurrentIndex((prev) => (prev + 1) % allImages.length);
-      timer = setTimeout(cycleImages, 1200);
+    return () => {
+      clearTimeout(startDelay);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
     };
-
-    // Start instantly if images ready, otherwise wait briefly
-    timer = setTimeout(cycleImages, imagesReady ? 150 : 400);
-
-    return () => clearTimeout(timer);
-  }, [isHovered, allImages, imagesReady]);
+  }, [isHovered, allImages.length]);
 
   const cardContent = (
     <>
@@ -138,14 +149,14 @@ export default function ProjectCard({
           )}
 
           {/* 3. Dynamic Cycling Layer — uses native <img> for guaranteed cache hit */}
-          <AnimatePresence mode="popLayout">
+          <AnimatePresence mode="sync">
             {isHovered && currentIndex > 0 && (
               <motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, scale: 1.03 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.8, ease: 'easeInOut' }}
                 className="absolute inset-0 flex items-center justify-center p-4 z-[15]"
               >
                 <div className="relative w-full h-full shadow-2xl">
