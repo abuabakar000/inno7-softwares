@@ -50,7 +50,7 @@ export default function Navbar() {
         <Link href="/" className="hover:opacity-80 transition-opacity">
           <Image 
             src="/logo.png" 
-            alt="Sitte Agency Logo" 
+            alt="Inno7 Softwares Logo" 
             width={120} 
             height={40} 
             className="h-10 w-auto object-contain"

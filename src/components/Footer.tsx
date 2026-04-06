@@ -27,10 +27,10 @@ export default function Footer() {
             <p className="text-[5vw] md:text-[2.5vw] font-thin tracking-tighter">
               Drop us a line at{" "}
               <a
-                href="mailto:hello@sitte.agency"
+                href="mailto:hello@inno7.agency"
                 className="italic underline decoration-white/30 underline-offset-[12px] hover:text-zinc-400 hover:decoration-white transition-all duration-500"
               >
-                hello@sitte.agency
+                hello@inno7.agency
               </a>
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function Footer() {
           <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-y-6 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500">
             {/* Left: Branding */}
             <div className="flex items-center gap-4">
-              <span className="text-zinc-400">© 2026 SITTE AGENCY</span>
+              <span className="text-zinc-400">© 2026 INNO7 SOFTWARES</span>
             </div>
 
             {/* Middle: Socials */}

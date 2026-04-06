@@ -54,12 +54,12 @@ export default function ProjectCard({
 
     const cycleImages = () => {
       setCurrentIndex((prev) => (prev + 1) % allImages.length);
-      // Subsequent images cycle every 1.5s
-      timer = setTimeout(cycleImages, 1500);
+      // Subsequent images cycle every 1.2s for rhythmic energy
+      timer = setTimeout(cycleImages, 1200);
     };
 
-    // First transition happens after exactly 0.5s
-    timer = setTimeout(cycleImages, 500);
+    // First transition happens almost instantly (200ms) for high-response feel
+    timer = setTimeout(cycleImages, 200);
 
     return () => clearTimeout(timer);
   }, [isHovered, allImages]);
@@ -72,41 +72,82 @@ export default function ProjectCard({
         </div>
       ) : (
         <div className={`relative ${aspectRatio} overflow-hidden bg-zinc-950 mb-6 group-hover:shadow-2xl transition-shadow duration-500`}>
-          {/* Persistent Thumbnail Background */}
+          {/* 1. Preload Component: Force cache all cycle images in WebP */}
+          <div className="absolute inset-0 z-0 opacity-0 pointer-events-none -translate-x-full overflow-hidden">
+            {allImages.map((img, i) => {
+              // Convert to optimized path if not already
+              const optimizedSrc = img.startsWith('/images/optimized') ? img : `/images/optimized${img.replace(/\.[^/.]+$/, ".webp")}`;
+              return (
+                <Image
+                  key={`preload-${i}`}
+                  src={optimizedSrc}
+                  alt=""
+                  width={10}
+                  height={10}
+                  priority={i < 4} // Preload the whole sequence
+                />
+              );
+            })}
+          </div>
+
+          {/* 2. Glassmorphism Ambient Glow: Blurred background logic */}
+          <AnimatePresence>
+            {isHovered && currentIndex > 0 && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.6 }}
+                exit={{ opacity: 0 }}
+                className="absolute inset-0 z-10 blur-3xl saturate-150 scale-125"
+              >
+                <Image
+                  src={allImages[currentIndex].startsWith('/images/optimized') ? allImages[currentIndex] : `/images/optimized${allImages[currentIndex].replace(/\.[^/.]+$/, ".webp")}`}
+                  alt=""
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20 backdrop-blur-xl" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* 3. Persistent Foundation: Always shows the main image */}
           {!isPlaceholder && allImages.length > 0 && (
-            <div className="absolute inset-0 opacity-20 blur-[2px] scale-105 saturate-150">
+            <div className="absolute inset-0 z-0">
               <Image
                 src={allImages[0]}
-                alt="Project context background"
+                alt={`${title} - Base`}
                 fill
                 className="object-cover"
                 sizes={sizes}
+                priority
               />
             </div>
           )}
 
-          <AnimatePresence>
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, scale: currentIndex === 0 ? 1 : 1.05 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className={`absolute inset-0 flex items-center justify-center ${currentIndex === 0 ? '' : 'p-4'}`}
-            >
-              <div className="relative w-full h-full">
-                <Image
-                  src={allImages[currentIndex]}
-                  alt={`${title} - ${currentIndex + 1}`}
-                  fill
-                  sizes={sizes}
-                  className={`${currentIndex === 0 ? 'object-cover' : 'object-contain'} relative z-20`}
-                  priority={currentIndex === 0}
-                />
-              </div>
-            </motion.div>
+          {/* 4. Dynamic Cycling Layer: High-fidelity focus */}
+          <AnimatePresence mode="popLayout">
+            {isHovered && currentIndex > 0 && (
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, scale: 1.05, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-0 flex items-center justify-center p-4 z-20"
+              >
+                <div className="relative w-full h-full shadow-2xl">
+                  <Image
+                    src={allImages[currentIndex].startsWith('/images/optimized') ? allImages[currentIndex] : `/images/optimized${allImages[currentIndex].replace(/\.[^/.]+$/, ".webp")}`}
+                    alt={`${title} - ${currentIndex + 1}`}
+                    fill
+                    sizes={sizes}
+                    className="object-contain relative z-20"
+                  />
+                </div>
+              </motion.div>
+            )}
           </AnimatePresence>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:from-transparent transition-colors duration-500 z-30 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-30 pointer-events-none" />
 
           {/* Magnetic 'Link' Circle */}
           <motion.div
