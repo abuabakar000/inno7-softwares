@@ -67,7 +67,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       description: 'A custom-trained AI platform that automates complex resume building with high-fidelity outputs. We integrated advanced parsing logic and LLM-driven suggestions to ensure every user gets a competitive edge in their job search. The system handles massive datasets with millisecond latency, providing a seamless experience for global users.',
       image: '/images/related/resume-ai-thumb.png',
       tag: 'AI INTEGRATION',
-      href: '#'
+      href: 'https://resume-ai-web-delta.vercel.app/'
     },
     faqs: [
       { q: "How secure is my company data?", a: "We use private VPC environments and never train public models on your proprietary data. Your information remains yours alone." },
@@ -114,40 +114,40 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
     ]
   },
-  'app-platforms': {
-    slug: 'app-platforms',
-    title: 'App\nPlatforms',
-    heroImage: '/images/services/app.png',
-    heroDescription: 'We develop high-performance mobile applications and cross-platform experiences that put your business directly in your customers\' pockets. From native iOS and Android to modern hybrid solutions, we build for engagement.',
-    specializationHeading: 'Mobile App and Platform Engineering Case Studies for Clients',
-    specializationText: 'Our agency, Inex Labs, specializes in mobile product engineering, creating native and cross-platform apps and providing seamless digital experiences. We build mobile platforms tailored to your user engagement goals to effectively leverage mobile-first trends, enhance brand loyalty, and drive growth. Our goal is to ensure your app becomes a powerful tool for your users.',
-    ctaText: 'LAUNCH YOUR APP',
-    whySectionTitle: 'WHY DOES YOUR BUSINESS NEED A MOBILE PRIORITY?',
+  'ai-integration': {
+    slug: 'ai-integration',
+    title: 'AI\nIntegration',
+    heroImage: '/images/services/ai-integration.png',
+    heroDescription: 'We bridge the gap between raw data and intelligent action, embedding state-of-the-art AI into your existing workflows to drive exponential efficiency and competitive advantage.',
+    specializationHeading: 'Custom RAG Pipelines and Enterprise AI Engineering Case Studies',
+    specializationText: 'Our agency, Inex Labs, specializes in AI integration development, creating bespoke LLM-driven systems and providing full-service automation. We build architectures tailored to your operational goals to effectively leverage private datasets, enhance decision-making, and drive growth. Our goal is to ensure your infrastructure becomes a powerful, self-evolving engine.',
+    ctaText: 'INTEGRATE AI',
+    whySectionTitle: 'TRANSFORMING LOGIC WITH ENTERPRISE-GRADE AI',
     steps: [
-      { num: '01', title: 'Ubiquitous Presence', description: 'Be where your customers are. A dedicated mobile platform ensures your brand is accessible anytime, anywhere, with just a single tap.' },
-      { num: '02', title: 'Native Performance', description: 'We leverage hardware-level capabilities and OS-specific optimizations to deliver lightning-fast, butter-smooth experiences that hybrid web apps can\'t match.' },
-      { num: '03', title: 'Push Engagement', description: 'Drive retention and re-engagement through intelligent push notifications and real-time updates that keep your users coming back to your platform.' },
-      { num: '04', title: 'Offline Capability', description: 'Provide value even without an internet connection. Our apps are built to handle offline states gracefully, syncing data seamlessly when connectivity returns.' }
+      { num: '01', title: 'Knowledge Audit', description: 'We identify high-impact processes where AI can eliminate bottlenecks and extract value from your proprietary data silos.' },
+      { num: '02', title: 'Pipeline Engineering', description: 'We build secure, high-speed data ingestion flows (RAG) that allow LLMs to reason over your specific business context in real-time.' },
+      { num: '03', title: 'Model Orchestration', description: 'Our engineers combine best-in-class models (GPT-4, Claude, Llama 3) to create multi-agent systems that handle complex, multi-step tasks.' },
+      { num: '04', title: 'Native Deployment', description: 'We seamlessly embed AI capabilities into your existing web and mobile environments, ensuring a cohesive and intuitive user experience.' }
     ],
     capabilities: [
-      { icon: 'Smartphone', title: 'iOS &\nAndroid', description: 'We develop high-quality applications for both major mobile operating systems, ensuring broad market reach and platform-specific excellence.' },
-      { icon: 'Lock', title: 'UX Optimization', description: 'Our mobile designers focus on ergonomics and thumb-friendly interactions, creating intuitive interfaces that feel natural and effortless to use.' },
-      { icon: 'Database', title: 'API Integration', description: 'We build seamless connections between your mobile app and backend services, ensuring real-time data synchronization and feature parity.' },
-      { icon: 'Rocket', title: 'Performance', description: 'We optimize every frame and network request, providing the snappy, responsive feel that mobile users have come to expect as a standard for quality.' }
+      { icon: 'Cpu', title: 'Enterprise\nRAG', description: 'Built-in knowledge retrieval systems that allow AI to answer complex queries based purely on your internal documents and databases.' },
+      { icon: 'Activity', title: 'Predictive Insights', description: 'We deploy deep learning models that analyze historical patterns to forecast churn, demand, and high-value customer behaviors.' },
+      { icon: 'Monitor', title: 'Multi-modal AI', description: 'Integrating computer vision and natural language processing to enable AI that can see, hear, and understand your business world.' },
+      { icon: 'Shield', title: 'Private LLMs', description: 'Deploying sovereign, open-source models within your private cloud to ensure sensitive data never leaves your secure perimeter.' }
     ],
     project: {
-      title: 'THE GOOD BURGER',
-      subtitle: 'MOBILE APP',
-      description: 'A high-performance application for a premium restaurant chain featuring real-time ordering and location-based discovery. The app is built on a robust architecture that manages peak-time surges with absolute stability. We focused on reducing friction in the ordering process, resulting in a significant uplift in mobile-driven revenue.',
-      image: '/images/related/burg-thumb.png',
-      tag: 'MOBILE APP',
-      href: '#'
+      title: 'RESUME AI',
+      subtitle: 'AI INTEGRATION',
+      description: 'An end-to-end AI integration for a high-volume recruitment platform. We implemented a custom RAG pipeline that allows recruiters to query massive resume databases using natural language. The system provides real-time matching and scoring with 95% accuracy, significantly reducing time-to-hire for global enterprises.',
+      image: '/images/related/resume-ai-thumb.png',
+      tag: 'AI ARCHITECTURE',
+      href: 'https://resume-ai-web-delta.vercel.app/'
     },
     faqs: [
-      { q: "Do you build native or cross-platform apps?", a: "We build both. We'll help you choose the best approach (Swift/Kotlin or Flutter/React Native) based on your goals." },
-      { q: "Will the app be available on both major stores?", a: "Yes, we handle the entire submission and approval process for both the Apple App Store and Google Play Store." },
-      { q: "How do you handle app updates and maintenance?", a: "We provide ongoing support to ensure your app remains compatible with the latest OS versions and device hardware." },
-      { q: "Can the app function without an internet connection?", a: "Yes, we specialize in building offline-first applications that sync data seamlessly once connectivity is restored." },
+      { q: "Can AI work with our existing legacy systems?", a: "Yes, we specialize in building bridge APIs that allow modern AI models to interact with and extract value from legacy data structures." },
+      { q: "Is our proprietary data used to train public models?", a: "Never. We use private enterprise endpoints and local model deployments to ensure your data stays strictly under your control." },
+      { q: "How do you handle AI hallucinations?", a: "We implement rigorous 'grounding' techniques (RAG) and automated verification layers to ensure outputs are based on factual business data." },
+      { q: "What is the typical ROI for an AI integration?", a: "Most clients see a significant reduction in operational costs and 2-3x efficiency gains in data-heavy departments within the first quarter." },
       { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
     ]
   },

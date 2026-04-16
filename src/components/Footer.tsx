@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80 md:bg-gradient-to-b md:from-black md:via-transparent md:to-black" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-32 md:pt-40 pb-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-32 md:pt-40 pb-32 md:pb-12">
           {/* Large CTA Text */}
           <div className="mb-40">
             <h2 className="text-[10vw] md:text-[7vw] font-thin leading-none tracking-tighter uppercase mb-6 opacity-90">
@@ -45,9 +45,7 @@ export default function Footer() {
 
             {/* Middle: Socials */}
             <div className="flex items-center gap-6">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">INSTAGRAM</a>
-              <span className="opacity-20">|</span>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LINKEDIN</a>
+              <a href="https://www.linkedin.com/in/abu-bakar-khawaja-dev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LINKEDIN</a>
             </div>
 
             {/* Right: Placeholder to keep center alignment */}

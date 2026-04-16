@@ -10,12 +10,21 @@ import Footer from "@/components/Footer";
 import { useContact } from "@/context/ContactContext";
 import ProjectCard from "@/components/ProjectCard";
 import CTASection from "@/components/CTASection";
+import { 
+  Users, Monitor, Activity, Cpu, Rocket, Eye, Layout, 
+  Smartphone, Lock, Database, Settings, Code2, Shield, Globe 
+} from 'lucide-react';
+import { SERVICES_DATA } from "@/data/services";
+
+const ICON_MAP: Record<string, any> = {
+  Users, Monitor, Activity, Cpu, Rocket, Eye, Layout, 
+  Smartphone, Lock, Database, Settings, Code2, Shield, Globe 
+};
 
 interface Service {
+  slug: string;
   title: string;
   subServices: string[];
-  image1: string;
-  image2: string;
   link?: string;
 }
 
@@ -81,6 +90,7 @@ function ServiceTile({
 }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const data = SERVICES_DATA[service.slug];
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -88,11 +98,11 @@ function ServiceTile({
   };
 
   return (
-    <div
+    <motion.div
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group relative border-b border-white/10 transition-all duration-500 overflow-hidden ${isOpen ? "bg-white/[0.03] py-6 md:py-10" : "hover:bg-white/[0.01]"
+      className={`group relative border-b border-white/10 transition-colors duration-700 overflow-hidden ${isOpen ? "bg-white/[0.03]" : "hover:bg-white/[0.01]"
         }`}
     >
       {/* Background Glow Effect */}
@@ -108,10 +118,10 @@ function ServiceTile({
       {/* Header */}
       <div
         onClick={onClick}
-        className="relative z-10 flex items-center justify-between py-6 md:py-8 cursor-pointer px-4 transition-all"
+        className="relative z-10 flex items-center justify-between py-6 md:py-8 cursor-pointer px-4"
       >
         <div className="flex items-center gap-4 md:gap-8">
-          <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-500 ${isOpen ? "rotate-180" : ""}`}>
+          <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-500 ${isOpen ? "rotate-180 text-white" : "text-zinc-500 group-hover:text-white"}`}>
             <svg
               width="24"
               height="24"
@@ -133,13 +143,13 @@ function ServiceTile({
               )}
             </svg>
           </div>
-          <h3 className={`font-light tracking-tight transition-all duration-300 uppercase ${isOpen ? "text-xl md:text-2xl text-white" : "text-xl md:text-4xl text-zinc-400"}`}>
+          <h3 className={`font-light tracking-tight transition-all duration-300 uppercase ${isOpen ? "text-xl md:text-3xl lg:text-5xl text-white" : "text-xl md:text-4xl text-zinc-400 group-hover:text-white"}`}>
             {service.title}
           </h3>
         </div>
 
         <div className="flex items-center gap-4 md:gap-8">
-          <span className="text-xl md:text-2xl font-light text-zinc-400">
+          <span className={`text-xl md:text-2xl font-light transition-colors ${isOpen ? "text-white" : "text-zinc-500"}`}>
             {String(index + 1).padStart(2, "0")}
           </span>
           <div className="flex items-center gap-2 md:gap-3">
@@ -147,19 +157,20 @@ function ServiceTile({
               <motion.div
                 key={i}
                 animate={isOpen ? {
-                  height: [16, 24, 16],
-                  opacity: [0.2, 0.5, 0.2],
+                  scaleY: [1, 2, 1],
+                  opacity: [0.1, 0.4, 0.1],
                 } : {
-                  height: 16,
+                  scaleY: 1,
                   opacity: 0.1,
                 }}
                 transition={{
-                  duration: 1.5,
+                  duration: 2,
                   repeat: Infinity,
-                  delay: i * 0.1,
+                  delay: i * 0.15,
                   ease: "easeInOut"
                 }}
-                className="w-[1px] bg-white shrink-0"
+                style={{ transformOrigin: 'bottom' }}
+                className="w-[1px] h-4 bg-white shrink-0"
               />
             ))}
           </div>
@@ -167,77 +178,78 @@ function ServiceTile({
       </div>
 
       {/* Expanded Content */}
-      <div
-        className={`relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 px-4 transition-all duration-700 ease-in-out ${isOpen ? "max-h-[1500px] opacity-100 pb-12" : "max-h-0 opacity-0 pointer-events-none"
-          }`}
-      >
-        {/* Mobile View Inspiration Stack */}
-        <div className="flex flex-col gap-8 md:hidden">
-          {/* Main Image */}
-          <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden border border-white/10">
-            <Image
-              src={service.image1}
-              alt={service.title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 33vw"
-            />
-          </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="relative z-10 overflow-hidden"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 px-4 pb-8 pt-2">
+              {/* Left: Service Details & Tech Grid */}
+              <div className="lg:col-span-5 flex flex-col gap-8 py-2">
+                <div className="flex flex-col gap-6">
+                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 mb-2">Core Technologies</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+                    {service.subServices.map((sub) => (
+                      <div key={sub} className="flex items-center gap-3 group/sub cursor-pointer">
+                        <div className="w-1.5 h-1.5 rounded-full border border-white/20 group-hover/sub:bg-white transition-all duration-300" />
+                        <span className="text-sm md:text-base text-zinc-300 font-light group-hover/sub:text-white transition-colors">
+                          {sub}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
-          {/* Repeated Title */}
-          <h4 className="text-2xl font-medium tracking-tight text-white uppercase">
-            {service.title}
-          </h4>
-
-          {/* Sub-services Grid */}
-          <div className="grid grid-cols-1 gap-y-5">
-            {service.subServices.map((sub) => (
-              <div key={sub} className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full border border-white/40 mt-2 shrink-0" />
-                <span className="text-lg font-light text-zinc-400">
-                  {sub}
-                </span>
+                <div className="mt-auto pt-8">
+                  <AgencyButton text="VIEW SERVICE DETAILS" href={service.link} />
+                </div>
               </div>
-            ))}
-          </div>
 
-          <div className="mt-4">
-            <AgencyButton text="View Service Details" href={service.link} className="w-full justify-between" />
-          </div>
-        </div>
+              {/* Right: Digital Blueprint Dashboard (Bento Style) */}
+              <div className="lg:col-span-7 h-full">
+                <div className="flex sm:grid sm:grid-cols-2 gap-4 overflow-x-auto sm:overflow-x-visible snap-x snap-mandatory no-scrollbar pb-4 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
+                  {data?.capabilities.map((cap, i) => {
+                    const Icon = ICON_MAP[cap.icon] || Rocket;
+                    return (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: i * 0.05 + 0.2 }}
+                        className="relative min-w-[78vw] sm:min-w-0 snap-start group/cap p-5 md:p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-all duration-500 flex flex-col justify-between overflow-hidden sm:aspect-auto min-h-[160px] sm:min-h-0"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent opacity-0 group-hover/cap:opacity-100 transition-opacity duration-500" />
 
-        {/* Desktop View (Maintain current structure or refine slightly) */}
-        <div className="hidden md:flex flex-col justify-between h-full py-4">
-          <div className="grid grid-cols-2 gap-x-12 gap-y-8">
-            {service.subServices.map((sub) => (
-              <div key={sub} className="flex items-center gap-4 group/sub cursor-pointer">
-                <div className="w-2 h-2 rounded-full border border-white/40 group-hover/sub:bg-white transition-colors" />
-                <span className="text-xl text-zinc-400 group-hover/sub:text-white transition-opacity">
-                  {sub}
-                </span>
+                        <div className="relative z-10 flex flex-col h-full">
+                          <div className="flex items-center gap-4 mb-4">
+                            <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-white/[0.03] flex items-center justify-center text-white/40 group-hover/cap:text-white group-hover/cap:scale-110 transition-all duration-500 border border-white/5 shrink-0">
+                              <Icon strokeWidth={1} size={20} />
+                            </div>
+                            <h5 className="text-[14px] md:text-lg font-medium uppercase tracking-tight text-white/90 leading-tight">{cap.title}</h5>
+                          </div>
+
+                          <p className="text-[12px] md:text-sm text-zinc-400 leading-relaxed font-light group-hover/cap:text-zinc-300 transition-colors">
+                            {cap.description}
+                          </p>
+                        </div>
+
+                        <div className="absolute top-4 right-4 text-[10px] font-mono text-white/5 select-none">
+                          0{i + 1}
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
               </div>
-            ))}
-          </div>
-
-          <div className="mt-auto pt-16 flex items-center gap-4">
-            <AgencyButton text="View Full Service" href={service.link} />
-          </div>
-        </div>
-
-        <div className="hidden md:flex relative justify-end h-[450px]">
-          <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl group/image">
-            <Image
-              src={service.image1}
-              alt="Mockup"
-              fill
-              className="object-cover opacity-90 transition-transform duration-700 group-hover/image:scale-110"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-          </div>
-        </div>
-      </div>
-    </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 }
 
@@ -294,6 +306,7 @@ export default function Home() {
 
   const services: Service[] = [
     {
+      slug: "website-development",
       title: "Website development",
       subServices: [
         "Angular Website Development",
@@ -303,11 +316,10 @@ export default function Home() {
         "React Website Development",
         "WordPress Website Development",
       ],
-      image1: "/client1.png",
-      image2: "/client2.png",
       link: "/services/website-development",
     },
     {
+      slug: "branding-design",
       title: "Branding and design",
       subServices: [
         "Logo Design",
@@ -317,11 +329,10 @@ export default function Home() {
         "Color Palette",
         "Marketing Materials",
       ],
-      image1: "/client2.png",
-      image2: "/client3.png",
       link: "/services/branding-design",
     },
     {
+      slug: "crm-systems",
       title: "CRM systems",
       subServices: [
         "Custom CRM",
@@ -331,11 +342,10 @@ export default function Home() {
         "Automated Workflows",
         "Analytics Dashboard",
       ],
-      image1: "/client3.png",
-      image2: "/client4.png",
       link: "/services/crm-systems",
     },
     {
+      slug: "saas-solutions",
       title: "SaaS solutions",
       subServices: [
         "Product Strategy",
@@ -345,11 +355,10 @@ export default function Home() {
         "API Development",
         "Scalability",
       ],
-      image1: "/client4.png",
-      image2: "/client1.png",
       link: "/services/saas-solutions",
     },
     {
+      slug: "ai-agents-chatbot",
       title: "AI Agents / Chatbot",
       subServices: [
         "LLM Customization",
@@ -359,25 +368,23 @@ export default function Home() {
         "Voice AI",
         "Business Logic",
       ],
-      image1: "/client2.png",
-      image2: "/client4.png",
       link: "/services/ai-agents-chatbot",
     },
     {
-      title: "App platforms",
+      slug: "ai-integration",
+      title: "AI Integration",
       subServices: [
-        "iOS Development",
-        "Android Development",
-        "Cross-platform (Flutter/RN)",
-        "Quality Assurance",
-        "App Store Optimization",
-        "Maintenance",
+        "Knowledge Audit",
+        "RAG Engineering",
+        "LLM Orchestration",
+        "Private Deployment",
+        "Fine-tuning",
+        "Workflow Automation",
       ],
-      image1: "/client1.png",
-      image2: "/client3.png",
-      link: "/services/app-platforms",
+      link: "/services/ai-integration",
     },
     {
+      slug: "website-support",
       title: "Website support",
       subServices: [
         "Security Monitoring",
@@ -387,11 +394,10 @@ export default function Home() {
         "Backup Systems",
         "Platform Hardening",
       ],
-      image1: "/images/optimized/cleanzo/pic2.webp",
-      image2: "/images/optimized/cleanzo/pic3.webp",
       link: "/services/website-support",
     },
     {
+      slug: "ecommerce-stores",
       title: "E-commerce stores",
       subServices: [
         "Shopify Setup",
@@ -401,11 +407,10 @@ export default function Home() {
         "Inventory Management",
         "Store SEO",
       ],
-      image1: "/client3.png",
-      image2: "/client2.png",
       link: "/services/ecommerce-stores",
     },
     {
+      slug: "seo-optimization",
       title: "SEO optimization",
       subServices: [
         "Technical SEO",
@@ -415,8 +420,6 @@ export default function Home() {
         "Local SEO",
         "Analytics Tracking",
       ],
-      image1: "/images/optimized/portfolio-sites/pic2.webp",
-      image2: "/images/optimized/portfolio-sites/pic3.webp",
       link: "/services/seo-optimization",
     },
   ];
@@ -427,7 +430,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <main className="relative flex flex-col justify-center min-h-screen pt-20 px-0 md:px-12 overflow-hidden">
+      <main className="relative flex flex-col justify-center min-h-[90vh] md:min-h-screen pt-20 px-0 md:px-12 overflow-hidden">
         {/* Mobile-Only Social Proof at Top (Inspiration Aligned) */}
         <div className="flex md:hidden items-center gap-5 px-6 mb-10">
           <div className="flex -space-x-4">
@@ -481,7 +484,7 @@ export default function Home() {
 
           {/* Mobile-Only Video and CTAs */}
           <div className="md:hidden space-y-12">
-            <div className="relative w-full aspect-video overflow-hidden shadow-2xl bg-zinc-900">
+            <div className="relative w-full aspect-video overflow-hidden shadow-2xl bg-zinc-900 border-t border-b border-white/5">
               <video
                 src="/hero.mp4"
                 autoPlay
@@ -492,14 +495,14 @@ export default function Home() {
               />
             </div>
 
-            <div className="flex items-center gap-3 px-6 pb-12 w-full">
+            <div className="flex items-center gap-3 px-6 pb-4 w-full">
               <AgencyButton text="DISCUSS THE PROJECT" onClick={openContact} className="w-full" />
             </div>
           </div>
         </div>
 
         {/* Bottom Section - Responsive Visibility */}
-        <div className="mt-20 flex flex-col md:flex-row items-start md:items-end justify-between gap-12 pb-12 transition-all px-6 md:px-0">
+        <div className="mt-12 md:mt-20 flex flex-col md:flex-row items-start md:items-end justify-between gap-12 pb-12 transition-all px-6 md:px-0">
           {/* Social Proof (Desktop only now) */}
           <div className="hidden md:flex flex-col gap-4">
             <div className="flex -space-x-3">
@@ -538,7 +541,7 @@ export default function Home() {
       </main>
 
       {/* Portfolio Section */}
-      <section className="py-24 px-6 md:px-12 bg-black border-t border-white/10">
+      <section className="py-16 md:py-24 px-6 md:px-12 bg-black border-t border-white/10">
         <div className="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-8 mb-16 md:mb-24 overflow-hidden">
           <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
             WE ARE
@@ -592,7 +595,7 @@ export default function Home() {
             tags={["Frontend", "AI Integration", "PDF Generation"]}
             images={["/images/optimized/resume-ai/pic1.webp", "/images/optimized/resume-ai/pic2.webp", "/images/optimized/resume-ai/pic3.webp", "/images/optimized/resume-ai/pic4.webp", "/images/optimized/resume-ai/pic5.webp", "/images/optimized/resume-ai/pic6.webp"]}
             aspectRatio="aspect-[4/5]"
-            href="/services/ai-agents-chatbot"
+            href="https://resume-ai-web-delta.vercel.app/"
           />
 
           <ProjectCard
@@ -666,32 +669,40 @@ export default function Home() {
         <div className="w-full lg:w-1/2 lg:ml-auto px-6 md:px-12 lg:px-20 z-20 py-24 lg:py-16">
           <motion.div
             style={{ opacity: aiTextOpacity }}
-            className="max-w-lg mt-auto lg:mt-0 lg:-translate-y-8"
+            className="w-full lg:max-w-2xl"
           >
-            <div className="mb-10">
-              <h3 className="text-white text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight leading-none opacity-90">
-                AI Tools
-              </h3>
-            </div>
+            <div className="flex flex-col gap-12">
+              <div>
+                <h3 className="text-white text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight leading-none opacity-90">
+                  AI Tools
+                </h3>
+              </div>
 
-            <h4 className="text-zinc-400 text-[5.5vw] md:text-xl font-normal tracking-tight mb-16 leading-[1.4] uppercase max-w-2xl">
-              Precision-engineered <span className="text-white">software solutions</span> and disruptive <span className="text-white">AI-integrated ecosystems</span> meticulously tailored to the absolute uniqueness and vision of your business. We build <span className="text-white">intelligent architectures</span> that <span className="text-white">automate complexity</span>, accelerate performance, and scale with your growth, ensuring a <span className="text-white">future-proof competitive advantage</span> through state-of-the-art machine learning integration.
-            </h4>
+              <div className="space-y-10">
+                <h4 className="text-white text-[5vw] md:text-2xl font-light leading-[1.2] tracking-tight uppercase">
+                  Precision-engineered <span className="text-white font-medium">software solutions</span> and disruptive <span className="text-white font-medium">AI-integrated ecosystems</span>.
+                </h4>
 
-            <div className="flex items-center gap-4">
-              <AgencyButton text="DISCUSS THE PROJECT" onClick={openContact} />
+                <p className="text-zinc-300 text-[3.2vw] md:text-base font-normal leading-relaxed tracking-wider uppercase max-w-xl">
+                  Meticulously tailored to the absolute uniqueness and vision of your business. We build intelligent architectures that automate complexity, accelerate performance, and scale with your growth, ensuring a future-proof competitive advantage.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-4 pt-4">
+                <AgencyButton text="DISCUSS THE PROJECT" onClick={openContact} />
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Testimonial & Stats Section moved from before AI Section */}
-      <section className="py-24 px-6 md:px-12 bg-black overflow-hidden relative border-t border-white/5">
+      <section className="py-20 px-6 md:px-12 bg-black overflow-hidden relative border-t border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row lg:items-stretch gap-16 lg:gap-24">
+          <div className="flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-24">
             {/* Left: Project Preview Card */}
             <div className="w-full lg:w-[45%] relative group">
-              <div className="relative aspect-[1.1/1] overflow-hidden shadow-3xl bg-zinc-900 border border-white/10 rounded-2xl h-full">
+              <div className="relative aspect-[16/10] lg:aspect-[1.1/1] overflow-hidden shadow-3xl bg-zinc-900 border border-white/10 rounded-2xl h-full">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={testimonialIndex}
@@ -726,19 +737,19 @@ export default function Home() {
                   className="relative"
                 >
                   {/* Minimalist Quote Mark */}
-                  <div className="absolute -top-12 -left-8 text-zinc-900 text-[180px] font-serif leading-none select-none -z-10 opacity-20">
+                  <div className="absolute -top-8 -left-4 md:-top-12 md:-left-8 text-zinc-900 text-[100px] md:text-[180px] font-serif leading-none select-none -z-10 opacity-20">
                     “
                   </div>
 
-                  <p className="text-xl md:text-2xl font-light text-zinc-400 leading-relaxed tracking-tight mb-8 max-w-2xl relative z-10">
+                  <p className="text-lg md:text-2xl font-light text-zinc-300 leading-relaxed tracking-tight mb-8 max-w-2xl relative z-10">
                     {testimonials[testimonialIndex].quote}
                   </p>
 
-                  <div className="flex flex-col gap-2">
-                    <span className="text-sm font-medium uppercase tracking-[0.3em] text-white">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-xs md:text-sm font-medium uppercase tracking-[0.2em] md:tracking-[0.3em] text-white">
                       {testimonials[testimonialIndex].author}
                     </span>
-                    <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-600">
+                    <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500">
                       {testimonials[testimonialIndex].role}
                     </span>
                   </div>
@@ -746,25 +757,25 @@ export default function Home() {
               </AnimatePresence>
 
               {/* High-Impact Stats */}
-              <div className="pt-10 border-t border-white/5 md:flex items-end gap-12">
+              <div className="pt-8 mt-10 border-t border-white/5 flex items-center justify-between lg:items-end gap-12">
                 <div>
-                  <h3 className="text-[12vw] md:text-[8vw] font-thin tracking-tight text-white leading-none mb-4">
+                  <h3 className="text-[12vw] md:text-[7vw] font-thin tracking-tighter text-white leading-none mb-2">
                     100%
                   </h3>
-                  <p className="text-[10px] md:text-xs font-bold uppercase text-zinc-500 tracking-[0.4em]">
+                  <p className="text-[9px] md:text-xs font-bold uppercase text-zinc-500 tracking-[0.3em]">
                     Satisfied Clients
                   </p>
                 </div>
 
                 {/* Pagination Indicators - Minimalist Style */}
-                <div className="mt-12 md:mt-0 flex gap-4 ml-auto pb-4">
+                <div className="flex gap-4 pb-4">
                   {testimonials.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => setTestimonialIndex(idx)}
                       className="group flex flex-col gap-2"
                     >
-                      <div className={`h-[1px] transition-all duration-500 ${testimonialIndex === idx ? 'w-12 bg-white' : 'w-6 bg-white/20 group-hover:bg-white/40'}`} />
+                      <div className={`h-[1px] transition-all duration-500 ${testimonialIndex === idx ? 'w-10 md:w-12 bg-white' : 'w-5 md:w-6 bg-white/20 group-hover:bg-white/40'}`} />
                     </button>
                   ))}
                 </div>

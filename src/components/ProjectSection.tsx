@@ -130,7 +130,7 @@ export default function ProjectSection({
             </div>
 
             <div className="mt-8">
-              <AgencyButton text="PROJECT REVIEW" href="#" />
+              <AgencyButton text="SHOW MORE PROJECTS" href="/portfolio" />
             </div>
           </div>
         </div>

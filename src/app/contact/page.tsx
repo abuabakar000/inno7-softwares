@@ -35,7 +35,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
       <Navbar />
 
-      <main className="pt-40 pb-32 px-6 md:px-12 max-w-7xl mx-auto">
+      <main className="pt-40 pb-32 px-6 md:px-12 relative overflow-hidden">
         {/* Hero Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

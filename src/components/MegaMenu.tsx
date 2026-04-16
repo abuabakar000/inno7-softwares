@@ -37,9 +37,9 @@ export const serviceCategories = [
     subLinks: ["LLM Customization", "AI Automation", "Chatbot Systems"]
   },
   {
-    title: "APPLICATION DEVELOPMENT",
-    href: "/services/app-platforms",
-    subLinks: ["iOS Apps", "Android Apps", "Native Strategy"]
+    title: "AI INTEGRATION",
+    href: "/services/ai-integration",
+    subLinks: ["RAG Pipelines", "LLM Orchestration", "Private AI"]
   },
   {
     title: "WEBSITE SUPPORT",
@@ -102,16 +102,20 @@ export default function MegaMenu({ isOpen }: MegaMenuProps) {
           <h2 className="text-xl font-base tracking-tighter text-white uppercase leading-none">
             NEW PROJECT
           </h2>
-          <div className="relative aspect-[3/4] rounded-xl overflow-hidden group border border-white/5">
+          <Link 
+            href="https://the-good-burger.vercel.app/" 
+            target="_blank"
+            className="relative aspect-[3/4] rounded-xl overflow-hidden group border border-white/5 block"
+          >
             <Image
-              src="/portfolio_project_1_1773957776150.png" // Placeholder, user will update later
-              alt="New Project"
+              src="/images/optimized/burg/pic1.webp"
+              alt="The Good Burger"
               fill
-              className="object-cover group-hover:scale-110 transition-transform duration-1000 grayscale group-hover:grayscale-0 transition-all"
+              className="object-cover group-hover:scale-110 transition-transform duration-1000"
               sizes="(max-width: 1200px) 0vw, 25vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          </div>
+          </Link>
         </div>
       </div>
     </motion.div>

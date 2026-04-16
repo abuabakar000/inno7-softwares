@@ -131,7 +131,7 @@ const projects = [
     images: ["/images/optimized/resume-ai/pic1.webp", "/images/optimized/resume-ai/pic2.webp", "/images/optimized/resume-ai/pic3.webp", "/images/optimized/resume-ai/pic4.webp", "/images/optimized/resume-ai/pic5.webp", "/images/optimized/resume-ai/pic6.webp"],
     aspectRatio: "aspect-[4/5]",
     filterCategory: "WEB SOLUTION",
-    href: "/services/ai-agents-chatbot"
+    href: "https://resume-ai-web-delta.vercel.app/"
   },
   {
     title: "MINT CARE DENTISTRY",

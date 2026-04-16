@@ -86,7 +86,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
 
         {/* Section 2: Specialization & CTA */}
         <section className="px-6 md:px-12 py-32 border-t border-white/10 bg-zinc-950/30">
-          <div className="max-w-5xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-left md:text-center">
             <h2 className="text-2xl md:text-4xl font-thin mb-10 tracking-tight leading-tight text-white uppercase">
               {data.specializationHeading}
             </h2>
@@ -94,7 +94,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
               {data.specializationText}
             </p>
 
-            <div className="flex justify-center">
+            <div className="flex justify-start md:justify-center">
               <AgencyButton text={data.ctaText} onClick={openContact} />
             </div>
           </div>

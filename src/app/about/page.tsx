@@ -181,8 +181,8 @@ export default function AboutPage() {
           </div>
 
           {/* Centered Become a Client Button */}
-          <div className="flex justify-center mt-12">
-            <AgencyButton text="BECOME A CLIENT" onClick={() => document.dispatchEvent(new CustomEvent('openContact'))} />
+          <div className="flex justify-start md:justify-center mt-12 px-6 md:px-0">
+            <AgencyButton text="SHOW MORE PROJECTS" href="/portfolio" />
           </div>
         </div>
       </section>
@@ -209,32 +209,35 @@ export default function AboutPage() {
           >
             <div className="min-w-[80vw] md:min-w-0 snap-center">
               <ProjectCard 
-                title="VALIDSOFT"
-                category="Marketing"
-                tags={["Branding", "UI/UX", "Strategy"]}
+                title="THE GOOD BURGER"
+                category="Restaurant"
+                tags={["React", "UI/UX Design", "Framer Motion"]}
                 aspectRatio="aspect-square"
-                image="/project_validsoft.png"
+                image="/images/optimized/burg/pic1.webp"
                 sizes="(max-width: 768px) 80vw, 33vw"
+                href="https://the-good-burger.vercel.app/"
               />
             </div>
             <div className="min-w-[80vw] md:min-w-0 snap-center">
               <ProjectCard 
-                title="BATTLER SPORT"
-                category="Marketing"
-                tags={["Online Store", "Design", "Dev"]}
+                title="CLEANZO"
+                category="Cleaning Service"
+                tags={["UX/UI Design", "Front end", "Brand Identity"]}
                 aspectRatio="aspect-square"
-                image="/project_battler.png"
+                image="/images/optimized/cleanzo/thumbnail.webp"
                 sizes="(max-width: 768px) 80vw, 33vw"
+                href="https://cleanzo.vercel.app/"
               />
             </div>
             <div className="min-w-[80vw] md:min-w-0 snap-center">
               <ProjectCard 
-                title="MARTIN ENERGY"
-                category="Marketing"
-                tags={["Corporate", "UI/UX", "Dev"]}
+                title="SAASFORGE"
+                category="Saas Development"
+                tags={["Secure Auth", "Online Payments", "SaaS Solutions"]}
                 aspectRatio="aspect-square"
-                image="/project_martin.png"
+                image="/images/optimized/saasforge/pic1.webp"
                 sizes="(max-width: 768px) 80vw, 33vw"
+                href="http://saas-forge-frontend.vercel.app/"
               />
             </div>
           </div>
@@ -252,7 +255,7 @@ export default function AboutPage() {
           </div>
 
           {/* Mobile CTA - Visible only on small screens */}
-          <div className="flex md:hidden justify-center mt-12">
+          <div className="flex md:hidden justify-start mt-12 px-6 md:px-0">
             <AgencyButton text="SHOW MORE PROJECTS" href="/portfolio" />
           </div>
         </div>
@@ -275,19 +278,18 @@ export default function AboutPage() {
             className="relative flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-6 md:gap-4 lg:gap-8 no-scrollbar pb-8 -mx-6 px-6 md:mx-0 md:px-0 scroll-pl-6 group/process"
           >
             
-            {/* Arched Connectors with High-Impact Sequencing Arrows (Desktop Only) */}
-            <div className="hidden md:block absolute top-[50px] inset-x-0 h-12 -z-0 px-[12.5%]">
-              <svg className="w-full h-full overflow-visible" viewBox="0 0 750 100" fill="none">
-                <defs>
-                  {/* High-end V-shaped arrowhead - Bolder for full visibility */}
-                  <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-                    <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </marker>
-                </defs>
-                {/* Individual paths covering all three gaps (Strategy->Design->Dev->Launch) */}
-                <path d="M 30 50 Q 125 -25 215 50" stroke="#475569" strokeWidth="2" strokeDasharray="6 6" markerEnd="url(#arrowhead)" />
-                <path d="M 285 50 Q 375 -25 465 50" stroke="#475569" strokeWidth="2" strokeDasharray="6 6" markerEnd="url(#arrowhead)" />
-                <path d="M 535 50 Q 625 -25 720 50" stroke="#475569" strokeWidth="2" strokeDasharray="6 6" markerEnd="url(#arrowhead)" />
+            <div className="hidden md:block absolute top-[48px] inset-x-0 h-px -z-0 px-[15vw]">
+              <svg className="w-full h-full overflow-visible" fill="none">
+                <line 
+                  x1="0" 
+                  y1="0" 
+                  x2="100%" 
+                  y2="0" 
+                  stroke="#cbd5e1" 
+                  strokeWidth="2" 
+                  strokeDasharray="1 8" 
+                  strokeLinecap="round"
+                />
               </svg>
             </div>
 

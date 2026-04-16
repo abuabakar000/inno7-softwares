@@ -175,7 +175,7 @@ export default function ProjectCard({
 
           {/* Magnetic 'Link' Circle */}
           <motion.div
-            className="pointer-events-none absolute z-50 flex items-center justify-center bg-white rounded-full w-24 h-24 mix-blend-normal shadow-xl"
+            className="pointer-events-none absolute z-50 hidden md:flex items-center justify-center bg-white rounded-full w-24 h-24 mix-blend-normal shadow-xl"
             initial={{ opacity: 0, scale: 0 }}
             animate={{
               opacity: isHovered ? 1 : 0,
