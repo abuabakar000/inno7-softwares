@@ -180,6 +180,7 @@ function ServiceTile({
               alt={service.title}
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
 
@@ -208,7 +209,7 @@ function ServiceTile({
         {/* Desktop View (Maintain current structure or refine slightly) */}
         <div className="hidden md:flex flex-col justify-between h-full py-4">
           <div className="grid grid-cols-2 gap-x-12 gap-y-8">
-            {service.subServices.slice(0, 4).map((sub) => (
+            {service.subServices.map((sub) => (
               <div key={sub} className="flex items-center gap-4 group/sub cursor-pointer">
                 <div className="w-2 h-2 rounded-full border border-white/40 group-hover/sub:bg-white transition-colors" />
                 <span className="text-xl text-zinc-400 group-hover/sub:text-white transition-opacity">
@@ -230,6 +231,7 @@ function ServiceTile({
               alt="Mockup"
               fill
               className="object-cover opacity-90 transition-transform duration-700 group-hover/image:scale-110"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
           </div>
@@ -385,8 +387,8 @@ export default function Home() {
         "Backup Systems",
         "Platform Hardening",
       ],
-      image1: "/cleanzo/pic2.png",
-      image2: "/cleanzo/pic3.png",
+      image1: "/images/optimized/cleanzo/pic2.webp",
+      image2: "/images/optimized/cleanzo/pic3.webp",
       link: "/services/website-support",
     },
     {
@@ -413,14 +415,14 @@ export default function Home() {
         "Local SEO",
         "Analytics Tracking",
       ],
-      image1: "/portfolio-sites/pic2.png",
-      image2: "/portfolio-sites/pic3.png",
+      image1: "/images/optimized/portfolio-sites/pic2.webp",
+      image2: "/images/optimized/portfolio-sites/pic3.webp",
       link: "/services/seo-optimization",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black">
+    <div className="relative min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black">
       {/* Navigation */}
       <Navbar />
 
@@ -439,6 +441,7 @@ export default function Home() {
                   alt={`Client ${i}`}
                   fill
                   className="px-1 object-cover"
+                  sizes="48px"
                 />
               </div>
             ))}
@@ -510,6 +513,7 @@ export default function Home() {
                     alt={`Client ${i}`}
                     fill
                     className="object-cover"
+                    sizes="48px"
                   />
                 </div>
               ))}
@@ -541,10 +545,11 @@ export default function Home() {
           </h2>
           <div className="relative w-[30vw] h-[18vw] md:w-[15vw] md:h-[8vw] overflow-hidden shadow-2xl bg-zinc-900 border border-white/10 shrink-0">
             <Image
-              src="/inn7-light.svg"
-              alt="Inno7 Logo"
+              src="/proud.svg"
+              alt="Inex Labs Logo"
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 30vw, 15vw"
             />
           </div>
           <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
@@ -556,7 +561,7 @@ export default function Home() {
             title="THE GOOD BURGER"
             category="Restaurant"
             tags={["React", "UI/UX Design", "Framer Motion"]}
-            images={["/images/optimized/burg/pic1.webp", "/images/optimized/burg/pic2.webp", "/images/optimized/burg/pic3.webp", "/images/optimized/burg/pic4.webp"]}
+            images={["/images/optimized/burg/pic1.webp", "/images/optimized/burg/pic2.webp", "/images/optimized/burg/pic3.webp", "/images/optimized/burg/pic4.webp", "/images/optimized/burg/pic5.webp", "/images/optimized/burg/pic6.webp"]}
             aspectRatio="aspect-[4/5]"
             href="https://the-good-burger.vercel.app/"
           />
@@ -565,7 +570,7 @@ export default function Home() {
             title="CLEANZO"
             category="Cleaning Service"
             tags={["UX/UI Design", "Front end", "Brand Identity"]}
-            images={["/images/optimized/cleanzo/thumbnail.webp", "/images/optimized/cleanzo/pic2.webp", "/images/optimized/cleanzo/pic3.webp", "/images/optimized/cleanzo/pic4.webp"]}
+            images={["/images/optimized/cleanzo/thumbnail.webp", "/images/optimized/cleanzo/pic2.webp", "/images/optimized/cleanzo/pic3.webp", "/images/optimized/cleanzo/pic4.webp", "/images/optimized/cleanzo/pic5.webp", "/images/optimized/cleanzo/pic6.webp"]}
             aspectRatio="aspect-[3/4]"
             className="mt-0 md:mt-16"
             href="https://cleanzo.vercel.app/"
@@ -575,7 +580,7 @@ export default function Home() {
             title="SAASFORGE"
             category="SaaS Development"
             tags={["Secure Auth", "Online Payments", "SaaS Solutions"]}
-            images={["/images/optimized/saasforge/pic1.webp", "/images/optimized/saasforge/pic2.webp", "/images/optimized/saasforge/pic3.webp", "/images/optimized/saasforge/pic4.webp"]}
+            images={["/images/optimized/saasforge/pic1.webp", "/images/optimized/saasforge/pic2.webp", "/images/optimized/saasforge/pic3.webp", "/images/optimized/saasforge/pic4.webp", "/images/optimized/saasforge/pic5.webp"]}
             aspectRatio="aspect-[4/5]"
             className="mt-0 md:-mt-12"
             href="http://saas-forge-frontend.vercel.app/"
@@ -585,7 +590,7 @@ export default function Home() {
             title="RESUME AI"
             category="AI Resume Generator"
             tags={["Frontend", "AI Integration", "PDF Generation"]}
-            images={["/images/optimized/resume-ai/pic1.webp", "/images/optimized/resume-ai/pic2.webp", "/images/optimized/resume-ai/pic3.webp", "/images/optimized/resume-ai/pic4.webp"]}
+            images={["/images/optimized/resume-ai/pic1.webp", "/images/optimized/resume-ai/pic2.webp", "/images/optimized/resume-ai/pic3.webp", "/images/optimized/resume-ai/pic4.webp", "/images/optimized/resume-ai/pic5.webp", "/images/optimized/resume-ai/pic6.webp"]}
             aspectRatio="aspect-[4/5]"
             href="/services/ai-agents-chatbot"
           />
@@ -594,7 +599,7 @@ export default function Home() {
             title="MINT CARE DENTISTRY"
             category="Dentistry Website"
             tags={["24/7 Chatbot", "Branding", "Full Stack Development"]}
-            images={["/images/optimized/mint-care-dentistry/pic1.webp", "/images/optimized/mint-care-dentistry/pic2.webp", "/images/optimized/mint-care-dentistry/pic3.webp", "/images/optimized/mint-care-dentistry/pic4.webp"]}
+            images={["/images/optimized/mint-care-dentistry/pic1.webp", "/images/optimized/mint-care-dentistry/pic2.webp", "/images/optimized/mint-care-dentistry/pic3.webp", "/images/optimized/mint-care-dentistry/pic4.webp", "/images/optimized/mint-care-dentistry/pic5.webp", "/images/optimized/mint-care-dentistry/pic6.webp"]}
             aspectRatio="aspect-[3/4]"
             className="mt-0 md:mt-16"
             href="https://mint-care-dentistry.vercel.app/"
@@ -604,7 +609,7 @@ export default function Home() {
             title="PORTFOLIO SITES"
             category="Branding"
             tags={["Portfolio Design", "Framer Motion", "Landing Page"]}
-            images={["/images/optimized/portfolio-sites/pic1.webp", "/images/optimized/portfolio-sites/pic2.webp", "/images/optimized/portfolio-sites/pic3.webp", "/images/optimized/portfolio-sites/pic4.webp"]}
+            images={["/images/optimized/portfolio-sites/pic1.webp", "/images/optimized/portfolio-sites/pic2.webp", "/images/optimized/portfolio-sites/pic3.webp", "/images/optimized/portfolio-sites/pic4.webp", "/images/optimized/portfolio-sites/pic5.webp", "/images/optimized/portfolio-sites/pic6.webp"]}
             aspectRatio="aspect-[4/5]"
             className="mt-0 md:-mt-12"
             href="http://ak-portfolio-site.vercel.app/"
@@ -648,6 +653,7 @@ export default function Home() {
               fill
               className="object-cover opacity-80 lg:opacity-60 grayscale lg:brightness-[0.7]"
               priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </motion.div>
           {/* Gradients to blend */}
@@ -700,6 +706,7 @@ export default function Home() {
                       alt="Project Preview"
                       fill
                       className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700"
+                      sizes="(max-width: 1024px) 100vw, 45vw"
                     />
                   </motion.div>
                 </AnimatePresence>
@@ -785,6 +792,8 @@ export default function Home() {
                       width={64}
                       height={64}
                       className="w-full h-full object-contain"
+                      style={{ width: 'auto', height: 'auto' }}
+                      sizes="64px"
                     />
                   </div>
                 </div>

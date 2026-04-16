@@ -50,11 +50,12 @@ export default function Navbar() {
         <Link href="/" className="hover:opacity-80 transition-opacity">
           <Image 
             src="/logo.png" 
-            alt="Inno7 Softwares Logo" 
+            alt="Inex Labs Logo" 
             width={120} 
             height={40} 
             className="h-10 w-auto object-contain"
-            style={{ height: 'auto' }}
+            style={{ width: 'auto', height: 'auto' }}
+            sizes="120px"
           />
         </Link>
 

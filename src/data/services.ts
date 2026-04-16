@@ -46,7 +46,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/ai-chatbots.png',
     heroDescription: 'We empower your business with autonomous AI agents and intelligent chatbots that handle complex interactions, lead qualification, and customer support with human-level precision.',
     specializationHeading: 'Autonomous Agent Engineering and Conversational AI Case Studies',
-    specializationText: 'Our agency, Inn7 Softwares, specializes in conversational architecture, creating bespoke AI agents that integrate deeply with your CRM and internal databases. We build solutions tailored to your operational goals to effectively automate customer touchpoints, reduce overhead, and provide 24/7 high-fidelity service. Our goal is to ensure your customer experience becomes a powerful competitive advantage.',
+    specializationText: 'Our agency, Inex Labs, specializes in conversational architecture, creating bespoke AI agents that integrate deeply with your CRM and internal databases. We build solutions tailored to your operational goals to effectively automate customer touchpoints, reduce overhead, and provide 24/7 high-fidelity service. Our goal is to ensure your customer experience becomes a powerful competitive advantage.',
     ctaText: 'DEPLOY YOUR AGENT',
     whySectionTitle: 'TRANSFORMING INTERACTION WITH CLOUD-NATIVE AI',
     steps: [
@@ -83,7 +83,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/branding.png',
     heroDescription: 'We study the site, find all the problem areas and determine how to eliminate them. We analyze competitors in search results and their strategies. We conduct an audit of the available traffic to the site in terms of sources and effectiveness in search engines.',
     specializationHeading: 'Brand Identity and Design Strategy Case Studies for Clients',
-    specializationText: 'Our agency, Inn7 Softwares, specializes in brand design development, creating brand styles, and providing full-service branding. We create projects tailored to your goals to effectively compete in the market, enhance your company image, and attract new customers. Our goal is to ensure that the outcome becomes a powerful catalyst for scaling and further business growth.',
+    specializationText: 'Our agency, Inex Labs, specializes in brand design development, creating brand styles, and providing full-service branding. We create projects tailored to your goals to effectively compete in the market, enhance your company image, and attract new customers. Our goal is to ensure that the outcome becomes a powerful catalyst for scaling and further business growth.',
     ctaText: 'DISCUSS THE PROJECT',
     whySectionTitle: 'WHY DO COMPANIES NEED BRAND IDENTITY?',
     steps: [
@@ -120,7 +120,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/app.png',
     heroDescription: 'We develop high-performance mobile applications and cross-platform experiences that put your business directly in your customers\' pockets. From native iOS and Android to modern hybrid solutions, we build for engagement.',
     specializationHeading: 'Mobile App and Platform Engineering Case Studies for Clients',
-    specializationText: 'Our agency, Inn7 Softwares, specializes in mobile product engineering, creating native and cross-platform apps and providing seamless digital experiences. We build mobile platforms tailored to your user engagement goals to effectively leverage mobile-first trends, enhance brand loyalty, and drive growth. Our goal is to ensure your app becomes a powerful tool for your users.',
+    specializationText: 'Our agency, Inex Labs, specializes in mobile product engineering, creating native and cross-platform apps and providing seamless digital experiences. We build mobile platforms tailored to your user engagement goals to effectively leverage mobile-first trends, enhance brand loyalty, and drive growth. Our goal is to ensure your app becomes a powerful tool for your users.',
     ctaText: 'LAUNCH YOUR APP',
     whySectionTitle: 'WHY DOES YOUR BUSINESS NEED A MOBILE PRIORITY?',
     steps: [
@@ -157,7 +157,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/crm.png',
     heroDescription: 'We design and implement custom CRM solutions that streamline your sales, marketing, and support operations. Our data-driven platforms empower your team with actionable insights and automated workflows.',
     specializationHeading: 'Custom CRM and Operational Flow Case Studies for Clients',
-    specializationText: 'Our agency, Inn7 Softwares, specializes in custom CRM development, creating integrated management platforms and providing data-driven solutions. We build tools tailored to your business logic to effectively manage your customer relationships, enhance team productivity, and drive revenue. Our goal is to ensure your operations become a powerful engine for scaling.',
+    specializationText: 'Our agency, Inex Labs, specializes in custom CRM development, creating integrated management platforms and providing data-driven solutions. We build tools tailored to your business logic to effectively manage your customer relationships, enhance team productivity, and drive revenue. Our goal is to ensure your operations become a powerful engine for scaling.',
     ctaText: 'OPTIMIZE YOUR FLOW',
     whySectionTitle: 'WHY DOES YOUR BUSINESS NEED A CUSTOM CRM?',
     steps: [
@@ -194,7 +194,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/ecom.png',
     heroDescription: 'We build high-conversion digital storefronts that turn browsers into loyal customers. From custom headless commerce to powerful Shopify integrations, we provide the tools to scale your retail business globally.',
     specializationHeading: 'E-commerce Store and Retail Logic Case Studies for Clients',
-    specializationText: 'Our agency, Inn7 Softwares, specializes in commerce engineering, creating high-performance online stores and providing full-service retail solutions. We build e-commerce platforms tailored to your sales goals to effectively increase conversions, enhance customer journeys, and drive growth. Our goal is to ensure your store becomes a powerful revenue engine.',
+    specializationText: 'Our agency, Inex Labs, specializes in commerce engineering, creating high-performance online stores and providing full-service retail solutions. We build e-commerce platforms tailored to your sales goals to effectively increase conversions, enhance customer journeys, and drive growth. Our goal is to ensure your store becomes a powerful revenue engine.',
     ctaText: 'BOOST YOUR SALES',
     whySectionTitle: 'DRIVING REVENUE THROUGH SEAMLESS COMMERCE',
     steps: [
@@ -231,7 +231,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/saas.png',
     heroDescription: 'We architect and build scalable Software-as-a-Service platforms that solve complex business challenges. From multi-tenant infrastructure to flexible subscription management, we provide the technical foundation for your digital product.',
     specializationHeading: 'SaaS Product and Scalable Platform Case Studies for Clients',
-    specializationText: 'Our agency, Inn7 Softwares, specializes in SaaS product engineering, creating multi-tenant platforms and providing scalable digital solutions. We build architectures tailored to your growth strategy to effectively serve your global user base, enhance operational efficiency, and drive recurring revenue. Our goal is to ensure your SaaS becomes a powerful industry leader.',
+    specializationText: 'Our agency, Inex Labs, specializes in SaaS product engineering, creating multi-tenant platforms and providing scalable digital solutions. We build architectures tailored to your growth strategy to effectively serve your global user base, enhance operational efficiency, and drive recurring revenue. Our goal is to ensure your SaaS becomes a powerful industry leader.',
     ctaText: 'SCALE YOUR VISION',
     whySectionTitle: 'THE POWER OF A SCALABLE SAAS MODEL',
     steps: [
@@ -268,7 +268,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/web-dev.png',
     heroDescription: 'We engineer scalable, high-performance digital solutions tailored to your business needs. From modern frontend frameworks to robust backend architectures, we ensure your web presence is fast, secure, and future-proof.',
     specializationHeading: 'Website Development and Creation Case Studies for Clients',
-    specializationText: 'Our agency, Inn7 Softwares, specializes in advanced web engineering, creating custom digital platforms and providing full-stack development. We build projects optimized for speed and conversion to effectively compete in the digital landscape, enhance your online presence, and drive business logic. Our goal is to ensure your platform becomes a robust engine for growth.',
+    specializationText: 'Our agency, Inex Labs, specializes in advanced web engineering, creating custom digital platforms and providing full-stack development. We build projects optimized for speed and conversion to effectively compete in the digital landscape, enhance your online presence, and drive business logic. Our goal is to ensure your platform becomes a robust engine for growth.',
     ctaText: 'START YOUR PROJECT',
     whySectionTitle: 'WHY DO COMPANIES NEED CUSTOM DEVELOPMENT?',
     steps: [
@@ -305,7 +305,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/web-support.png',
     heroDescription: 'We provide comprehensive, high-priority maintenance and management for your digital assets. From security hardening to performance tuning, we ensure your platform remains a high-performance business tool.',
     specializationHeading: 'Technical Management and Infrastructure Support Case Studies',
-    specializationText: 'Our agency, Inn7 Softwares, specializes in boutique support services, providing dedicated attention to the technical health of your website. We offer solutions tailored to your operational uptime goals to effectively mitigate risks, optimize loading speeds, and implement security protocols. Our goal is to ensure your digital core remains unbreakable and consistently performant.',
+    specializationText: 'Our agency, Inex Labs, specializes in boutique support services, providing dedicated attention to the technical health of your website. We offer solutions tailored to your operational uptime goals to effectively mitigate risks, optimize loading speeds, and implement security protocols. Our goal is to ensure your digital core remains unbreakable and consistently performant.',
     ctaText: 'SECURE YOUR SITE',
     whySectionTitle: 'THE CRITICAL NEED FOR ACTIVE MAINTENANCE',
     steps: [
@@ -342,7 +342,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: '/images/services/seo.png',
     heroDescription: 'We deploy advanced technical SEO and content strategy to dominate search results. From semantic keyword architecture to authority building, we turn search into a high-ROI acquisition channel.',
     specializationHeading: 'Search Performance and Content Authority Case Studies',
-    specializationText: 'Our agency, Inn7 Softwares, specializes in search engineering, creating visible digital presences and providing data-driven growth. We build strategies tailored to your market positioning goals to effectively increase organic reach, enhance brand authority, and drive high-intent traffic. Our goal is to ensure your brand becomes the top-of-mind choice in search.',
+    specializationText: 'Our agency, Inex Labs, specializes in search engineering, creating visible digital presences and providing data-driven growth. We build strategies tailored to your market positioning goals to effectively increase organic reach, enhance brand authority, and drive high-intent traffic. Our goal is to ensure your brand becomes the top-of-mind choice in search.',
     ctaText: 'DOMINATE SEARCH',
     whySectionTitle: 'WINNING THE BATTLE FOR ORGANIC VISIBILITY',
     steps: [

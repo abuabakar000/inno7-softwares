@@ -13,6 +13,7 @@ export default function Footer() {
             alt="Footer Background"
             fill
             className="object-cover opacity-60 md:opacity-30 grayscale brightness-50"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80 md:bg-gradient-to-b md:from-black md:via-transparent md:to-black" />
         </div>
@@ -27,10 +28,10 @@ export default function Footer() {
             <p className="text-[5vw] md:text-[2.5vw] font-thin tracking-tighter">
               Drop us a line at{" "}
               <a
-                href="mailto:hello@inno7.agency"
+                href="mailto:hello@inexlabs.com"
                 className="italic underline decoration-white/30 underline-offset-[12px] hover:text-zinc-400 hover:decoration-white transition-all duration-500"
               >
-                hello@inno7.agency
+                hello@inexlabs.com
               </a>
             </p>
           </div>
@@ -39,7 +40,7 @@ export default function Footer() {
           <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-y-6 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500">
             {/* Left: Branding */}
             <div className="flex items-center gap-4">
-              <span className="text-zinc-400">© 2026 INNO7 SOFTWARES</span>
+              <span className="text-zinc-400">© 2026 INEX LABS</span>
             </div>
 
             {/* Middle: Socials */}

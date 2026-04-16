@@ -100,7 +100,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           {/* Centered Heading - Final Mobile Calibration */}
           <div className="text-left mb-20">
-            <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight leading-[0.95] opacity-90 px-4 md:px-0">
+            <h2 className="text-4xl md:text-6xl font-thin uppercase tracking-tight leading-none mb-10 opacity-90 px-4 md:px-0 max-w-4xl">
               WEB SOLUTION DEVELOPMENT <br className="hidden md:block" /> FOR YOUR BUSINESS
             </h2>
           </div>
@@ -192,7 +192,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-20">
-            <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight leading-[0.95] opacity-90 text-white">
+            <h2 className="text-4xl md:text-6xl font-thin uppercase tracking-tight leading-none opacity-90 text-white">
               MORE PROJECTS
             </h2>
             
@@ -263,7 +263,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           {/* Section Heading - Balanced for White BG */}
           <div className="text-left mb-32">
-            <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight leading-[0.95] opacity-90 text-black">
+            <h2 className="text-4xl md:text-6xl font-thin uppercase tracking-tight leading-none opacity-90 text-black mb-10">
               SOLUTION IMPLEMENTATION PROCESS. <br className="hidden md:block" /> DEPLOYMENT WITHOUT CHAOS
             </h2>
           </div>

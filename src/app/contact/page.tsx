@@ -71,11 +71,11 @@ export default function ContactPage() {
                     (Email)
                   </span>
                   <div className="flex flex-col gap-2">
-                    <a href="mailto:office@inn7softwares.com" className="text-[13px] md:text-base font-normal tracking-tight uppercase text-white/90 hover:text-white transition-all duration-500">
-                      office@inn7softwares.com
+                    <a href="mailto:office@inexlabs.com" className="text-[13px] md:text-base font-normal tracking-tight uppercase text-white/90 hover:text-white transition-all duration-500">
+                      office@inexlabs.com
                     </a>
-                    <a href="mailto:support@inn7softwares.com" className="text-[13px] md:text-base font-normal tracking-tight uppercase text-white/90 hover:text-white transition-all duration-500">
-                      support@inn7softwares.com
+                    <a href="mailto:support@inexlabs.com" className="text-[13px] md:text-base font-normal tracking-tight uppercase text-white/90 hover:text-white transition-all duration-500">
+                      support@inexlabs.com
                     </a>
                   </div>
                   <div className="w-8 h-[1px] bg-white/20 group-hover/item:w-12 transition-all duration-500" />
@@ -94,7 +94,7 @@ export default function ContactPage() {
 
                 {/* Branding Accent */}
                 <div className="pt-8 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
-                   <div className="text-[10px] font-black tracking-[0.5em] text-white uppercase">INN7 SOFTWARES</div>
+                   <div className="text-[10px] font-black tracking-[0.5em] text-white uppercase">INEX LABS</div>
                 </div>
               </div>
 

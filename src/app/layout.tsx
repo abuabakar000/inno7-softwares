@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Inno7 Softwares | Premium Digital Boutique",
+  title: "Inex Labs | Premium Digital Boutique",
   description: "Boutique digital agency specializing in high-end software solutions, custom CRM architectures, and premium AI integrations.",
   icons: {
     icon: "/favicon.png",
@@ -31,7 +31,7 @@ export default function RootLayout({
       className={`${inter.variable} h-full antialiased dark`}
       suppressHydrationWarning
     >
-      <body className="min-h-full bg-black text-white">
+      <body className="min-h-full bg-black text-white" suppressHydrationWarning>
         <ContactProvider>
           {children}
         </ContactProvider>

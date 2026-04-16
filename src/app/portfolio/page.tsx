@@ -99,7 +99,7 @@ const projects = [
     title: "THE GOOD BURGER",
     category: "Restaurant",
     tags: ["React", "UI/UX Design", "Framer Motion"],
-    images: ["/images/optimized/burg/pic1.webp", "/images/optimized/burg/pic2.webp", "/images/optimized/burg/pic3.webp", "/images/optimized/burg/pic4.webp"],
+    images: ["/images/optimized/burg/pic1.webp", "/images/optimized/burg/pic2.webp", "/images/optimized/burg/pic3.webp", "/images/optimized/burg/pic4.webp", "/images/optimized/burg/pic5.webp", "/images/optimized/burg/pic6.webp"],
     aspectRatio: "aspect-[4/5]",
     filterCategory: "CREATIVE",
     href: "https://the-good-burger.vercel.app/"
@@ -108,7 +108,7 @@ const projects = [
     title: "CLEANZO",
     category: "Cleaning Service",
     tags: ["UX/UI Design", "Front end", "Brand Identity"],
-    images: ["/images/optimized/cleanzo/thumbnail.webp", "/images/optimized/cleanzo/pic2.webp", "/images/optimized/cleanzo/pic3.webp", "/images/optimized/cleanzo/pic4.webp"],
+    images: ["/images/optimized/cleanzo/thumbnail.webp", "/images/optimized/cleanzo/pic2.webp", "/images/optimized/cleanzo/pic3.webp", "/images/optimized/cleanzo/pic4.webp", "/images/optimized/cleanzo/pic5.webp", "/images/optimized/cleanzo/pic6.webp"],
     aspectRatio: "aspect-[3/4]",
     className: "mt-0 md:mt-16",
     filterCategory: "LANDING PAGE",
@@ -118,7 +118,7 @@ const projects = [
     title: "SAASFORGE",
     category: "Saas Development",
     tags: ["Secure Auth", "Online Payments", "SaaS Solutions"],
-    images: ["/images/optimized/saasforge/pic1.webp", "/images/optimized/saasforge/pic2.webp", "/images/optimized/saasforge/pic3.webp", "/images/optimized/saasforge/pic4.webp"],
+    images: ["/images/optimized/saasforge/pic1.webp", "/images/optimized/saasforge/pic2.webp", "/images/optimized/saasforge/pic3.webp", "/images/optimized/saasforge/pic4.webp", "/images/optimized/saasforge/pic5.webp"],
     aspectRatio: "aspect-[4/5]",
     className: "mt-0 md:-mt-12",
     filterCategory: "WEB SOLUTION",
@@ -128,7 +128,7 @@ const projects = [
     title: "RESUME AI",
     category: "AI Resume Generator",
     tags: ["Frontend", "AI Integration", "PDF Generation"],
-    images: ["/images/optimized/resume-ai/pic1.webp", "/images/optimized/resume-ai/pic2.webp", "/images/optimized/resume-ai/pic3.webp", "/images/optimized/resume-ai/pic4.webp"],
+    images: ["/images/optimized/resume-ai/pic1.webp", "/images/optimized/resume-ai/pic2.webp", "/images/optimized/resume-ai/pic3.webp", "/images/optimized/resume-ai/pic4.webp", "/images/optimized/resume-ai/pic5.webp", "/images/optimized/resume-ai/pic6.webp"],
     aspectRatio: "aspect-[4/5]",
     filterCategory: "WEB SOLUTION",
     href: "/services/ai-agents-chatbot"
@@ -137,7 +137,7 @@ const projects = [
     title: "MINT CARE DENTISTRY",
     category: "Dentistry Website",
     tags: ["24/7 Chatbot", "Branding", "Full Stack Development"],
-    images: ["/images/optimized/mint-care-dentistry/pic1.webp", "/images/optimized/mint-care-dentistry/pic2.webp", "/images/optimized/mint-care-dentistry/pic3.webp", "/images/optimized/mint-care-dentistry/pic4.webp"],
+    images: ["/images/optimized/mint-care-dentistry/pic1.webp", "/images/optimized/mint-care-dentistry/pic2.webp", "/images/optimized/mint-care-dentistry/pic3.webp", "/images/optimized/mint-care-dentistry/pic4.webp", "/images/optimized/mint-care-dentistry/pic5.webp", "/images/optimized/mint-care-dentistry/pic6.webp"],
     aspectRatio: "aspect-[3/4]",
     className: "mt-0 md:mt-16",
     filterCategory: "DENTISTRY",
@@ -147,7 +147,7 @@ const projects = [
     title: "PORTFOLIO SITES",
     category: "Branding",
     tags: ["Portfolio Design", "Framer Motion", "Landing Page"],
-    images: ["/images/optimized/portfolio-sites/pic1.webp", "/images/optimized/portfolio-sites/pic2.webp", "/images/optimized/portfolio-sites/pic3.webp", "/images/optimized/portfolio-sites/pic4.webp"],
+    images: ["/images/optimized/portfolio-sites/pic1.webp", "/images/optimized/portfolio-sites/pic2.webp", "/images/optimized/portfolio-sites/pic3.webp", "/images/optimized/portfolio-sites/pic4.webp", "/images/optimized/portfolio-sites/pic5.webp", "/images/optimized/portfolio-sites/pic6.webp"],
     aspectRatio: "aspect-[4/5]",
     className: "mt-0 md:-mt-12",
     filterCategory: "BRANDING",
@@ -157,7 +157,7 @@ const projects = [
     title: "DEVCOLLAB",
     category: "SaaS",
     tags: ["Collaboration Tool", "Real-time Chat", "Project Management"],
-    images: ["/images/optimized/dev-collab/pic1.webp", "/images/optimized/dev-collab/pic2.webp", "/images/optimized/dev-collab/pic3.webp", "/images/optimized/dev-collab/pic4.webp"],
+    images: ["/images/optimized/dev-collab/pic1.webp", "/images/optimized/dev-collab/pic2.webp", "/images/optimized/dev-collab/pic3.webp", "/images/optimized/dev-collab/pic4.webp", "/images/optimized/dev-collab/pic5.webp"],
     aspectRatio: "aspect-[4/5]",
     filterCategory: "WEB SOLUTION",
     href: "https://dev-collab-frontend-alpha.vercel.app/"
@@ -166,7 +166,7 @@ const projects = [
     title: "MR DRAINER",
     category: "Plumbring service",
     tags: ["Branding", "Contact Flow", "Local SEO"],
-    images: ["/images/optimized/plumber/pic1.webp", "/images/optimized/plumber/pic2.webp", "/images/optimized/plumber/pic3.webp", "/images/optimized/plumber/pic4.webp"],
+    images: ["/images/optimized/plumber/pic1.webp", "/images/optimized/plumber/pic2.webp", "/images/optimized/plumber/pic3.webp", "/images/optimized/plumber/pic4.webp", "/images/optimized/plumber/pic5.webp", "/images/optimized/plumber/pic6.webp"],
     aspectRatio: "aspect-[3/4]",
     className: "mt-0 md:mt-16",
     filterCategory: "WEB SOLUTION",
@@ -186,7 +186,7 @@ export default function PortfolioPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black">
+    <div className="relative min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black">
       <Navbar />
 
       <main className="pt-48 pb-24 px-6 md:px-12">
@@ -197,8 +197,8 @@ export default function PortfolioPage() {
           </h2>
           <div className="relative w-[30vw] h-[18vw] md:w-[15vw] md:h-[8vw] overflow-hidden shadow-2xl bg-zinc-900 border border-white/5 shrink-0">
             <Image
-              src="/inn7-light.svg"
-              alt="Inno7 Logo"
+              src="/proud.svg"
+              alt="Inex Labs Logo"
               fill
               className="object-cover"
             />
