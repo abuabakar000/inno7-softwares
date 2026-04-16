@@ -53,9 +53,12 @@ export default function Navbar() {
             alt="Inex Labs Logo" 
             width={120} 
             height={40} 
-            className="h-10 w-auto object-contain"
-            style={{ width: 'auto', height: 'auto' }}
-            sizes="120px"
+            style={{ 
+              height: '40px', 
+              width: 'auto',
+              objectFit: 'contain'
+            }}
+            priority
           />
         </Link>
 

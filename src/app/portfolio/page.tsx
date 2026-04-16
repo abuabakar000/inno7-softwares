@@ -189,7 +189,7 @@ export default function PortfolioPage() {
     <div className="relative min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black">
       <Navbar />
 
-      <main className="pt-48 pb-24 px-6 md:px-12">
+      <main className="relative pt-48 pb-24 px-6 md:px-12">
         {/* WE ARE PROUD Header */}
         <div className="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-8 mb-16 md:mb-24 overflow-hidden">
           <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">

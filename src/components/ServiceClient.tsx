@@ -50,7 +50,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
     <div className="min-h-screen bg-black text-white font-inter selection:bg-white selection:text-black">
       <Navbar />
 
-      <main className="pt-12 md:pt-20 pb-20">
+      <main className="relative pt-12 md:pt-20 pb-20">
         {/* Section 1: Hero */}
         <section className="px-6 md:px-12 mb-16 md:mb-32 pt-6 md:pt-16 relative overflow-hidden">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-0 items-start">
