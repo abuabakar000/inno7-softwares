@@ -9,6 +9,7 @@ import { useContact } from "@/context/ContactContext";
 
 import { useState } from "react";
 import { sendEmail } from "@/app/actions/sendEmail";
+import SuccessToast from "@/components/SuccessToast";
 
 const socialLinks = [
   { icon: Instagram, href: "#" },
@@ -54,6 +55,7 @@ export default function ContactPage() {
   const { openContact } = useContact();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -69,6 +71,7 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
     
     try {
       const result = await sendEmail(formData);
@@ -76,9 +79,12 @@ export default function ContactPage() {
         setIsSuccess(true);
         setFormData({ name: "", phone: "", email: "", message: "" });
         setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        setErrorMessage(result.error || "Failed to send message. Please try again.");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Submission failed:", error);
+      setErrorMessage(error.message || "An unexpected error occurred.");
     } finally {
       setIsSubmitting(false);
     }
@@ -216,19 +222,17 @@ export default function ContactPage() {
                   className={isSuccess ? "bg-green-500/20" : ""}
                 />
               </div>
-              {isSuccess && (
-                <motion.p 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-sm font-medium text-white/60 tracking-widest uppercase"
-                >
-                  Thank you! We&apos;ll be in touch shortly.
-                </motion.p>
-              )}
             </div>
           </motion.form>
         </div>
       </main>
+
+      <SuccessToast 
+        show={isSuccess} 
+        onClose={() => setIsSuccess(false)} 
+        message="Your inquiry has been received. We'll be in touch shortly."
+      />
+
       <Footer />
     </div>
   );

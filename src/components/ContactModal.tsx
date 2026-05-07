@@ -11,6 +11,7 @@ interface ContactModalProps {
 }
 
 import { sendEmail } from "@/app/actions/sendEmail";
+import SuccessToast from "./SuccessToast";
 
 function ContactInput({ 
   label, 
@@ -49,6 +50,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [mounted, setMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -68,6 +70,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
     
     try {
       const result = await sendEmail(formData);
@@ -78,9 +81,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           setIsSuccess(false);
           onClose();
         }, 3000);
+      } else {
+        setErrorMessage(result.error || "Failed to send message.");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Submission failed:", error);
+      setErrorMessage(error.message || "An unexpected error occurred.");
     } finally {
       setIsSubmitting(false);
     }
@@ -198,18 +204,24 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     </svg>
                   </button>
                 </div>
-                {isSuccess && (
+                {errorMessage && (
                   <motion.p 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-[10px] font-bold text-black/40 tracking-widest uppercase"
+                    className="text-[10px] font-bold text-red-600 tracking-widest uppercase"
                   >
-                    Thank you! We&apos;ll be in touch shortly.
+                    {errorMessage}
                   </motion.p>
                 )}
               </form>
             </div>
           </motion.div>
+
+          <SuccessToast 
+            show={isSuccess} 
+            onClose={() => setIsSuccess(false)} 
+            message="Message sent! We'll talk soon."
+          />
         </>
       )}
     </AnimatePresence>,

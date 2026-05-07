@@ -4,6 +4,10 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+if (!process.env.RESEND_API_KEY) {
+  console.warn("RESEND_API_KEY is not set in environment variables");
+}
+
 export async function sendEmail(formData: {
   name: string;
   email: string;
@@ -11,6 +15,10 @@ export async function sendEmail(formData: {
   message: string;
 }) {
   try {
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error("Email service is not configured (API Key missing)");
+    }
+
     const { data, error } = await resend.emails.send({
       from: 'Inex Labs <notifications@contact.inexlabs.com>',
       to: ['hello@inexlabs.com'],
