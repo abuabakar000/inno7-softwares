@@ -54,20 +54,19 @@ export default function Footer() {
         </div>
       </footer>
 
-      {/* Floating Action Buttons - Hidden on Mobile to avoid overlap with MobileNav */}
-      <div className="fixed bottom-8 right-8 flex-col gap-4 z-50 hidden lg:flex">
-        <button className="w-14 h-14 bg-zinc-900/80 backdrop-blur-md rounded-full border border-white/10 flex items-center justify-center hover:bg-zinc-800 transition-colors shadow-2xl group">
-          <div className="flex gap-1">
-            <div className="w-1 h-1 bg-white rounded-full group-hover:scale-125 transition-transform" />
-            <div className="w-1 h-1 bg-white rounded-full group-hover:scale-125 transition-transform delay-75" />
-            <div className="w-1 h-1 bg-white rounded-full group-hover:scale-125 transition-transform delay-150" />
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
+        <a 
+          href="tel:+16393876511" 
+          className="group h-14 w-14 md:hover:w-[180px] bg-white text-black rounded-full flex items-center justify-center md:justify-end transition-all duration-500 ease-[0.22,1,0.36,1] shadow-2xl overflow-hidden px-4 relative border border-black/5"
+        >
+          <div className="absolute left-6 hidden md:flex items-center whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0">
+            <span className="text-[11px] font-black tracking-widest">+1 639 387 6511</span>
           </div>
-        </button>
-        <button className="w-14 h-14 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 active:scale-95 transition-all shadow-2xl">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="relative z-10 transition-transform group-hover:scale-110">
             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
           </svg>
-        </button>
+        </a>
       </div>
     </>
   );

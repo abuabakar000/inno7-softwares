@@ -7,6 +7,9 @@ import Footer from "@/components/Footer";
 import AgencyButton from "@/components/AgencyButton";
 import { useContact } from "@/context/ContactContext";
 
+import { useState } from "react";
+import { sendEmail } from "@/app/actions/sendEmail";
+
 const socialLinks = [
   { icon: Instagram, href: "#" },
   { icon: Facebook, href: "#" },
@@ -14,7 +17,21 @@ const socialLinks = [
   { icon: Globe, href: "#", name: "Dribbble" },
 ];
 
-function ContactInput({ label, placeholder, required = false }: { label: string; placeholder: string; required?: boolean }) {
+function ContactInput({ 
+  label, 
+  placeholder, 
+  name, 
+  value, 
+  onChange, 
+  required = false 
+}: { 
+  label: string; 
+  placeholder: string; 
+  name: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean 
+}) {
   return (
     <div className="flex flex-col gap-4 group">
       <span className="text-[12px] font-medium text-zinc-400 tracking-tight">
@@ -22,6 +39,10 @@ function ContactInput({ label, placeholder, required = false }: { label: string;
       </span>
       <input
         type="text"
+        name={name}
+        value={value}
+        onChange={onChange}
+        required={required}
         placeholder={placeholder}
         className="bg-transparent border-b border-white/20 py-2 text-base md:text-xl lg:text-2xl font-thin tracking-tighter uppercase placeholder:text-white/40 focus:outline-none focus:border-white transition-colors w-full"
       />
@@ -31,6 +52,38 @@ function ContactInput({ label, placeholder, required = false }: { label: string;
 
 export default function ContactPage() {
   const { openContact } = useContact();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      const result = await sendEmail(formData);
+      if (result.success) {
+        setIsSuccess(true);
+        setFormData({ name: "", phone: "", email: "", message: "" });
+        setTimeout(() => setIsSuccess(false), 5000);
+      }
+    } catch (error) {
+      console.error("Submission failed:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
       <Navbar />
@@ -63,7 +116,7 @@ export default function ContactPage() {
           >
             {/* Glassmorphic Card */}
             <div className="bg-white/[0.03] backdrop-blur-3xl p-10 md:p-14 rounded-[2rem] border border-white/10 shadow-2xl transition-all duration-700 group-hover:border-white/20">
-              
+
               <div className="flex flex-col gap-12">
                 {/* Email Section */}
                 <div className="flex flex-col gap-4 group/item">
@@ -74,8 +127,8 @@ export default function ContactPage() {
                     <a href="mailto:office@inexlabs.com" className="text-[13px] md:text-base font-normal tracking-tight uppercase text-white/90 hover:text-white transition-all duration-500">
                       office@inexlabs.com
                     </a>
-                    <a href="mailto:support@inexlabs.com" className="text-[13px] md:text-base font-normal tracking-tight uppercase text-white/90 hover:text-white transition-all duration-500">
-                      support@inexlabs.com
+                    <a href="mailto:hello@inexlabs.com" className="text-[13px] md:text-base font-normal tracking-tight uppercase text-white/90 hover:text-white transition-all duration-500">
+                      hello@inexlabs.com
                     </a>
                   </div>
                   <div className="w-8 h-[1px] bg-white/20 group-hover/item:w-12 transition-all duration-500" />
@@ -86,15 +139,20 @@ export default function ContactPage() {
                   <span className="text-[12px] font-medium text-zinc-400 uppercase tracking-[0.2em]">
                     (Phone)
                   </span>
-                  <a href="tel:+17867447141" className="text-xl md:text-2xl font-thin tracking-tighter uppercase text-white/90 hover:text-white transition-all duration-500">
-                    +1 786 744 7141
+                  <a href="tel:+16393876511" className="text-xl md:text-2xl font-thin tracking-tighter uppercase text-white/90 hover:text-white transition-all duration-500">
+                    +1 639 387 6511
                   </a>
                   <div className="w-8 h-[1px] bg-white/20 group-hover/item:w-12 transition-all duration-500" />
                 </div>
 
                 {/* Branding Accent */}
-                <div className="pt-8 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
-                   <div className="text-[10px] font-black tracking-[0.5em] text-white uppercase">INEX LABS</div>
+                <div className="pt-8 group-hover:scale-105 transition-transform duration-700">
+                  <div className="relative inline-block">
+                    <div className="text-[11px] font-black tracking-[0.7em] bg-gradient-to-r from-white via-white/50 to-white bg-clip-text text-transparent uppercase py-1 border-y border-white/5">
+                      INEX LABS
+                    </div>
+                    <div className="absolute -inset-1 bg-white/5 blur-xl -z-10 group-hover:bg-white/10 transition-colors" />
+                  </div>
                 </div>
               </div>
 
@@ -104,34 +162,75 @@ export default function ContactPage() {
           </motion.div>
 
           {/* Right Form */}
-          <motion.div
+          <motion.form
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="w-full lg:w-2/3 flex flex-col gap-12"
           >
-            <ContactInput label="Name" placeholder="SIRIUS BLACK" />
-            <ContactInput label="Phone" placeholder="+1 312 340 0323" required />
-            <ContactInput label="Email" placeholder="SIRIUSBLACK@MAIL.COM" />
+            <ContactInput 
+              label="Name" 
+              placeholder="SIRIUS BLACK" 
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <ContactInput 
+              label="Phone" 
+              placeholder="+1 312 340 0323" 
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required 
+            />
+            <ContactInput 
+              label="Email" 
+              placeholder="SIRIUSBLACK@MAIL.COM" 
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
 
             <div className="flex flex-col gap-4 pt-4">
               <span className="text-[12px] font-medium text-zinc-400 uppercase tracking-tight">
                 (Your Message)
               </span>
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
                 placeholder="A BRIEF ABOUT YOUR PROJECT..."
                 rows={1}
-                className="bg-transparent border-b border-white/20 py-2 text-base md:text-xl lg:text-2xl font-thin tracking-tighter uppercase text-white placeholder:text-white/10 focus:outline-none focus:border-white transition-colors w-full resize-none min-h-[80px]"
+                className="bg-transparent border-b border-white/20 py-2 text-base md:text-xl lg:text-2xl font-thin tracking-tighter uppercase text-white placeholder:text-white/40 focus:outline-none focus:border-white transition-colors w-full resize-none min-h-[80px]"
               />
             </div>
 
-            <div className="pt-8">
-              <AgencyButton text="SEND MESSAGE" onClick={() => console.log('Sending message...')} />
+            <div className="pt-8 flex flex-col gap-4">
+              <div className="relative inline-block">
+                <AgencyButton 
+                  text={isSubmitting ? "SENDING..." : isSuccess ? "MESSAGE SENT!" : "SEND MESSAGE"} 
+                  className={isSuccess ? "bg-green-500/20" : ""}
+                />
+              </div>
+              {isSuccess && (
+                <motion.p 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-sm font-medium text-white/60 tracking-widest uppercase"
+                >
+                  Thank you! We&apos;ll be in touch shortly.
+                </motion.p>
+              )}
             </div>
-          </motion.div>
+          </motion.form>
         </div>
       </main>
       <Footer />
     </div>
   );
 }
+

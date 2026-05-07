@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, ClipboardList, MoreHorizontal, X, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Phone, ClipboardList, X, ChevronRight, ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 import { serviceCategories } from './MegaMenu';
 import { useContact } from '@/context/ContactContext';
@@ -78,19 +78,10 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
           </button>
 
           {/* Phone Icon */}
-          <a href="tel:#" className="text-white/80 hover:text-white transition-colors">
+          <a href="tel:+16393876511" className="text-white/80 hover:text-white transition-colors">
             <Phone size={20} strokeWidth={1.5} />
           </a>
         </motion.div>
-
-        {/* More Button */}
-        <motion.button
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          className="bg-zinc-900/90 backdrop-blur-xl border border-white/10 p-4 rounded-full text-white/80 hover:text-white shadow-2xl"
-        >
-          <MoreHorizontal size={20} strokeWidth={1.5} />
-        </motion.button>
       </div>
 
       {/* Full Screen Menu Overlay */}

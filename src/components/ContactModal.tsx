@@ -10,7 +10,23 @@ interface ContactModalProps {
   onClose: () => void;
 }
 
-function ContactInput({ label, placeholder, required = false }: { label: string; placeholder: string; required?: boolean }) {
+import { sendEmail } from "@/app/actions/sendEmail";
+
+function ContactInput({ 
+  label, 
+  placeholder, 
+  name, 
+  value, 
+  onChange, 
+  required = false 
+}: { 
+  label: string; 
+  placeholder: string; 
+  name: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean 
+}) {
   return (
     <div className="group relative flex flex-col gap-2">
       <span className="text-[12px] font-medium text-zinc-500 uppercase tracking-tight">
@@ -18,6 +34,10 @@ function ContactInput({ label, placeholder, required = false }: { label: string;
       </span>
       <input
         type="text"
+        name={name}
+        value={value}
+        onChange={onChange}
+        required={required}
         placeholder={placeholder}
         className="bg-transparent border-b border-black py-1.5 text-base md:text-lg lg:text-xl font-bold tracking-tighter uppercase placeholder:text-zinc-200 focus:outline-none focus:border-black transition-colors w-full"
       />
@@ -27,10 +47,44 @@ function ContactInput({ label, placeholder, required = false }: { label: string;
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [mounted, setMounted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: ""
+  });
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      const result = await sendEmail(formData);
+      if (result.success) {
+        setIsSuccess(true);
+        setFormData({ name: "", phone: "", email: "", message: "" });
+        setTimeout(() => {
+          setIsSuccess(false);
+          onClose();
+        }, 3000);
+      }
+    } catch (error) {
+      console.error("Submission failed:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   // Prevent scroll when modal is open
   useEffect(() => {
@@ -87,16 +141,41 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
             {/* Form Content */}
             <div className="flex-1 flex flex-col justify-center w-full px-6 md:px-12 pb-12">
-              <div className="flex flex-col gap-8">
-                <ContactInput label="(Name)" placeholder="SIRIUS BLACK" />
-                <ContactInput label="(Phone)" placeholder="+1 312 340 0323" required />
-                <ContactInput label="(Email)" placeholder="SIRIUSBLACK@MAIL.COM" />
+              <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+                <ContactInput 
+                  label="(Name)" 
+                  placeholder="SIRIUS BLACK" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+                <ContactInput 
+                  label="(Phone)" 
+                  placeholder="+1 639 387 6511" 
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required 
+                />
+                <ContactInput 
+                  label="(Email)" 
+                  placeholder="HELLO@INEXLABS.COM" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
                 
                 <div className="flex flex-col gap-2">
                   <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
                     (Your Message)
                   </span>
                   <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     placeholder="A BRIEF ABOUT YOUR PROJECT..."
                     rows={1}
                     className="bg-transparent border-b border-black py-1.5 text-base md:text-lg lg:text-xl font-bold tracking-tighter uppercase placeholder:text-zinc-200 focus:outline-none focus:border-black transition-colors w-full resize-none min-h-[60px]"
@@ -105,17 +184,30 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-4 mt-4">
-                  <button className="bg-black text-white px-10 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-xl">
-                    Send Message
+                  <button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-black text-white px-10 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-xl disabled:opacity-50"
+                  >
+                    {isSubmitting ? "SENDING..." : isSuccess ? "MESSAGE SENT!" : "Send Message"}
                   </button>
-                  <button className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl group">
+                  <button type="submit" disabled={isSubmitting} className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl group disabled:opacity-50">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
                       <line x1="5" y1="12" x2="19" y2="12" />
                       <polyline points="12 5 19 12 12 19" />
                     </svg>
                   </button>
                 </div>
-              </div>
+                {isSuccess && (
+                  <motion.p 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-[10px] font-bold text-black/40 tracking-widest uppercase"
+                  >
+                    Thank you! We&apos;ll be in touch shortly.
+                  </motion.p>
+                )}
+              </form>
             </div>
           </motion.div>
         </>
