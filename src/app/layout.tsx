@@ -8,7 +8,7 @@ const inter = Inter({
   weight: ["100", "200", "300", "400", "700", "800", "900"],
 });
 
-const SITE_URL = "https://inexlabs.com";
+const SITE_URL = "https://www.inexlabs.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

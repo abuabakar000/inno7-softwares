@@ -26,12 +26,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${cleanTitle} Services — Inex Labs`,
     description: data.heroDescription,
     alternates: {
-      canonical: `https://inexlabs.com/services/${slug}`,
+      canonical: `https://www.inexlabs.com/services/${slug}`,
     },
     openGraph: {
       title: `${cleanTitle} Services — Inex Labs`,
       description: data.heroDescription,
-      url: `https://inexlabs.com/services/${slug}`,
+      url: `https://www.inexlabs.com/services/${slug}`,
       type: "website",
     },
   };

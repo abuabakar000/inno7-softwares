@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SERVICES_DATA } from "@/data/services";
 
-const SITE_URL = "https://inexlabs.com";
+const SITE_URL = "https://www.inexlabs.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages

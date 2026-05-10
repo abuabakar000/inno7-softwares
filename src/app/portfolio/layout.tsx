@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Explore Inex Labs' portfolio of premium digital projects — from AI-powered platforms and SaaS products to restaurant websites and cleaning service apps. See how we build different.",
   alternates: {
-    canonical: "https://inexlabs.com/portfolio",
+    canonical: "https://www.inexlabs.com/portfolio",
   },
   openGraph: {
     title: "Portfolio — Our Work & Case Studies | Inex Labs",
     description:
       "Explore our portfolio of premium digital projects — AI platforms, SaaS products, e-commerce stores, and more.",
-    url: "https://inexlabs.com/portfolio",
+    url: "https://www.inexlabs.com/portfolio",
     type: "website",
   },
 };

@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/", "/actions/"],
       },
     ],
-    sitemap: "https://inexlabs.com/sitemap.xml",
+    sitemap: "https://www.inexlabs.com/sitemap.xml",
   };
 }
