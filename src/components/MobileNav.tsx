@@ -14,7 +14,12 @@ interface MobileNavProps {
 export default function MobileNav({ navLinks }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
-  const { openContact } = useContact();
+  const { openContact, setIsMenuOpen } = useContact();
+
+  const toggleMenu = (open: boolean) => {
+    setIsOpen(open);
+    setIsMenuOpen(open);
+  };
 
   const menuVariants: any = {
     closed: {
@@ -60,7 +65,7 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
           {/* Custom 2-line Hamburger */}
           <button
             onClick={() => {
-              setIsOpen(true);
+              toggleMenu(true);
               setActiveSubMenu(null);
             }}
             className="flex flex-col gap-1.5 items-start group"
@@ -108,7 +113,7 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
                 <span className="text-[10px] font-black tracking-[0.4em] text-red-600 uppercase">Navigations</span>
               )}
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={() => toggleMenu(false)}
                 className="text-white/60 hover:text-white transition-colors"
               >
                 <X size={32} strokeWidth={1} />
@@ -147,7 +152,7 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
                           <button
                             onClick={() => {
                               openContact();
-                              setIsOpen(false);
+                              toggleMenu(false);
                             }}
                             className="text-4xl font-thin tracking-tighter text-white hover:text-red-500 transition-colors uppercase block py-2 text-left"
                           >
@@ -156,7 +161,7 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
                         ) : (
                           <Link
                             href={link.href}
-                            onClick={() => setIsOpen(false)}
+                            onClick={() => toggleMenu(false)}
                             className="text-4xl font-thin tracking-tighter text-white hover:text-red-500 transition-colors uppercase block py-2"
                           >
                             {link.name}
@@ -188,7 +193,7 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
                       >
                         <Link
                           href={cat.href}
-                          onClick={() => setIsOpen(false)}
+                          onClick={() => toggleMenu(false)}
                           className="flex flex-col gap-1 group py-2"
                         >
                           <span className="text-xl font-thin tracking-tight text-white/80 group-hover:text-white transition-colors uppercase">

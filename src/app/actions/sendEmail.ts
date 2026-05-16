@@ -21,7 +21,7 @@ export async function sendEmail(formData: {
 
     const { data, error } = await resend.emails.send({
       from: 'Inex Labs <notifications@contact.inexlabs.com>',
-      to: ['hello@inexlabs.com'],
+      to: ['office@inexlabs.com'],
       subject: `New Contact Form Submission from ${formData.name}`,
       replyTo: formData.email,
       html: `

@@ -133,9 +133,22 @@ export default function ContactPage() {
                     <a href="mailto:office@inexlabs.com" className="text-[13px] md:text-base font-normal tracking-tight uppercase text-white/90 hover:text-white transition-all duration-500">
                       office@inexlabs.com
                     </a>
-                    <a href="mailto:hello@inexlabs.com" className="text-[13px] md:text-base font-normal tracking-tight uppercase text-white/90 hover:text-white transition-all duration-500">
-                      hello@inexlabs.com
-                    </a>
+                  </div>
+                  <div className="w-8 h-[1px] bg-white/20 group-hover/item:w-12 transition-all duration-500" />
+                </div>
+
+                {/* Working Hours Section */}
+                <div className="flex flex-col gap-4 group/item">
+                  <span className="text-[12px] font-medium text-zinc-400 uppercase tracking-[0.2em]">
+                    (Working Hours)
+                  </span>
+                  <div className="flex flex-col gap-1">
+                    <p className="text-[13px] md:text-base font-normal tracking-tight uppercase text-white/90">
+                      Mon — Sat: 8 AM — 4 PM
+                    </p>
+                    <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
+                      Canadian Time (EST/CST)
+                    </p>
                   </div>
                   <div className="w-8 h-[1px] bg-white/20 group-hover/item:w-12 transition-all duration-500" />
                 </div>
