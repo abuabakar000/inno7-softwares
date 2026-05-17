@@ -43,9 +43,11 @@ export default function Footer() {
           {/* Single-line Bottom Bar */}
           <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-y-6 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500">
             {/* Left: Branding & Legal */}
-            <div className="flex items-center gap-8">
+            <div className="flex flex-wrap items-center gap-4 md:gap-8">
               <span className="text-zinc-400">© 2026 INEX LABS</span>
               <Link href="/privacy" className="hover:text-white transition-colors">PRIVACY POLICY</Link>
+              <span className="text-zinc-800 hidden md:inline">|</span>
+              <Link href="/terms" className="hover:text-white transition-colors">TERMS & CONDITIONS</Link>
             </div>
 
             {/* Middle: Socials */}
