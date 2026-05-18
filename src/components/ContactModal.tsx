@@ -189,20 +189,25 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex items-center gap-4 mt-4">
-                  <button 
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-black text-white px-10 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-xl disabled:opacity-50"
-                  >
-                    {isSubmitting ? "SENDING..." : isSuccess ? "MESSAGE SENT!" : "Send Message"}
-                  </button>
-                  <button type="submit" disabled={isSubmitting} className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl group disabled:opacity-50">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </button>
+                <div className="flex flex-col gap-4 mt-4">
+                  <div className="flex items-center gap-4">
+                    <button 
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="bg-black text-white px-10 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-xl disabled:opacity-50"
+                    >
+                      {isSubmitting ? "SENDING..." : isSuccess ? "MESSAGE SENT!" : "Send Message"}
+                    </button>
+                    <button type="submit" disabled={isSubmitting} className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl group disabled:opacity-50">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </button>
+                  </div>
+                  <p className="text-[10px] leading-relaxed text-zinc-500 max-w-md mt-1">
+                    By providing your phone number, you agree to receive SMS messages from Inex Labs related to consultations, project updates, and customer support. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for assistance. View our <a href="https://inexlabs.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">Privacy Policy</a> and <a href="https://inexlabs.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">Terms & Conditions</a>.
+                  </p>
                 </div>
                 {errorMessage && (
                   <motion.p 

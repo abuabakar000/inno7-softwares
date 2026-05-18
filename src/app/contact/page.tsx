@@ -235,6 +235,9 @@ export default function ContactPage() {
                   className={isSuccess ? "bg-green-500/20" : ""}
                 />
               </div>
+              <p className="text-[11px] leading-relaxed text-zinc-500 mt-2 max-w-xl">
+                By providing your phone number, you agree to receive SMS messages from Inex Labs related to consultations, project updates, and customer support. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for assistance. View our <a href="https://inexlabs.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-300 transition-colors">Privacy Policy</a> and <a href="https://inexlabs.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-300 transition-colors">Terms & Conditions</a>.
+              </p>
             </div>
           </motion.form>
         </div>
