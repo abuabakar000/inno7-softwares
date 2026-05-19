@@ -55,7 +55,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     name: "",
     phone: "",
     email: "",
-    message: ""
+    message: "",
+    smsConsent: false
   });
 
   useEffect(() => {
@@ -63,8 +64,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target;
+    if (type === "checkbox") {
+      const checked = (e.target as HTMLInputElement).checked;
+      setFormData(prev => ({ ...prev, [name]: checked }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -76,7 +82,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       const result = await sendEmail(formData);
       if (result.success) {
         setIsSuccess(true);
-        setFormData({ name: "", phone: "", email: "", message: "" });
+        setFormData({ name: "", phone: "", email: "", message: "", smsConsent: false });
         setTimeout(() => {
           setIsSuccess(false);
           onClose();
@@ -188,6 +194,21 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   />
                 </div>
 
+                <div className="flex flex-col gap-2 mt-2">
+                  <label className="flex items-start gap-3 cursor-pointer group text-zinc-600 hover:text-black transition-colors">
+                    <input
+                      type="checkbox"
+                      name="smsConsent"
+                      checked={formData.smsConsent}
+                      onChange={handleChange}
+                      className="mt-1 w-4 h-4 rounded border-zinc-300 text-black focus:ring-black cursor-pointer accent-black shrink-0"
+                    />
+                    <span className="text-[11px] leading-relaxed select-none">
+                      I agree to receive SMS messages from Inex Labs regarding consultations, project updates, and customer support. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out and HELP for assistance. Consent is not a condition of purchase.
+                    </span>
+                  </label>
+                </div>
+
                 {/* Action Buttons */}
                 <div className="flex flex-col gap-4 mt-4">
                   <div className="flex items-center gap-4">
@@ -206,7 +227,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     </button>
                   </div>
                   <p className="text-[10px] leading-relaxed text-zinc-500 max-w-md mt-1">
-                    By providing your phone number, you agree to receive SMS messages from Inex Labs related to consultations, project updates, and customer support. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for assistance. View our <a href="https://inexlabs.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">Privacy Policy</a> and <a href="https://inexlabs.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">Terms & Conditions</a>.
+                    View our <a href="https://inexlabs.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">Privacy Policy</a> and <a href="https://inexlabs.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">Terms & Conditions</a>.
                   </p>
                 </div>
                 {errorMessage && (

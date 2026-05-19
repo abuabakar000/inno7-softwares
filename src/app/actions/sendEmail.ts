@@ -13,6 +13,7 @@ export async function sendEmail(formData: {
   email: string;
   phone: string;
   message: string;
+  smsConsent?: boolean;
 }) {
   try {
     if (!process.env.RESEND_API_KEY) {
@@ -41,6 +42,13 @@ export async function sendEmail(formData: {
           <div style="margin-top: 20px;">
             <p style="color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px;">Phone Number</p>
             <p style="font-size: 18px; margin-top: 0;">${formData.phone}</p>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <p style="color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px;">SMS Consent Given?</p>
+            <p style="font-size: 18px; margin-top: 0; color: ${formData.smsConsent ? '#4ade80' : '#f87171'}; font-weight: bold;">
+              ${formData.smsConsent ? 'YES, CONSENTED' : 'NO / NOT CHECKED'}
+            </p>
           </div>
 
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
