@@ -34,8 +34,8 @@ function ContactInput({
   required?: boolean 
 }) {
   return (
-    <div className="flex flex-col gap-4 group">
-      <span className="text-[12px] font-medium text-zinc-400 tracking-tight">
+    <div className="flex flex-col gap-2 md:gap-4 group">
+      <span className="text-[11px] md:text-[12px] font-medium text-zinc-400 tracking-tight">
         ({label}){required && "*"}
       </span>
       <input
@@ -45,7 +45,7 @@ function ContactInput({
         onChange={onChange}
         required={required}
         placeholder={placeholder}
-        className="bg-transparent border-b border-white/20 py-2 text-base md:text-xl lg:text-2xl font-thin tracking-tighter uppercase placeholder:text-white/40 focus:outline-none focus:border-white transition-colors w-full"
+        className="bg-transparent border-b border-white/20 py-1 md:py-2 text-base md:text-xl lg:text-2xl font-thin tracking-tighter uppercase placeholder:text-white/40 focus:outline-none focus:border-white transition-colors w-full"
       />
     </div>
   );
@@ -100,25 +100,25 @@ export default function ContactPage() {
     <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
       <Navbar />
 
-      <main className="pt-40 pb-32 px-6 md:px-12 relative overflow-hidden">
+      <main className="pt-24 md:pt-40 pb-16 md:pb-32 px-6 md:px-12 relative overflow-hidden">
         {/* Hero Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-32"
+          className="mb-12 md:mb-32"
         >
-          <h1 className="text-[10vw] md:text-[8vw] font-thin leading-[0.9] tracking-tight uppercase mb-8">
+          <h1 className="text-[10vw] md:text-[8vw] font-thin leading-[0.9] tracking-tight uppercase mb-4 md:mb-8">
             WANT A PROJECT<br />
             THAT WORKS?
           </h1>
-          <p className="text-xl md:text-2xl font-light text-zinc-400">
+          <p className="text-lg md:text-2xl font-light text-zinc-400">
             We&apos;re Here – Message or Call Us.
           </p>
         </motion.div>
 
         {/* Contact Grid */}
-        <div className="flex flex-col lg:flex-row gap-20 items-start">
+        <div className="flex flex-col lg:flex-row gap-10 md:gap-20 items-start">
           {/* Left Sidebar */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -127,12 +127,12 @@ export default function ContactPage() {
             className="w-full lg:w-1/3 group relative overflow-hidden"
           >
             {/* Glassmorphic Card */}
-            <div className="bg-white/[0.03] backdrop-blur-3xl p-10 md:p-14 rounded-[2rem] border border-white/10 shadow-2xl transition-all duration-700 group-hover:border-white/20">
+            <div className="bg-white/[0.03] backdrop-blur-3xl p-6 md:p-14 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 shadow-2xl transition-all duration-700 group-hover:border-white/20">
 
-              <div className="flex flex-col gap-12">
+              <div className="flex flex-col gap-6 md:gap-12">
                 {/* Email Section */}
-                <div className="flex flex-col gap-4 group/item">
-                  <span className="text-[12px] font-medium text-zinc-400 uppercase tracking-[0.2em]">
+                <div className="flex flex-col gap-2 md:gap-4 group/item">
+                  <span className="text-[11px] md:text-[12px] font-medium text-zinc-400 uppercase tracking-[0.2em]">
                     (Email)
                   </span>
                   <div className="flex flex-col gap-2">
@@ -144,8 +144,8 @@ export default function ContactPage() {
                 </div>
 
                 {/* Working Hours Section */}
-                <div className="flex flex-col gap-4 group/item">
-                  <span className="text-[12px] font-medium text-zinc-400 uppercase tracking-[0.2em]">
+                <div className="flex flex-col gap-2 md:gap-4 group/item">
+                  <span className="text-[11px] md:text-[12px] font-medium text-zinc-400 uppercase tracking-[0.2em]">
                     (Working Hours)
                   </span>
                   <div className="flex flex-col gap-1">
@@ -160,8 +160,8 @@ export default function ContactPage() {
                 </div>
 
                 {/* Phone Section */}
-                <div className="flex flex-col gap-4 group/item">
-                  <span className="text-[12px] font-medium text-zinc-400 uppercase tracking-[0.2em]">
+                <div className="flex flex-col gap-2 md:gap-4 group/item">
+                  <span className="text-[11px] md:text-[12px] font-medium text-zinc-400 uppercase tracking-[0.2em]">
                     (Phone)
                   </span>
                   <a href="tel:+16393876511" className="text-xl md:text-2xl font-thin tracking-tighter uppercase text-white/90 hover:text-white transition-all duration-500">
@@ -171,7 +171,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Branding Accent */}
-                <div className="pt-8 group-hover:scale-105 transition-transform duration-700">
+                <div className="pt-4 md:pt-8 group-hover:scale-105 transition-transform duration-700">
                   <div className="relative inline-block">
                     <div className="text-[11px] font-black tracking-[0.7em] bg-gradient-to-r from-white via-white/50 to-white bg-clip-text text-transparent uppercase py-1 border-y border-white/5">
                       INEX LABS
@@ -192,7 +192,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-full lg:w-2/3 flex flex-col gap-12"
+            className="w-full lg:w-2/3 flex flex-col gap-6 md:gap-12"
           >
             <ContactInput 
               label="Name" 
@@ -219,8 +219,8 @@ export default function ContactPage() {
               required
             />
 
-            <div className="flex flex-col gap-4 pt-4">
-              <span className="text-[12px] font-medium text-zinc-400 uppercase tracking-tight">
+            <div className="flex flex-col gap-2 pt-2 md:gap-4 md:pt-4">
+              <span className="text-[11px] md:text-[12px] font-medium text-zinc-400 uppercase tracking-tight">
                 (Your Message)
               </span>
               <textarea
@@ -230,7 +230,7 @@ export default function ContactPage() {
                 required
                 placeholder="A BRIEF ABOUT YOUR PROJECT..."
                 rows={1}
-                className="bg-transparent border-b border-white/20 py-2 text-base md:text-xl lg:text-2xl font-thin tracking-tighter uppercase text-white placeholder:text-white/40 focus:outline-none focus:border-white transition-colors w-full resize-none min-h-[80px]"
+                className="bg-transparent border-b border-white/20 py-1 md:py-2 text-base md:text-xl lg:text-2xl font-thin tracking-tighter uppercase text-white placeholder:text-white/40 focus:outline-none focus:border-white transition-colors w-full resize-none min-h-[60px] md:min-h-[80px]"
               />
             </div>
 
@@ -249,7 +249,7 @@ export default function ContactPage() {
               </label>
             </div>
 
-            <div className="pt-8 flex flex-col gap-4">
+            <div className="pt-4 md:pt-8 flex flex-col gap-4">
               <div className="relative inline-block">
                 <AgencyButton 
                   text={isSubmitting ? "SENDING..." : isSuccess ? "MESSAGE SENT!" : "SEND MESSAGE"} 
