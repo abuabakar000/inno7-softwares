@@ -56,20 +56,20 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className="relative z-10 flex items-center justify-between py-6 cursor-pointer group hover:opacity-80 transition-all px-4"
+        className="relative z-10 flex items-center justify-between py-4 md:py-6 cursor-pointer group hover:opacity-80 transition-all px-2 md:px-4"
       >
-        <h3 className="text-[15px] md:text-base font-medium tracking-tight text-white group-hover:translate-x-2 transition-transform">
+        <h3 className="text-sm sm:text-[15px] md:text-base font-medium tracking-tight text-white group-hover:translate-x-2 transition-transform">
           {question}
         </h3>
         <div className={`transition-transform duration-500 ${isOpen ? "rotate-45" : ""}`}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-40">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-40 w-4 h-4 md:w-5 md:h-5">
             <line x1="7" y1="17" x2="17" y2="7" />
             <polyline points="7 7 17 7 17 17" />
           </svg>
         </div>
       </div>
-      <div className={`relative z-10 px-4 overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-40 pb-8" : "max-h-0"}`}>
-        <p className="text-[15px] md:text-base text-zinc-400 leading-relaxed max-w-2xl">
+      <div className={`relative z-10 px-2 md:px-4 overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-40 pb-5 md:pb-8" : "max-h-0"}`}>
+        <p className="text-xs sm:text-[14px] md:text-base text-zinc-400 leading-relaxed max-w-2xl">
           {answer}
         </p>
       </div>
@@ -118,10 +118,10 @@ function ServiceTile({
       {/* Header */}
       <div
         onClick={onClick}
-        className="relative z-10 flex items-center justify-between py-6 md:py-8 cursor-pointer px-4"
+        className="relative z-10 flex items-center justify-between py-4 md:py-8 cursor-pointer px-2 md:px-4"
       >
-        <div className="flex items-center gap-4 md:gap-8">
-          <div className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-500 ${isOpen ? "rotate-180 text-white" : "text-zinc-500 group-hover:text-white"}`}>
+        <div className="flex items-center gap-3 md:gap-8">
+          <div className={`w-6 h-6 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-500 ${isOpen ? "rotate-180 text-white" : "text-zinc-500 group-hover:text-white"}`}>
             <svg
               width="24"
               height="24"
@@ -131,7 +131,7 @@ function ServiceTile({
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="md:w-8 md:h-8"
+              className="w-4 h-4 md:w-8 md:h-8"
             >
               {isOpen ? (
                 <polyline points="6 9 12 15 18 9" />
@@ -143,16 +143,16 @@ function ServiceTile({
               )}
             </svg>
           </div>
-          <h3 className={`font-light tracking-tight transition-all duration-300 uppercase ${isOpen ? "text-xl md:text-3xl lg:text-5xl text-white" : "text-xl md:text-4xl text-zinc-400 group-hover:text-white"}`}>
+          <h3 className={`font-light tracking-tight transition-all duration-300 uppercase ${isOpen ? "text-[16px] sm:text-xl md:text-3xl lg:text-5xl text-white" : "text-[16px] sm:text-xl md:text-4xl text-zinc-400 group-hover:text-white"}`}>
             {service.title}
           </h3>
         </div>
 
-        <div className="flex items-center gap-4 md:gap-8">
-          <span className={`text-xl md:text-2xl font-light transition-colors ${isOpen ? "text-white" : "text-zinc-500"}`}>
+        <div className="flex items-center gap-3 md:gap-8">
+          <span className={`text-base md:text-2xl font-light transition-colors ${isOpen ? "text-white" : "text-zinc-500"}`}>
             {String(index + 1).padStart(2, "0")}
           </span>
-          <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex items-center gap-1.5 md:gap-3">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <motion.div
                 key={i}
@@ -170,7 +170,7 @@ function ServiceTile({
                   ease: "easeInOut"
                 }}
                 style={{ transformOrigin: 'bottom' }}
-                className="w-[1px] h-4 bg-white shrink-0"
+                className="w-[1px] h-2.5 md:h-4 bg-white shrink-0"
               />
             ))}
           </div>
@@ -187,16 +187,16 @@ function ServiceTile({
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="relative z-10 overflow-hidden"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 px-4 pb-8 pt-2">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 px-2 md:px-4 pb-6 md:pb-8 pt-2">
               {/* Left: Service Details & Tech Grid */}
-              <div className="lg:col-span-5 flex flex-col gap-8 py-2">
-                <div className="flex flex-col gap-6">
-                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 mb-2">Core Technologies</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+              <div className="lg:col-span-5 flex flex-col gap-6 md:gap-8 py-2">
+                <div className="flex flex-col gap-4 md:gap-6">
+                  <h4 className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 mb-2">Core Technologies</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3 sm:gap-y-6">
                     {service.subServices.map((sub) => (
-                      <div key={sub} className="flex items-center gap-3 group/sub cursor-pointer">
+                      <div key={sub} className="flex items-center gap-2 md:gap-3 group/sub cursor-pointer">
                         <div className="w-1.5 h-1.5 rounded-full border border-white/20 group-hover/sub:bg-white transition-all duration-300" />
-                        <span className="text-sm md:text-base text-zinc-300 font-light group-hover/sub:text-white transition-colors">
+                        <span className="text-xs md:text-base text-zinc-300 font-light group-hover/sub:text-white transition-colors">
                           {sub}
                         </span>
                       </div>
@@ -204,14 +204,14 @@ function ServiceTile({
                   </div>
                 </div>
 
-                <div className="mt-auto pt-8">
+                <div className="mt-auto pt-6 md:pt-8">
                   <AgencyButton text="VIEW SERVICE DETAILS" href={service.link} />
                 </div>
               </div>
 
               {/* Right: Digital Blueprint Dashboard (Bento Style) */}
               <div className="lg:col-span-7 h-full">
-                <div className="flex sm:grid sm:grid-cols-2 gap-4 overflow-x-auto sm:overflow-x-visible snap-x snap-mandatory no-scrollbar pb-4 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
+                <div className="flex sm:grid sm:grid-cols-2 gap-3 md:gap-4 overflow-x-auto sm:overflow-x-visible snap-x snap-mandatory no-scrollbar pb-4 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
                   {data?.capabilities.map((cap, i) => {
                     const Icon = ICON_MAP[cap.icon] || Rocket;
                     return (
@@ -220,19 +220,19 @@ function ServiceTile({
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: i * 0.05 + 0.2 }}
-                        className="relative min-w-[78vw] sm:min-w-0 snap-start group/cap p-5 md:p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-all duration-500 flex flex-col justify-between overflow-hidden sm:aspect-auto min-h-[160px] sm:min-h-0"
+                        className="relative min-w-[78vw] sm:min-w-0 snap-start group/cap p-4 md:p-6 rounded-xl md:rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-all duration-500 flex flex-col justify-between overflow-hidden sm:aspect-auto min-h-[130px] md:min-h-[160px] sm:min-h-0"
                       >
                         <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent opacity-0 group-hover/cap:opacity-100 transition-opacity duration-500" />
 
                         <div className="relative z-10 flex flex-col h-full">
-                          <div className="flex items-center gap-4 mb-4">
-                            <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-white/[0.03] flex items-center justify-center text-white/40 group-hover/cap:text-white group-hover/cap:scale-110 transition-all duration-500 border border-white/5 shrink-0">
-                              <Icon strokeWidth={1} size={20} />
+                          <div className="flex items-center gap-3 md:gap-4 mb-4">
+                            <div className="w-7 h-7 md:w-10 md:h-10 rounded-xl bg-white/[0.03] flex items-center justify-center text-white/40 group-hover/cap:text-white group-hover/cap:scale-110 transition-all duration-500 border border-white/5 shrink-0">
+                              <Icon strokeWidth={1} size={16} className="md:w-5 md:h-5" />
                             </div>
-                            <h5 className="text-[14px] md:text-lg font-medium uppercase tracking-tight text-white/90 leading-tight">{cap.title}</h5>
+                            <h5 className="text-[12px] sm:text-[14px] md:text-lg font-medium uppercase tracking-tight text-white/90 leading-tight">{cap.title}</h5>
                           </div>
 
-                          <p className="text-[12px] md:text-sm text-zinc-400 leading-relaxed font-light group-hover/cap:text-zinc-300 transition-colors">
+                          <p className="text-[11px] sm:text-[12px] md:text-sm text-zinc-400 leading-relaxed font-light group-hover/cap:text-zinc-300 transition-colors">
                             {cap.description}
                           </p>
                         </div>
@@ -301,7 +301,7 @@ export default function Home() {
 
   const aiImageY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
   const aiImageScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.05, 1.1]);
-  const aiTextOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const aiTextOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.3, 1, 1, 0.3]);
 
 
   const services: Service[] = [
@@ -443,7 +443,7 @@ export default function Home() {
                   src={`/client${i}.png`}
                   alt={`Client ${i}`}
                   fill
-                  className="px-1 object-cover"
+                  className="object-cover"
                   sizes="48px"
                 />
               </div>
@@ -457,7 +457,7 @@ export default function Home() {
                 </svg>
               ))}
             </div>
-            <p className="text-[12px] text-zinc-400 font-medium tracking-tight whitespace-nowrap">Trusted by 150+ clients</p>
+            <p className="text-[12px] text-zinc-400 font-medium tracking-tight whitespace-nowrap">Trusted by clients</p>
           </div>
         </div>
 
@@ -541,25 +541,25 @@ export default function Home() {
       </main>
 
       {/* Portfolio Section */}
-      <section className="py-16 md:py-24 px-6 md:px-12 bg-black border-t border-white/10">
-        <div className="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-8 mb-16 md:mb-24 overflow-hidden">
-          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
+      <section className="py-16 px-4 md:px-12 bg-black border-t border-white/10">
+        <div className="flex flex-nowrap items-center gap-x-2 sm:gap-x-3 md:gap-8 mb-16 md:mb-24 overflow-hidden">
+          <h2 className="text-[8.5vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
             WE ARE
           </h2>
-          <div className="relative w-[30vw] h-[18vw] md:w-[15vw] md:h-[8vw] overflow-hidden shadow-2xl bg-zinc-900 border border-white/10 shrink-0">
+          <div className="relative w-[18vw] h-[11vw] md:w-[15vw] md:h-[8vw] rounded-none overflow-hidden shadow-2xl bg-zinc-900 border border-white/10 shrink-0">
             <Image
               src="/proud.svg"
               alt="Inex Labs Logo"
               fill
-              className="object-cover"
-              sizes="(max-width: 768px) 30vw, 15vw"
+              className="object-cover rounded-none"
+              sizes="(max-width: 768px) 18vw, 15vw"
             />
           </div>
-          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
+          <h2 className="text-[8.5vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
             PROUD
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-12 md:gap-8">
           <ProjectCard
             title="THE GOOD BURGER"
             category="Restaurant"
@@ -621,7 +621,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 md:py-32 px-6 md:px-12 bg-black border-t border-white/10">
+      <section className="py-16 md:py-32 px-4 md:px-12 bg-black border-t border-white/10">
         <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight mb-10 md:mb-20 opacity-90 leading-none">
           SERVICES
         </h2>
@@ -654,41 +654,45 @@ export default function Home() {
               src="/ai-vision.png"
               alt="AI Perspective"
               fill
-              className="object-cover opacity-80 lg:opacity-60 grayscale lg:brightness-[0.7]"
+              className="object-cover opacity-25 sm:opacity-40 lg:opacity-60 grayscale brightness-[0.25] sm:brightness-[0.4] lg:brightness-[0.7]"
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </motion.div>
           {/* Gradients to blend */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10" />
-          <div className="absolute inset-0 bg-black/40 lg:bg-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-black z-10" />
+          <div className="absolute inset-0 bg-black/60 lg:bg-transparent z-10" />
           <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-transparent to-black z-10" />
         </div>
 
         {/* Content Right */}
-        <div className="w-full lg:w-1/2 lg:ml-auto px-6 md:px-12 lg:px-20 z-20 py-24 lg:py-16">
+        <div className="w-full lg:w-1/2 lg:ml-auto px-6 md:px-12 lg:px-20 z-20 py-16 lg:py-16">
           <motion.div
             style={{ opacity: aiTextOpacity }}
             className="w-full lg:max-w-2xl"
           >
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-8 md:gap-12">
               <div>
-                <h3 className="text-white text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight leading-none opacity-90">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-zinc-400">INTELLIGENT ECOSYSTEMS</span>
+                </div>
+                <h3 className="text-white text-[11vw] sm:text-[8vw] lg:text-[7vw] font-thin uppercase tracking-tight leading-none opacity-95">
                   AI Tools
                 </h3>
               </div>
 
-              <div className="space-y-10">
-                <h4 className="text-white text-[5vw] md:text-2xl font-light leading-[1.2] tracking-tight uppercase">
+              <div className="space-y-6 md:space-y-10">
+                <h4 className="text-white text-xl sm:text-2xl lg:text-3xl font-light leading-[1.3] tracking-tight uppercase">
                   Precision-engineered <span className="text-white font-medium">software solutions</span> and disruptive <span className="text-white font-medium">AI-integrated ecosystems</span>.
                 </h4>
 
-                <p className="text-zinc-300 text-[3.2vw] md:text-base font-normal leading-relaxed tracking-wider uppercase max-w-xl">
+                <p className="text-zinc-400 text-sm sm:text-base lg:text-lg font-light leading-relaxed tracking-normal max-w-xl">
                   Meticulously tailored to the absolute uniqueness and vision of your business. We build intelligent architectures that automate complexity, accelerate performance, and scale with your growth, ensuring a future-proof competitive advantage.
                 </p>
               </div>
 
-              <div className="flex items-center gap-4 pt-4">
+              <div className="flex items-center gap-4 pt-2 md:pt-4">
                 <AgencyButton text="DISCUSS THE PROJECT" onClick={openContact} />
               </div>
             </div>
@@ -697,12 +701,12 @@ export default function Home() {
       </section>
 
       {/* Testimonial & Stats Section moved from before AI Section */}
-      <section className="py-20 px-6 md:px-12 bg-black overflow-hidden relative border-t border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-24">
+      <section className="py-16 md:py-24 px-4 md:px-12 bg-black overflow-hidden relative border-t border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16">
             {/* Left: Project Preview Card */}
-            <div className="w-full lg:w-[45%] relative group">
-              <div className="relative aspect-[16/10] lg:aspect-[1.1/1] overflow-hidden shadow-3xl bg-zinc-900 border border-white/10 rounded-2xl h-full">
+            <div className="w-full lg:w-[38%] relative group">
+              <div className="relative aspect-[16/9] lg:aspect-[1.3/1] overflow-hidden shadow-2xl bg-zinc-900 border border-white/10 rounded-2xl">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={testimonialIndex}
@@ -717,7 +721,7 @@ export default function Home() {
                       alt="Project Preview"
                       fill
                       className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700"
-                      sizes="(max-width: 1024px) 100vw, 45vw"
+                      sizes="(max-width: 1024px) 100vw, 38vw"
                     />
                   </motion.div>
                 </AnimatePresence>
@@ -726,30 +730,30 @@ export default function Home() {
             </div>
 
             {/* Right: Testimonial Card */}
-            <div className="w-full lg:w-[55%] flex flex-col justify-between py-2">
+            <div className="w-full lg:w-[62%] flex flex-col justify-between py-1">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={testimonialIndex}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
+                  exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="relative"
                 >
                   {/* Minimalist Quote Mark */}
-                  <div className="absolute -top-8 -left-4 md:-top-12 md:-left-8 text-zinc-900 text-[100px] md:text-[180px] font-serif leading-none select-none -z-10 opacity-20">
+                  <div className="absolute -top-6 -left-3 md:-top-10 md:-left-6 text-zinc-900 text-[80px] md:text-[130px] font-serif leading-none select-none -z-10 opacity-20">
                     “
                   </div>
 
-                  <p className="text-lg md:text-2xl font-light text-zinc-300 leading-relaxed tracking-tight mb-8 max-w-2xl relative z-10">
+                  <p className="text-[15px] sm:text-[18px] md:text-xl font-light text-zinc-300 leading-relaxed tracking-tight mb-5 max-w-2xl relative z-10">
                     {testimonials[testimonialIndex].quote}
                   </p>
 
-                  <div className="flex flex-col gap-1">
-                    <span className="text-xs md:text-sm font-medium uppercase tracking-[0.2em] md:tracking-[0.3em] text-white">
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.25em] text-white">
                       {testimonials[testimonialIndex].author}
                     </span>
-                    <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500">
+                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em] text-zinc-500">
                       {testimonials[testimonialIndex].role}
                     </span>
                   </div>
@@ -757,25 +761,25 @@ export default function Home() {
               </AnimatePresence>
 
               {/* High-Impact Stats */}
-              <div className="pt-8 mt-10 border-t border-white/5 flex items-center justify-between lg:items-end gap-12">
+              <div className="pt-5 mt-6 border-t border-white/5 flex items-center justify-between lg:items-end gap-8">
                 <div>
-                  <h3 className="text-[12vw] md:text-[7vw] font-thin tracking-tighter text-white leading-none mb-2">
-                    100%
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-thin tracking-tighter text-white leading-none mb-1.5">
+                    {testimonials[testimonialIndex].stat}
                   </h3>
                   <p className="text-[9px] md:text-xs font-bold uppercase text-zinc-500 tracking-[0.3em]">
-                    Satisfied Clients
+                    {testimonials[testimonialIndex].statSub}
                   </p>
                 </div>
 
                 {/* Pagination Indicators - Minimalist Style */}
-                <div className="flex gap-4 pb-4">
+                <div className="flex gap-3 pb-2">
                   {testimonials.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => setTestimonialIndex(idx)}
-                      className="group flex flex-col gap-2"
+                      className="group flex flex-col gap-1.5"
                     >
-                      <div className={`h-[1px] transition-all duration-500 ${testimonialIndex === idx ? 'w-10 md:w-12 bg-white' : 'w-5 md:w-6 bg-white/20 group-hover:bg-white/40'}`} />
+                      <div className={`h-[1px] transition-all duration-500 ${testimonialIndex === idx ? 'w-8 md:w-10 bg-white' : 'w-4 md:w-5 bg-white/20 group-hover:bg-white/40'}`} />
                     </button>
                   ))}
                 </div>
@@ -786,7 +790,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 px-6 md:px-12 bg-black flex flex-col lg:flex-row gap-20">
+      <section className="py-16 md:py-32 px-4 md:px-12 bg-black flex flex-col lg:flex-row gap-12 lg:gap-20">
         <div className="hidden lg:block lg:w-1/3 group">
           <div className="relative h-full">
             <div className="absolute inset-0 bg-white/2 rounded-[2rem] -z-10 group-hover:bg-white/5 transition-colors duration-700" />
@@ -824,8 +828,8 @@ export default function Home() {
 
         {/* Right: FAQ Tiles */}
         <div className="lg:w-2/3 flex flex-col">
-          <h2 className="text-4xl md:text-5xl font-thin uppercase tracking-tight mb-16 opacity-90 leading-tight">
-            Frequently Asked<br />Questions And Answers
+          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight mb-10 md:mb-16 opacity-90 leading-none">
+            FAQ
           </h2>
 
           <div className="flex flex-col">

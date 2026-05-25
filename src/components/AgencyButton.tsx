@@ -36,21 +36,20 @@ export default function AgencyButton({
         repeat: Infinity,
         ease: "easeInOut"
       }}
-      className={`group flex items-center gap-4 bg-white rounded-full ${size === 'sm' ? 'px-6 py-2.5' : 'px-8 py-4'} transition-transform hover:scale-105 active:scale-95 cursor-pointer shadow-xl relative ${className}`}
+      className={`group flex items-center gap-3 md:gap-4 bg-white rounded-full ${size === 'sm' ? 'px-4 py-2 md:px-6 md:py-2.5' : 'px-6 py-3 md:px-8 md:py-4'} transition-transform hover:scale-105 active:scale-95 cursor-pointer shadow-xl relative ${className}`}
     >
-      <span className={`text-black ${size === 'sm' ? 'text-[9px]' : 'text-[10px]'} font-bold uppercase tracking-[0.2em] whitespace-nowrap flex items-center gap-2`}>
+      <span className={`text-black ${size === 'sm' ? 'text-[8px] md:text-[9px]' : 'text-[9px] md:text-[10px]'} font-bold uppercase tracking-[0.2em] whitespace-nowrap flex items-center gap-2`}>
         {text}
       </span>
-      <div className={`${size === 'sm' ? 'w-6 h-6' : 'w-8 h-8'} rounded-full bg-black flex items-center justify-center transition-transform group-hover:rotate-[-45deg] shrink-0`}>
+      <div className={`${size === 'sm' ? 'w-5 h-5 md:w-6 md:h-6' : 'w-7 h-7 md:w-8 md:h-8'} rounded-full bg-black flex items-center justify-center transition-transform group-hover:rotate-[-45deg] shrink-0`}>
         <svg 
-          width={size === 'sm' ? "14" : "18"} 
-          height={size === 'sm' ? "14" : "18"} 
           viewBox="0 0 24 24" 
           fill="none" 
           stroke="white" 
           strokeWidth="2.5" 
           strokeLinecap="round" 
           strokeLinejoin="round"
+          className={size === 'sm' ? 'w-3 h-3 md:w-[14px] md:h-[14px]' : 'w-3.5 h-3.5 md:w-[18px] md:h-[18px]'}
         >
           <line x1="5" y1="12" x2="19" y2="12" />
           <polyline points="12 5 19 12 12 19" />

@@ -111,7 +111,7 @@ export default function ProjectCard({
           <span className="text-zinc-700 text-[10px] font-bold uppercase tracking-widest">Image Coming Soon</span>
         </div>
       ) : (
-        <div className={`relative ${aspectRatio} overflow-hidden bg-zinc-950 mb-6 group-hover:shadow-2xl transition-shadow duration-500`}>
+        <div className={`relative ${aspectRatio} overflow-hidden bg-zinc-950 mb-2.5 md:mb-6 group-hover:shadow-2xl transition-shadow duration-500`}>
 
           {/* 1. Glassmorphism Ambient Glow */}
           <AnimatePresence>
@@ -211,17 +211,27 @@ export default function ProjectCard({
         </div>
       )}
 
-      <div className="flex justify-between items-start border-t border-white/10 pt-4">
-        <h3 className={`text-xl md:text-2xl font-black uppercase tracking-tighter ${isPlaceholder ? 'text-zinc-600' : ''}`}>
-          {title}
-        </h3>
-        <div className="text-right">
-          <p className={`text-[10px] font-bold uppercase tracking-widest mb-1 ${isPlaceholder ? 'text-zinc-400' : 'text-white'}`}>
+      <div className="flex flex-col md:flex-row justify-between items-start border-t border-white/10 pt-2.5 md:pt-4 gap-2 md:gap-4">
+        {/* Left Side: Title & Category (Stacked on mobile) */}
+        <div className="flex flex-col gap-1">
+          <h3 className={`text-[13.5px] sm:text-lg md:text-2xl font-black uppercase tracking-tighter leading-tight ${isPlaceholder ? 'text-zinc-600' : ''}`}>
+            {title}
+          </h3>
+          <p className={`text-[9px] sm:text-[10px] font-bold uppercase tracking-widest md:hidden ${isPlaceholder ? 'text-zinc-500' : 'text-white/60'}`}>
             {category}
           </p>
-          <div className={`flex flex-col text-[8px] uppercase tracking-widest font-bold ${isPlaceholder ? 'text-zinc-500 opacity-40' : 'text-zinc-500 opacity-60'}`}>
+        </div>
+
+        {/* Right Side: Category & Tags (Desktop stacked, mobile horizontal wrap tags) */}
+        <div className="flex flex-col md:items-end w-full md:w-auto">
+          {/* Category on Desktop only */}
+          <p className={`hidden md:block text-[10px] font-bold uppercase tracking-widest mb-1 ${isPlaceholder ? 'text-zinc-400' : 'text-white'}`}>
+            {category}
+          </p>
+          {/* Tags list */}
+          <div className={`flex flex-wrap md:flex-col md:items-end gap-x-2 gap-y-0.5 text-[8px] uppercase tracking-widest font-bold ${isPlaceholder ? 'text-zinc-500 opacity-40' : 'text-zinc-500 opacity-60'}`}>
             {tags.map((tag) => (
-              <span key={tag}>{tag}</span>
+              <span key={tag} className="whitespace-nowrap">{tag}</span>
             ))}
           </div>
         </div>

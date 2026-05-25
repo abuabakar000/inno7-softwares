@@ -50,33 +50,49 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
     <div className="min-h-screen bg-black text-white font-inter selection:bg-white selection:text-black">
       <Navbar />
 
-      <main className="relative pt-12 md:pt-20 pb-20">
+      <main className="relative pt-12 md:pt-20 pb-0 md:pb-20">
         {/* Section 1: Hero */}
-        <section className="px-6 md:px-12 mb-16 md:mb-32 pt-6 md:pt-16 relative overflow-hidden">
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-0 items-start">
+        <section className="px-4 md:px-12 mb-10 md:mb-32 pt-6 md:pt-16 relative overflow-hidden">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-0 items-start">
             {/* Left: Content (Overlaying) */}
-            <div className="flex flex-col gap-8 order-1 lg:order-1 pt-10 relative z-20">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-thin uppercase leading-[0.9] tracking-tighter text-white whitespace-pre-line reveal-text drop-shadow-2xl">
+            <div className="flex flex-col gap-6 md:gap-8 order-1 lg:order-1 pt-6 md:pt-10 relative z-20">
+              <h1 className="text-4xl md:text-7xl lg:text-8xl font-thin uppercase leading-[0.95] md:leading-[0.9] tracking-tighter text-white whitespace-pre-line reveal-text drop-shadow-2xl">
                 {data.title}
               </h1>
-              <p className="text-lg md:text-xl font-light leading-relaxed text-white/50 max-w-xl drop-shadow-lg">
+              <p className="text-sm sm:text-base md:text-xl font-light leading-relaxed text-white/50 max-w-xl drop-shadow-lg">
                 {data.heroDescription}
               </p>
-              <div className="pt-4">
+
+              {/* Mobile-Only Image (rendered between paragraph and button on mobile) */}
+              <div className="lg:hidden relative aspect-[4/3] w-full flex items-center justify-center z-0 my-4">
+                <div className="absolute inset-0 bg-white/5 blur-[80px] rounded-full opacity-20" />
+                <div className="relative w-full h-full scale-100">
+                  <Image 
+                    src={data.heroImage}
+                    alt={data.title}
+                    fill
+                    className="object-contain"
+                    sizes="100vw"
+                    priority
+                  />
+                </div>
+              </div>
+
+              <div className="pt-2 lg:pt-4">
                 <AgencyButton text={data.ctaText} onClick={openContact} size="md" />
               </div>
             </div>
 
-            {/* Right: Circular/Abstract Image (Underlaying) */}
-            <div className="relative aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center order-2 lg:order-2 lg:-ml-32 lg:-mt-10 z-0">
+            {/* Right: Circular/Abstract Image (Desktop only) */}
+            <div className="hidden lg:flex relative aspect-square md:aspect-auto md:h-[600px] items-center justify-center lg:-ml-32 lg:-mt-10 z-0">
               <div className="absolute inset-0 bg-white/5 blur-[120px] rounded-full opacity-20" />
-              <div className="relative w-full h-full scale-100 lg:scale-110">
+              <div className="relative w-full h-full scale-110">
                 <Image 
                   src={data.heroImage}
                   alt={data.title}
                   fill
                   className="object-contain"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 40vw"
+                  sizes="40vw"
                   priority
                 />
               </div>
@@ -85,38 +101,53 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
         </section>
 
         {/* Section 2: Specialization & CTA */}
-        <section className="px-6 md:px-12 py-32 border-t border-white/10 bg-zinc-950/30">
-          <div className="max-w-5xl mx-auto text-left md:text-center">
-            <h2 className="text-2xl md:text-4xl font-thin mb-10 tracking-tight leading-tight text-white uppercase">
-              {data.specializationHeading}
-            </h2>
-            <p className="text-lg md:text-xl font-normal mb-16 tracking-tight text-zinc-400">
-              {data.specializationText}
-            </p>
+        <section className="px-4 md:px-12 py-16 md:py-32 border-t border-white/10 bg-zinc-950/20 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            {/* Top Outline */}
+            <div className="flex items-center gap-4 mb-8 md:mb-12">
+              <span className="text-[10px] font-mono tracking-[0.3em] text-zinc-500">02 / SPECIALIZATION</span>
+              <div className="h-[1px] flex-1 bg-white/10" />
+            </div>
 
-            <div className="flex justify-start md:justify-center">
-              <AgencyButton text={data.ctaText} onClick={openContact} />
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+              {/* Left Column: Heading */}
+              <div className="lg:col-span-7">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-thin tracking-tight leading-[1.05] text-white uppercase">
+                  {data.specializationHeading}
+                </h2>
+              </div>
+
+              {/* Right Column: Text & CTA Button */}
+              <div className="lg:col-span-5 flex flex-col gap-6 md:gap-8">
+                <p className="text-sm sm:text-base md:text-lg font-light leading-relaxed text-zinc-400">
+                  {data.specializationText}
+                </p>
+
+                <div className="flex justify-start">
+                  <AgencyButton text={data.ctaText} onClick={openContact} />
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Section 3: Why This Service? */}
-        <section className="px-6 md:px-12 py-32 border-t border-white/10">
-          <h2 className="text-4xl md:text-6xl font-thin uppercase tracking-tight mb-20 max-w-3xl leading-none">
+        <section className="px-4 md:px-12 py-16 md:py-32 border-t border-white/10">
+          <h2 className="text-2xl sm:text-3xl md:text-6xl font-thin uppercase tracking-tight mb-10 md:mb-20 max-w-3xl leading-none">
             {data.whySectionTitle}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-8">
             {data.steps.map((step) => (
               <div key={step.num} className="flex flex-col border-l border-white/10 pl-6 group">
-                <span className="text-4xl font-medium mb-8 flex items-center gap-4">
+                <span className="text-2xl sm:text-4xl font-medium mb-4 sm:mb-8 flex items-center gap-4">
                   {step.num}
                   <div className="h-[1px] w-8 bg-white/20 group-hover:w-12 transition-all duration-500" />
                 </span>
-                <h3 className="text-xl font-bold uppercase mb-6 tracking-tight leading-tight">
+                <h3 className="text-lg font-bold uppercase mb-4 md:mb-6 tracking-tight leading-tight">
                   {step.title}
                 </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed font-medium">
+                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light">
                   {step.description}
                 </p>
               </div>
@@ -124,7 +155,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
           </div>
         </section>
 
-        {/* Section 4: Projects (Swapped) */}
+        {/* Section 4: Projects */}
         <ProjectSection 
           projectTitle={data.project.title}
           projectSubtitle={data.project.subtitle}
@@ -134,7 +165,7 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
           href={data.project.href}
         />
 
-        {/* Section 5: Capabilities Grid / Mobile Slider (Swapped) */}
+        {/* Section 5: Capabilities Grid / Mobile Slider */}
         <section className="border-t border-black/5 bg-white overflow-hidden pb-12 md:pb-0">
           <div 
             onScroll={(e) => {
@@ -158,15 +189,15 @@ export default function ServiceClient({ data }: { data: ServiceData }) {
               return (
                 <div
                   key={index}
-                  className={`flex-shrink-0 w-[85vw] md:w-auto h-auto flex flex-col border-l ${index === data.capabilities.length - 1 ? 'border-r' : ''} border-black/5 px-8 md:px-12 py-20 group hover:bg-black/[0.02] transition-colors snap-start`}
+                  className={`flex-shrink-0 w-[85vw] md:w-auto h-auto flex flex-col border-l ${index === data.capabilities.length - 1 ? 'border-r' : ''} border-black/5 px-6 md:px-12 py-12 md:py-20 group hover:bg-black/[0.02] transition-colors snap-start`}
                 >
-                  <div className="mb-20 text-black transition-opacity">
-                    <Icon strokeWidth={1} size={48} />
+                  <div className="mb-10 md:mb-20 text-black transition-opacity">
+                    <Icon strokeWidth={1} size={40} className="md:w-12 md:h-12" />
                   </div>
-                  <h3 className="text-2xl font-bold uppercase mb-8 tracking-tight leading-tight whitespace-pre-line text-black">
+                  <h3 className="text-lg sm:text-2xl font-bold uppercase mb-4 md:mb-8 tracking-tight leading-tight whitespace-pre-line text-black">
                     {cap.title}
                   </h3>
-                  <p className="text-[15px] text-black leading-relaxed font-normal mt-auto transition-opacity">
+                  <p className="text-xs sm:text-[15px] text-black leading-relaxed font-light mt-auto transition-opacity">
                     {cap.description}
                   </p>
                 </div>

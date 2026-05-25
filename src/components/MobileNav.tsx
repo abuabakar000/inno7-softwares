@@ -97,7 +97,7 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 z-[110] bg-black flex flex-col p-10 overflow-hidden"
+            className="fixed inset-0 z-[110] bg-black flex flex-col p-10 overflow-y-auto no-scrollbar"
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-8">

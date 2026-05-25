@@ -87,8 +87,8 @@ export default function AboutPage() {
 
         {/* Bottom Section - Adjusted Typography & Magnetic CTA */}
         <div className="mt-12 md:mt-20 flex flex-col md:flex-row items-start md:items-end justify-between gap-12 pb-12 transition-all px-6 md:px-0">
-          <div className="max-w-4xl">
-            <p className="text-2xl md:text-3xl font-light text-zinc-400 leading-tight uppercase tracking-tight">
+          <div className="max-w-xl">
+            <p className="text-lg md:text-xl font-medium leading-tight text-zinc-400">
               We fuse AI with web to create unfair digital advantage, delivering systems built to think and win.
             </p>
           </div>
@@ -96,20 +96,20 @@ export default function AboutPage() {
       </main>
 
       {/* Solutions Section */}
-      <section className="pt-12 pb-32 md:py-32 px-6 md:px-12 bg-black border-t border-white/5">
+      <section className="py-16 md:py-32 px-4 md:px-12 bg-black border-t border-white/5">
         <div className="max-w-7xl mx-auto">
           {/* Centered Heading - Final Mobile Calibration */}
-          <div className="text-left mb-20">
-            <h2 className="text-4xl md:text-6xl font-thin uppercase tracking-tight leading-none mb-10 opacity-90 px-4 md:px-0 max-w-4xl">
+          <div className="text-left mb-12 md:mb-20">
+            <h2 className="text-2xl sm:text-4xl md:text-6xl font-thin uppercase tracking-tight leading-[1.1] mb-6 md:mb-10 opacity-90 max-w-4xl">
               WEB SOLUTION DEVELOPMENT <br className="hidden md:block" /> FOR YOUR BUSINESS
             </h2>
           </div>
-
+ 
           {/* Service Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-24 md:gap-y-24 mb-16 px-6 md:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-24 md:gap-y-24 mb-16 px-0">
             {/* AUDIT */}
-            <div className="flex flex-col gap-6 group">
-              <div className="relative h-[220px] md:h-[220px] w-full overflow-hidden transition-all duration-700 select-none pointer-events-none">
+            <div className="flex flex-col gap-4 md:gap-6 group">
+              <div className="relative h-[140px] sm:h-[180px] md:h-[220px] w-full overflow-hidden transition-all duration-700 select-none pointer-events-none">
                 <Image 
                   src="/icon-advt-1.svg" 
                   alt="Audit Illustration" 
@@ -117,17 +117,17 @@ export default function AboutPage() {
                   className="object-contain object-left md:object-center"
                 />
               </div>
-              <div className="space-y-3 text-left">
-                <h3 className="text-3xl md:text-3xl font-thin uppercase tracking-tight">AUDIT</h3>
-                <p className="text-[15px] md:text-lg font-light text-zinc-400 leading-relaxed max-w-sm md:max-w-md">
+              <div className="space-y-2 md:space-y-3 text-left">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-light uppercase tracking-tight">AUDIT</h3>
+                <p className="text-xs sm:text-sm md:text-base font-light text-zinc-400 leading-relaxed max-w-md">
                   Cohesive digital audits that enrich every aspect of your business logic.
                 </p>
               </div>
             </div>
-
+ 
             {/* DEVELOPMENT */}
-            <div className="flex flex-col gap-6 group">
-              <div className="relative h-[220px] md:h-[220px] w-full overflow-hidden transition-all duration-700 select-none pointer-events-none">
+            <div className="flex flex-col gap-4 md:gap-6 group">
+              <div className="relative h-[140px] sm:h-[180px] md:h-[220px] w-full overflow-hidden transition-all duration-700 select-none pointer-events-none">
                 <Image 
                   src="/icon-advt-2.svg" 
                   alt="Development Illustration" 
@@ -135,17 +135,17 @@ export default function AboutPage() {
                   className="object-contain object-left md:object-center"
                 />
               </div>
-              <div className="space-y-3 text-left">
-                <h3 className="text-3xl md:text-3xl font-thin uppercase tracking-tight">DEVELOPMENT</h3>
-                <p className="text-[15px] md:text-lg font-light text-zinc-400 leading-relaxed max-w-sm md:max-w-md">
+              <div className="space-y-2 md:space-y-3 text-left">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-light uppercase tracking-tight">DEVELOPMENT</h3>
+                <p className="text-xs sm:text-sm md:text-base font-light text-zinc-400 leading-relaxed max-w-md">
                   Maximum functionality and enjoyment in every line of code we ship.
                 </p>
               </div>
             </div>
-
+ 
             {/* DESIGN */}
-            <div className="flex flex-col gap-6 group">
-              <div className="relative h-[220px] md:h-[220px] w-full overflow-hidden transition-all duration-700 select-none pointer-events-none">
+            <div className="flex flex-col gap-4 md:gap-6 group">
+              <div className="relative h-[140px] sm:h-[180px] md:h-[220px] w-full overflow-hidden transition-all duration-700 select-none pointer-events-none">
                 <Image 
                   src="/icon-advt-3.svg" 
                   alt="Design Illustration" 
@@ -153,17 +153,17 @@ export default function AboutPage() {
                   className="object-contain object-left md:object-center"
                 />
               </div>
-              <div className="space-y-3 text-left">
-                <h3 className="text-3xl md:text-3xl font-thin uppercase tracking-tight">DESIGN</h3>
-                <p className="text-[15px] md:text-lg font-light text-zinc-400 leading-relaxed max-w-sm md:max-w-md">
+              <div className="space-y-2 md:space-y-3 text-left">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-light uppercase tracking-tight">DESIGN</h3>
+                <p className="text-xs sm:text-sm md:text-base font-light text-zinc-400 leading-relaxed max-w-md">
                   Stunning interfaces tailored to your brand identity and user engagement.
                 </p>
               </div>
             </div>
-
+ 
             {/* SUPPORT */}
-            <div className="flex flex-col gap-6 group">
-              <div className="relative h-[220px] md:h-[220px] w-full overflow-hidden transition-all duration-700 select-none pointer-events-none">
+            <div className="flex flex-col gap-4 md:gap-6 group">
+              <div className="relative h-[140px] sm:h-[180px] md:h-[220px] w-full overflow-hidden transition-all duration-700 select-none pointer-events-none">
                 <Image 
                   src="/icon-advt-4.svg" 
                   alt="Support Illustration" 
@@ -171,28 +171,28 @@ export default function AboutPage() {
                   className="object-contain object-left md:object-center"
                 />
               </div>
-              <div className="space-y-3 text-left">
-                <h3 className="text-3xl md:text-3xl font-thin uppercase tracking-tight">SUPPORT</h3>
-                <p className="text-[15px] md:text-lg font-light text-zinc-400 leading-relaxed max-w-sm md:max-w-md">
+              <div className="space-y-2 md:space-y-3 text-left">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-light uppercase tracking-tight">SUPPORT</h3>
+                <p className="text-xs sm:text-sm md:text-base font-light text-zinc-400 leading-relaxed max-w-md">
                   Ongoing maintenance to keep your digital solutions performing flawlessly.
                 </p>
               </div>
             </div>
           </div>
-
+ 
           {/* Centered Become a Client Button */}
-          <div className="flex justify-start md:justify-center mt-12 px-6 md:px-0">
+          <div className="flex justify-start md:justify-center mt-12 px-0">
             <AgencyButton text="SHOW MORE PROJECTS" href="/portfolio" />
           </div>
         </div>
       </section>
 
       {/* More Projects Section */}
-      <section className="py-32 px-6 md:px-12 bg-black border-t border-white/5 overflow-hidden">
+      <section className="py-16 md:py-32 px-4 md:px-12 bg-black border-t border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-20">
-            <h2 className="text-4xl md:text-6xl font-thin uppercase tracking-tight leading-none opacity-90 text-white">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 md:mb-20">
+            <h2 className="text-2xl sm:text-4xl md:text-6xl font-thin uppercase tracking-tight leading-none opacity-90 text-white">
               MORE PROJECTS
             </h2>
             
@@ -200,7 +200,7 @@ export default function AboutPage() {
               <AgencyButton text="SHOW MORE PROJECTS" href="/portfolio" />
             </div>
           </div>
-
+ 
           {/* Project Slider/Grid - Dynamic and responsive to scroll */}
           <div 
             ref={projectRef}
@@ -241,7 +241,7 @@ export default function AboutPage() {
               />
             </div>
           </div>
-
+ 
           {/* Project Pagination Indicators (Mobile Only) */}
           <div className="flex md:hidden justify-center items-center gap-2 mt-8">
             {[0, 1, 2].map((i) => (
@@ -253,53 +253,36 @@ export default function AboutPage() {
               />
             ))}
           </div>
-
+ 
           {/* Mobile CTA - Visible only on small screens */}
-          <div className="flex md:hidden justify-start mt-12 px-6 md:px-0">
+          <div className="flex md:hidden justify-start mt-12 px-0">
             <AgencyButton text="SHOW MORE PROJECTS" href="/portfolio" />
           </div>
         </div>
       </section>
 
       {/* Solution Implementation Process Section - White Background */}
-      <section className="py-32 px-6 md:px-12 bg-white border-y border-zinc-200 relative overflow-hidden">
+      <section className="py-16 md:py-32 px-4 md:px-12 bg-white border-y border-zinc-200 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Section Heading - Balanced for White BG */}
-          <div className="text-left mb-32">
-            <h2 className="text-4xl md:text-6xl font-thin uppercase tracking-tight leading-none opacity-90 text-black mb-10">
+          <div className="text-left mb-12 md:mb-20">
+            <h2 className="text-2xl sm:text-4xl md:text-6xl font-thin uppercase tracking-tight leading-[1.1] text-black mb-6 md:mb-10">
               SOLUTION IMPLEMENTATION PROCESS. <br className="hidden md:block" /> DEPLOYMENT WITHOUT CHAOS
             </h2>
           </div>
-
-          {/* Process Pillars Container - Horizontal slider on mobile, Grid on desktop */}
-          <div 
-            ref={processRef}
-            onScroll={handleProcessScroll}
-            className="relative flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 gap-6 md:gap-4 lg:gap-8 no-scrollbar pb-8 -mx-6 px-6 md:mx-0 md:px-0 scroll-pl-6 group/process"
-          >
+ 
+          {/* Process Pillars Container - Grid on all screens (1-col mobile, 2-col tablet, 4-col desktop) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 lg:gap-8 z-10 relative">
             
-            <div className="hidden md:block absolute top-[48px] inset-x-0 h-px -z-0 px-[15vw]">
-              <svg className="w-full h-full overflow-visible" fill="none">
-                <line 
-                  x1="0" 
-                  y1="0" 
-                  x2="100%" 
-                  y2="0" 
-                  stroke="#cbd5e1" 
-                  strokeWidth="2" 
-                  strokeDasharray="1 8" 
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
-
             {/* PHASE 1: STRATEGY */}
-            <div className="flex flex-col items-center w-full min-w-[78vw] md:min-w-0 snap-center z-10 transition-transform duration-500">
-              <div className="w-24 h-24 rounded-full bg-zinc-950 flex items-center justify-center mb-12 shadow-[0_15px_40px_rgba(0,0,0,0.1)] mx-auto relative group-hover/process:scale-105 transition-transform duration-700">
-                <PenTool className="w-8 h-8 text-white" />
-                <div className="absolute -inset-2 bg-gradient-to-br from-[#3affab]/20 to-transparent rounded-full blur-xl opacity-0 group-hover/process:opacity-100 transition-opacity" />
+            <div className="flex flex-col items-start w-full p-6 rounded-2xl bg-zinc-50 border border-zinc-100 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-zinc-950 flex items-center justify-center shadow-md shrink-0 transition-transform duration-500 group-hover:scale-105">
+                  <PenTool className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-base md:text-lg font-bold uppercase tracking-wider text-black">STRATEGY</h3>
               </div>
-              <ul className="w-full space-y-3">
+              <ul className="w-full space-y-2.5">
                 {[
                   { num: "01", text: "Briefing" },
                   { num: "02", text: "Analytics" },
@@ -307,24 +290,27 @@ export default function AboutPage() {
                   { num: "04", text: "Specification" },
                   { num: "05", text: "Approval" }
                 ].map((item) => (
-                  <li key={item.num} className="flex items-center gap-4 bg-zinc-50 border border-zinc-100 rounded-full py-2.5 px-4 group hover:bg-zinc-100 transition-colors">
-                    <span className="w-6 h-6 rounded-full bg-[#3affab] text-black text-[9px] font-black flex items-center justify-center shrink-0">
+                  <li key={item.num} className="flex items-center gap-3 bg-white border border-zinc-100 rounded-full py-2 px-3.5 hover:bg-zinc-50 transition-colors">
+                    <span className="w-5 h-5 rounded-full bg-[#3affab] text-black text-[9px] font-black flex items-center justify-center shrink-0">
                       {item.num}
                     </span>
-                    <span className="text-[13px] font-bold uppercase tracking-widest text-zinc-600 group-hover:text-black transition-colors">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-600">
                       {item.text}
                     </span>
                   </li>
                 ))}
               </ul>
             </div>
-
+ 
             {/* PHASE 2: DESIGN */}
-            <div className="flex flex-col items-center w-full min-w-[78vw] md:min-w-0 snap-center z-10 transition-transform duration-500">
-              <div className="w-24 h-24 rounded-full bg-zinc-950 flex items-center justify-center mb-12 shadow-[0_15px_40px_rgba(0,0,0,0.1)] mx-auto relative">
-                <Monitor className="w-8 h-8 text-white" />
+            <div className="flex flex-col items-start w-full p-6 rounded-2xl bg-zinc-50 border border-zinc-100 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-zinc-950 flex items-center justify-center shadow-md shrink-0 transition-transform duration-500 group-hover:scale-105">
+                  <Monitor className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-base md:text-lg font-bold uppercase tracking-wider text-black">DESIGN</h3>
               </div>
-              <ul className="w-full space-y-3">
+              <ul className="w-full space-y-2.5">
                 {[
                   { num: "01", text: "Research" },
                   { num: "02", text: "Idea Preparation" },
@@ -332,24 +318,27 @@ export default function AboutPage() {
                   { num: "04", text: "UI Concept" },
                   { num: "05", text: "Responsiveness" }
                 ].map((item) => (
-                  <li key={item.num} className="flex items-center gap-4 bg-zinc-50 border border-zinc-100 rounded-full py-2.5 px-4 group hover:bg-zinc-100 transition-colors">
-                    <span className="w-6 h-6 rounded-full bg-[#3affab] text-black text-[9px] font-black flex items-center justify-center shrink-0">
+                  <li key={item.num} className="flex items-center gap-3 bg-white border border-zinc-100 rounded-full py-2 px-3.5 hover:bg-zinc-50 transition-colors">
+                    <span className="w-5 h-5 rounded-full bg-[#3affab] text-black text-[9px] font-black flex items-center justify-center shrink-0">
                       {item.num}
                     </span>
-                    <span className="text-[13px] font-bold uppercase tracking-widest text-zinc-600 group-hover:text-black transition-colors">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-600">
                       {item.text}
                     </span>
                   </li>
                 ))}
               </ul>
             </div>
-
+ 
             {/* PHASE 3: DEVELOPMENT */}
-            <div className="flex flex-col items-center w-full min-w-[78vw] md:min-w-0 snap-center z-10 transition-transform duration-500">
-              <div className="w-24 h-24 rounded-full bg-zinc-950 flex items-center justify-center mb-12 shadow-[0_15px_40px_rgba(0,0,0,0.1)] mx-auto">
-                <Code2 className="w-8 h-8 text-white" />
+            <div className="flex flex-col items-start w-full p-6 rounded-2xl bg-zinc-50 border border-zinc-100 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-zinc-950 flex items-center justify-center shadow-md shrink-0 transition-transform duration-500 group-hover:scale-105">
+                  <Code2 className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-base md:text-lg font-bold uppercase tracking-wider text-black">DEVELOP</h3>
               </div>
-              <ul className="w-full space-y-3">
+              <ul className="w-full space-y-2.5">
                 {[
                   { num: "01", text: "Architecture" },
                   { num: "02", text: "Front-end" },
@@ -357,24 +346,27 @@ export default function AboutPage() {
                   { num: "04", text: "Integrations" },
                   { num: "05", text: "Testing" }
                 ].map((item) => (
-                  <li key={item.num} className="flex items-center gap-4 bg-zinc-50 border border-zinc-100 rounded-full py-2.5 px-4 group hover:bg-zinc-100 transition-colors">
-                    <span className="w-6 h-6 rounded-full bg-[#3affab] text-black text-[9px] font-black flex items-center justify-center shrink-0">
+                  <li key={item.num} className="flex items-center gap-3 bg-white border border-zinc-100 rounded-full py-2 px-3.5 hover:bg-zinc-50 transition-colors">
+                    <span className="w-5 h-5 rounded-full bg-[#3affab] text-black text-[9px] font-black flex items-center justify-center shrink-0">
                       {item.num}
                     </span>
-                    <span className="text-[13px] font-bold uppercase tracking-widest text-zinc-600 group-hover:text-black transition-colors">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-600">
                       {item.text}
                     </span>
                   </li>
                 ))}
               </ul>
             </div>
-
+ 
             {/* PHASE 4: LAUNCH */}
-            <div className="flex flex-col items-center w-full min-w-[78vw] md:min-w-0 snap-center z-10 transition-transform duration-500">
-              <div className="w-24 h-24 rounded-full bg-zinc-950 flex items-center justify-center mb-12 shadow-[0_15px_40px_rgba(0,0,0,0.1)] mx-auto">
-                <Settings className="w-8 h-8 text-white" />
+            <div className="flex flex-col items-start w-full p-6 rounded-2xl bg-zinc-50 border border-zinc-100 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-zinc-950 flex items-center justify-center shadow-md shrink-0 transition-transform duration-500 group-hover:scale-105">
+                  <Settings className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-base md:text-lg font-bold uppercase tracking-wider text-black">LAUNCH</h3>
               </div>
-              <ul className="w-full space-y-3">
+              <ul className="w-full space-y-2.5">
                 {[
                   { num: "01", text: "Monitoring" },
                   { num: "02", text: "Optimization" },
@@ -382,29 +374,17 @@ export default function AboutPage() {
                   { num: "04", text: "Patches" },
                   { num: "05", text: "Support" }
                 ].map((item) => (
-                  <li key={item.num} className="flex items-center gap-4 bg-zinc-50 border border-zinc-100 rounded-full py-2.5 px-4 group hover:bg-zinc-100 transition-colors">
-                    <span className="w-6 h-6 rounded-full bg-[#3affab] text-black text-[9px] font-black flex items-center justify-center shrink-0">
+                  <li key={item.num} className="flex items-center gap-3 bg-white border border-zinc-100 rounded-full py-2 px-3.5 hover:bg-zinc-50 transition-colors">
+                    <span className="w-5 h-5 rounded-full bg-[#3affab] text-black text-[9px] font-black flex items-center justify-center shrink-0">
                       {item.num}
                     </span>
-                    <span className="text-[13px] font-bold uppercase tracking-widest text-zinc-600 group-hover:text-black transition-colors">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-600">
                       {item.text}
                     </span>
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
-
-          {/* Slider Pagination Indicators (Mobile Only) - Dynamic and responsive to scroll */}
-          <div className="flex md:hidden justify-center items-center gap-3 mt-12 pb-4">
-            {[0, 1, 2, 3].map((i) => (
-              <div 
-                key={i} 
-                className={`h-2 rounded-full transition-all duration-500 ease-out ${
-                  activeProcessStep === i ? 'bg-black w-8' : 'bg-zinc-200 w-2'
-                }`} 
-              />
-            ))}
           </div>
         </div>
       </section>

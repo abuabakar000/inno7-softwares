@@ -123,8 +123,8 @@ export default function ProjectSection({
 
           {/* 3. Description & CTA (Third on Mobile, Below Heading on Desktop) */}
           <div className="flex flex-col h-full justify-start order-3 lg:col-start-1 lg:row-start-2">
-            <div className="mb-12">
-              <p className="text-lg md:text-xl text-white/60 font-light max-w-xl leading-relaxed">
+            <div className="mb-8 md:mb-12">
+              <p className="text-sm sm:text-base md:text-xl text-white/60 font-light max-w-xl leading-relaxed">
                 {description}
               </p>
             </div>

@@ -22,12 +22,12 @@ export default function Footer() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80 md:bg-gradient-to-b md:from-black md:via-transparent md:to-black" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-32 md:pt-40 pb-32 md:pb-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-16 md:pt-40 pb-20 md:pb-12">
           {/* Large CTA Text */}
-          <div className="mb-40">
+          <div className="mb-20 md:mb-40">
             <h2 className="text-[10vw] md:text-[7vw] font-thin leading-none tracking-tighter uppercase mb-6 opacity-90">
-              LET&apos;S MOVE THE<br />
-              WORLD TOGETHER
+              YOUR BUSINESS DESERVES<br />
+              BETTER ONLINE
             </h2>
             <p className="text-[5vw] md:text-[2.5vw] font-thin tracking-tighter">
               Drop us a line at{" "}

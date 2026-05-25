@@ -189,41 +189,41 @@ export default function PortfolioPage() {
     <div className="relative min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black">
       <Navbar />
 
-      <main className="relative pt-48 pb-24 px-6 md:px-12">
+      <main className="relative pt-32 md:pt-48 pb-16 md:pb-24 px-4 md:px-12">
         {/* WE ARE PROUD Header */}
-        <div className="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-8 mb-16 md:mb-24 overflow-hidden">
-          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
+        <div className="flex flex-nowrap items-center justify-center md:justify-start gap-x-2 sm:gap-x-3 md:gap-8 mb-12 md:mb-24 overflow-hidden">
+          <h2 className="text-[8.5vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
             WE ARE
           </h2>
-          <div className="relative w-[30vw] h-[18vw] md:w-[15vw] md:h-[8vw] overflow-hidden shadow-2xl bg-zinc-900 border border-white/5 shrink-0">
+          <div className="relative w-[18vw] h-[11vw] md:w-[15vw] md:h-[8vw] rounded-none overflow-hidden shadow-2xl bg-zinc-900 border border-white/5 shrink-0">
             <Image
               src="/proud.svg"
               alt="Inex Labs Logo"
               fill
-              className="object-cover"
+              className="object-cover rounded-none"
             />
           </div>
-          <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
+          <h2 className="text-[8.5vw] md:text-[8vw] font-thin uppercase leading-none tracking-tight whitespace-nowrap opacity-90">
             PROUD
           </h2>
         </div>
 
-        <div className="relative w-full overflow-hidden mb-24 py-8 select-none">
+        <div className="relative w-full overflow-hidden mb-12 md:mb-24 py-4 md:py-8 select-none">
           {/* Side Fades */}
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black via-black/40 to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black via-black/40 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-black via-black/40 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-black via-black/40 to-transparent z-10 pointer-events-none" />
 
           {/* Row 1: Scrolling Left */}
-          <div className="flex mb-6">
+          <div className="flex mb-3 md:mb-6">
             <motion.div
               animate={{ x: ["0%", "-50%"] }}
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="flex gap-4 md:gap-6 whitespace-nowrap px-4"
+              className="flex gap-3 md:gap-6 whitespace-nowrap px-4"
             >
-              {[...categories.slice(0, 6), ...categories.slice(0, 6)].map((cat, idx) => (
+              {[...categories, ...categories].map((cat, idx) => (
                 <div
                   key={idx}
-                  className="px-6 py-3 md:px-10 md:py-4 rounded-full text-[13px] md:text-[15px] font-bold uppercase tracking-[0.15em] bg-transparent text-white border border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+                  className="px-4 py-2 md:px-10 md:py-4 rounded-full text-[11px] md:text-[15px] font-bold uppercase tracking-[0.15em] bg-transparent text-white border border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.03)]"
                 >
                   {cat}
                 </div>
@@ -231,8 +231,8 @@ export default function PortfolioPage() {
             </motion.div>
           </div>
 
-          {/* Row 2: Scrolling Right */}
-          <div className="flex">
+          {/* Row 2: Scrolling Right (Desktop Only) */}
+          <div className="hidden md:flex">
             <motion.div
               animate={{ x: ["-50%", "0%"] }}
               transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
@@ -261,14 +261,14 @@ export default function PortfolioPage() {
         </div>
 
         {/* TECHNOLOGIES Section (Bento Grid) */}
-        <section className="mt-48 group/main" onMouseMove={handleMouseMove}>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+        <section className="mt-20 md:mt-48 group/main" onMouseMove={handleMouseMove}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-20">
             <h2 className="text-[10vw] md:text-[8vw] font-thin uppercase tracking-tight opacity-90 leading-none">
               TECHNOLOGIES
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 min-h-[600px]">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 min-h-[500px]">
             {technologies.map((tech, idx) => {
               // Create Bento sizes: big for first few, regular for others
               // Adjusted for 11 items for maximum balance
@@ -279,7 +279,7 @@ export default function PortfolioPage() {
               return (
                 <div
                   key={idx}
-                  className={`group relative overflow-hidden p-8 md:p-12 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl transition-all duration-700 hover:border-white/30 flex flex-col justify-between ${isLarge ? "lg:row-span-2" : ""
+                  className={`group relative overflow-hidden p-5 md:p-12 rounded-xl md:rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl transition-all duration-700 hover:border-white/30 flex flex-col justify-between ${isLarge ? "lg:row-span-2" : ""
                     } ${isWide ? "lg:col-span-2" : ""} ${isMobileFull ? "col-span-2 md:col-span-1" : ""}`}
                 >
                   {/* Spotlight Effect overlay */}
@@ -290,16 +290,16 @@ export default function PortfolioPage() {
                     }}
                   />
 
-                  <div className="relative z-10 flex flex-col h-full gap-8">
-                    <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center opacity-100 transition-all transform group-hover:scale-110 group-hover:rotate-6 duration-700 text-white">
+                  <div className="relative z-10 flex flex-col h-full gap-4 md:gap-8">
+                    <div className="w-8 h-8 md:w-16 md:h-16 flex items-center justify-center opacity-100 transition-all transform group-hover:scale-110 group-hover:rotate-6 duration-700 text-white [&>svg]:w-6 [&>svg]:h-6 md:[&>svg]:w-8 md:[&>svg]:h-8">
                       {tech.icon}
                     </div>
 
                     <div className="mt-auto">
-                      <h3 className="text-xl md:text-2xl font-light uppercase tracking-tight text-white/90 group-hover:text-white transition-colors duration-500">
+                      <h3 className="text-sm sm:text-base md:text-2xl font-light uppercase tracking-tight text-white/90 group-hover:text-white transition-colors duration-500">
                         {tech.name}
                       </h3>
-                      <div className="h-[1px] w-0 group-hover:w-full bg-white/40 transition-all duration-700 mt-4" />
+                      <div className="h-[1px] w-0 group-hover:w-full bg-white/40 transition-all duration-700 mt-2 md:mt-4" />
                     </div>
                   </div>
 
