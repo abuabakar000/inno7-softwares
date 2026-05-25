@@ -181,10 +181,11 @@ function ServiceTile({
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            key="content"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="relative z-10 overflow-hidden"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 px-2 md:px-4 pb-6 md:pb-8 pt-2">
@@ -642,7 +643,7 @@ export default function Home() {
 
       <section
         ref={aiSectionRef}
-        className="relative min-h-screen bg-black overflow-hidden flex flex-col lg:flex-row items-center"
+        className="relative min-h-fit lg:min-h-screen py-12 sm:py-20 lg:py-0 bg-black overflow-hidden flex flex-col lg:flex-row items-center"
       >
         {/* Background/Left Visual */}
         <div className="absolute inset-0 lg:inset-y-0 lg:left-0 lg:w-1/2 overflow-hidden h-full">
@@ -666,7 +667,7 @@ export default function Home() {
         </div>
 
         {/* Content Right */}
-        <div className="w-full lg:w-1/2 lg:ml-auto px-6 md:px-12 lg:px-20 z-20 py-16 lg:py-16">
+        <div className="w-full lg:w-1/2 lg:ml-auto px-6 md:px-12 lg:px-20 z-20 py-8 lg:py-16">
           <motion.div
             style={{ opacity: aiTextOpacity }}
             className="w-full lg:max-w-2xl"
