@@ -164,8 +164,8 @@ export default function ContactPage() {
                   <span className="text-[11px] md:text-[12px] font-medium text-zinc-400 uppercase tracking-[0.2em]">
                     (Phone)
                   </span>
-                  <a href="tel:+16393876511" className="text-xl md:text-2xl font-thin tracking-tighter uppercase text-white/90 hover:text-white transition-all duration-500">
-                    +1 639 387 6511
+                  <a href="tel:+16396362350" className="text-xl md:text-2xl font-thin tracking-tighter uppercase text-white/90 hover:text-white transition-all duration-500">
+                    +1 639 636 2350
                   </a>
                   <div className="w-8 h-[1px] bg-white/20 group-hover/item:w-12 transition-all duration-500" />
                 </div>

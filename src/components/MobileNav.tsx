@@ -83,7 +83,7 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
           </button>
 
           {/* Phone Icon */}
-          <a href="tel:+16393876511" className="text-white/80 hover:text-white transition-colors">
+          <a href="tel:+16396362350" className="text-white/80 hover:text-white transition-colors">
             <Phone size={20} strokeWidth={1.5} />
           </a>
         </motion.div>

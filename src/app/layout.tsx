@@ -100,13 +100,13 @@ function StructuredData() {
     description:
       "Boutique digital agency specializing in high-end software solutions, custom CRM architectures, SaaS platforms, and premium AI integrations.",
     email: "office@inexlabs.com",
-    telephone: "+16393876511",
+    telephone: "+16396362350",
     sameAs: [
       "https://www.linkedin.com/in/abu-bakar-khawaja-dev",
     ],
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+16393876511",
+      telephone: "+16396362350",
       contactType: "customer service",
       email: "office@inexlabs.com",
       availableLanguage: ["English"],

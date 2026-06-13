@@ -164,7 +164,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 />
                 <ContactInput 
                   label="(Phone)" 
-                  placeholder="+1 639 387 6511" 
+                  placeholder="+1 639 636 2350" 
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
