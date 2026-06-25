@@ -22,14 +22,14 @@ export const serviceCategories = [
     subLinks: ["Logo and Guidelines", "Landing Page Design", "Visual Identity"]
   },
   {
-    title: "CRM SYSTEMS",
-    href: "/services/crm-systems",
-    subLinks: ["Real Estate CRMs", "Sales Automation", "Data Migration"]
+    title: "AUTOMATED SMS",
+    href: "/services/automated-sms",
+    subLinks: ["Missed Calls, Reviews & Schedulers", "Scheduler SMS", "Google Reviews SMS"]
   },
   {
-    title: "SaaS SOLUTIONS",
-    href: "/services/saas-solutions",
-    subLinks: ["Product Strategy", "Subscription Billing", "Cloud Infrastructure"]
+    title: "GOOGLE BUSINESS",
+    href: "/services/google-business",
+    subLinks: ["GMB Optimization", "Review Campaigns", "Profile Bettering"]
   },
   {
     title: "AI AGENTS / CHATBOT",
@@ -47,9 +47,9 @@ export const serviceCategories = [
     subLinks: ["Maintenance", "Uptime Monitoring", "Performance Tuning"]
   },
   {
-    title: "E-COMMERCE",
-    href: "/services/ecommerce-stores",
-    subLinks: ["Shopify Plus", "Headless Commerce", "Custom Checkout"]
+    title: "BOOKING SYSTEMS",
+    href: "/services/booking-systems",
+    subLinks: ["Scheduler Embeds", "Automated SMS Confirmations", "Calendar Syncing"]
   },
   {
     title: "SEO OPTIMIZATION",

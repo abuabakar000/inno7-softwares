@@ -272,24 +272,24 @@ export default function Home() {
       quote: "What stood out the most was their decision-making and attention to detail. They don't just build — they think. That made a huge difference in the final product.",
       author: "Mirza Asif Baig",
       role: "CEO and Investor Saffran Groups",
-      stat: "400+",
-      statSub: "Satisfied Clients"
+      stat: "5.0 ★",
+      statSub: "Google Business Rating"
     },
     {
       image: "/client3.png",
       quote: "They operate at a level that clearly exceeds standard expectations. The quality, speed, and insight they bring make them an incredibly valuable partner.",
       author: "Saffran Labs",
       role: "CTO at Saffran Labs",
-      stat: "150%+",
-      statSub: "Revenue Growth"
+      stat: "100%",
+      statSub: "Satisfaction Rate"
     },
     {
       image: "/client4.png",
       quote: "The level of talent and professionalism they bring is exceptional. They integrate seamlessly into workflows and consistently deliver high-quality results. Easily one of the best teams we've worked with.",
       author: "Aleem Minhas",
       role: "Director at Otoz.ai",
-      stat: "4.9/5",
-      statSub: "User Rating"
+      stat: "0",
+      statSub: "Missed Call Rate"
     }
   ];
 
@@ -333,30 +333,30 @@ export default function Home() {
       link: "/services/branding-design",
     },
     {
-      slug: "crm-systems",
-      title: "CRM systems",
+      slug: "automated-sms",
+      title: "Automated SMS",
       subServices: [
-        "Custom CRM",
-        "Salesforce Integration",
-        "HubSpot Setup",
-        "Data Migration",
-        "Automated Workflows",
-        "Analytics Dashboard",
+        "Missed-Call Auto SMS",
+        "Appointment Reminders",
+        "Google Reviews SMS",
+        "Lead Auto-Followups",
+        "Two-Way Chat Flows",
+        "Promotional Broadcasts",
       ],
-      link: "/services/crm-systems",
+      link: "/services/automated-sms",
     },
     {
-      slug: "saas-solutions",
-      title: "SaaS solutions",
+      slug: "google-business",
+      title: "Google Business",
       subServices: [
-        "Product Strategy",
-        "Architecture Design",
-        "Multi-tenancy",
-        "Subscription Models",
-        "API Development",
-        "Scalability",
+        "GMB Optimization",
+        "Google Maps Ranking",
+        "Review Automation",
+        "Competitor Audit",
+        "Profile Bettering",
+        "Local Citations",
       ],
-      link: "/services/saas-solutions",
+      link: "/services/google-business",
     },
     {
       slug: "ai-agents-chatbot",
@@ -398,17 +398,17 @@ export default function Home() {
       link: "/services/website-support",
     },
     {
-      slug: "ecommerce-stores",
-      title: "E-commerce stores",
+      slug: "booking-systems",
+      title: "Booking Systems",
       subServices: [
-        "Shopify Setup",
-        "WooCommerce",
-        "Custom Checkout",
-        "Payment Gateways",
-        "Inventory Management",
-        "Store SEO",
+        "Scheduler Embeds",
+        "Post-Booking SMS",
+        "SMS Reminders",
+        "No-Show Reduction",
+        "Calendar Syncing",
+        "Deposit Payments",
       ],
-      link: "/services/ecommerce-stores",
+      link: "/services/booking-systems",
     },
     {
       slug: "seo-optimization",
@@ -466,7 +466,7 @@ export default function Home() {
           {/* Main Typography Area */}
           <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-16 lg:gap-24 px-6 md:px-0">
             <h1 className="text-[12vw] md:text-[13vw] font-thin leading-[0.85] tracking-[-0.04em] uppercase whitespace-nowrap">
-              SAAS. APP.
+              GET JOBS.
             </h1>
             <div className="hidden md:block relative w-[22vw] h-[13vw] lg:w-[18vw] lg:h-[10vw] overflow-hidden shadow-2xl border border-white/5 mt-2 md:mt-4 lg:mt-6">
               <video
@@ -480,7 +480,7 @@ export default function Home() {
             </div>
           </div>
           <h1 className="text-[12vw] md:text-[13vw] font-thin leading-[0.85] tracking-[-0.04em] uppercase px-6 md:px-0 mb-8">
-            WEB SOLUTION
+            LOCAL SYSTEM
           </h1>
 
           {/* Mobile-Only Video and CTAs */}
@@ -532,10 +532,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Description - Hiding on smaller screens per user request */}
-          <div className="max-w-md md:text-right hidden md:block">
+          {/* Description */}
+          <div className="max-w-md text-left md:text-right">
             <p className="text-lg md:text-xl font-medium leading-tight text-zinc-400">
-              We develop online stores, CRM systems, SaaS solutions, and app platforms – integrating AI into processes and business solutions.
+              We help local service businesses dominate search, automate job bookings, and respond instantly to customer calls – accelerating revenue growth.
             </p>
           </div>
         </div>

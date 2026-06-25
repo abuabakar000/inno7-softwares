@@ -151,115 +151,115 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
     ]
   },
-  'crm-systems': {
-    slug: 'crm-systems',
-    title: 'CRM\nSystems',
+  'automated-sms': {
+    slug: 'automated-sms',
+    title: 'Automated\nSMS',
     heroImage: '/images/services/crm.png',
-    heroDescription: 'We design and implement custom CRM solutions that streamline your sales, marketing, and support operations. Our data-driven platforms empower your team with actionable insights and automated workflows.',
-    specializationHeading: 'Custom CRM and Operational Flow Case Studies for Clients',
-    specializationText: 'Our agency, Inex Labs, specializes in custom CRM development, creating integrated management platforms and providing data-driven solutions. We build tools tailored to your business logic to effectively manage your customer relationships, enhance team productivity, and drive revenue. Our goal is to ensure your operations become a powerful engine for scaling.',
-    ctaText: 'OPTIMIZE YOUR FLOW',
-    whySectionTitle: 'WHY DOES YOUR BUSINESS NEED A CUSTOM CRM?',
+    heroDescription: 'We design and implement custom automated SMS workflows that engage your customers instantly – from missed-call auto-responders to review generation and scheduling reminders.',
+    specializationHeading: 'Custom SMS Automation and Messaging Case Studies for Clients',
+    specializationText: 'Our agency, Inex Labs, specializes in conversational SMS architecture, building automated messaging flows and text pipelines. We design systems that turn missed opportunities into booked jobs, gather 5-star Google reviews on autopilot, and streamline your customer communication. Our goal is to ensure your business never misses a customer touchpoint.',
+    ctaText: 'AUTOMATE YOUR TEXTS',
+    whySectionTitle: 'WHY DOES YOUR BUSINESS NEED AUTOMATED SMS?',
     steps: [
-      { num: '01', title: 'Centralized Data', description: 'Break down information silos by bringing all your customer data into a single, unified platform that serves as your single source of truth.' },
-      { num: '02', title: 'Automated Workflows', description: 'Eliminate manual tasks with custom automation that handles lead routing, email follow-ups, and data entry, allowing your team to focus on high-value activities.' },
-      { num: '03', title: 'Advanced Analytics', description: 'Gain deep insights into your business performance with custom dashboards and reporting tools that highlight trends and opportunities.' },
-      { num: '04', title: 'Seamless Integrations', description: 'Connect your CRM with the tools you already use, ensuring smooth data flow across your entire tech stack—from ERPs to marketing platforms.' }
+      { num: '01', title: 'Instant Engagement', description: 'Respond to customers within seconds of a missed call, capturing leads before they dial your competitors.' },
+      { num: '02', title: 'Seamless Scheduling', description: 'Automate booking confirmations, calendar updates, and appointment reminders to drastically reduce no-shows.' },
+      { num: '03', title: 'Review Generation', description: 'Send automated feedback requests immediately after job completion to boost your 5-star Google reviews on autopilot.' },
+      { num: '04', title: 'Scale Operations', description: 'Broadcast promotions, send updates, and manage two-way customer conversations efficiently without manual labor.' }
     ],
     capabilities: [
-      { icon: 'Users', title: 'Data\nIntegration', description: 'We build specialized data pipelines that connect all your business units, ensuring a 360-degree view of every customer interaction.' },
-      { icon: 'Layout', title: 'Pipeline Management', description: 'Optimize your sales funnel with custom pipeline visualizations and tracking tools that help your team close deals faster and more effectively.' },
-      { icon: 'Activity', title: 'Reporting and BI', description: 'Turn your data into decisions with powerful Business Intelligence tools integrated directly into your custom CRM environment.' },
-      { icon: 'Settings', title: 'Workflow Automation', description: 'We automate repetitive processes, from lead generation and scoring to contract renewals and customer support ticketing.' }
+      { icon: 'Smartphone', title: 'Missed-Call Textback', description: 'Instantly send a text response to missed calls, capturing hot leads before they contact someone else.' },
+      { icon: 'Settings', title: 'Appointment Reminders', description: 'Automated SMS dispatch for scheduling, confirmations, and reminders, eliminating no-shows without manual effort.' },
+      { icon: 'Users', title: 'Google Review SMS', description: 'Send automated text messages right after service delivery, prompting customers to leave 5-star Google reviews in one click.' },
+      { icon: 'Activity', title: 'Conversational Flows', description: 'Two-way text automation that qualifies leads, answers FAQs, and forwards high-value prospects to your team.' }
     ],
     project: {
-      title: 'SAASFORGE',
-      subtitle: 'SaaS CRM',
-      description: 'A custom-built CRM system for specialized multi-tenant management across diverse business units. The platform architecture was designed to support massive data isolation while maintaining high-speed query performance. We implemented an intuitive dashboard that gives administrators a 360-degree view of their entire ecosystem at a single glance.',
+      title: 'AUTOFLOW',
+      subtitle: 'SMS Automation Platform',
+      description: 'A unified automated SMS dispatch engine integrated with business telephony. The platform instantly triggers customized SMS responses for missed calls, routes scheduler links, and deploys review requests immediately upon job completion, helping service businesses capture 30% more leads.',
       image: '/images/related/saasforge-thumb.png',
-      tag: 'ENTERPRISE',
+      tag: 'AUTOMATION',
       href: '#'
     },
     faqs: [
-      { q: "Can you migrate data from our existing CRM?", a: "Yes, we handle complex data migrations from legacy systems, ensuring data integrity and zero downtime." },
-      { q: "Do you provide training for our sales team?", a: "Absolutely. We provide comprehensive onboarding sessions and documentation to ensure your team is productive from day one." },
-      { q: "Is the CRM custom-built or platform-based?", a: "We build both fully custom CRMs and highly-specialized integrations on top of platforms like Salesforce and HubSpot." },
-      { q: "Can the CRM integrate with our marketing tools?", a: "Yes, we specialize in building seamless connections between your CRM and marketing automation platforms." },
-      { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
+      { q: "How does the missed-call auto SMS work?", a: "When a customer calls your business and no one answers, our system instantly sends a personalized text message (e.g., \"Sorry we missed you! How can we help?\") to keep the customer engaged." },
+      { q: "Can we integrate this with our existing CRM and calendar?", a: "Yes, we integrate with Google Calendar, Outlook, HubSpot, Salesforce, and custom database setups to sync scheduling links and customer contact data seamlessly." },
+      { q: "How do Google review requests get sent?", a: "The moment a job status is updated to completed in your system, our automation triggers a friendly text message to the client containing your direct Google Review link." },
+      { q: "Are these SMS messages customizable?", a: "Absolutely. You have full control over the wording, timing, and variables (like client name, service type, and price) used in every automated text." },
+      { q: "What is the typical timeline for setup?", a: "We can design, configure, and launch custom SMS automation flows in as little as 2 to 3 weeks, ensuring complete compliance with telephony standards (10DLC)." }
     ]
   },
-  'ecommerce-stores': {
-    slug: 'ecommerce-stores',
-    title: 'E-commerce\nStores',
+  'booking-systems': {
+    slug: 'booking-systems',
+    title: 'Booking\nSystems',
     heroImage: '/images/services/ecom.png',
-    heroDescription: 'We build high-conversion digital storefronts that turn browsers into loyal customers. From custom headless commerce to powerful Shopify integrations, we provide the tools to scale your retail business globally.',
-    specializationHeading: 'E-commerce Store and Retail Logic Case Studies for Clients',
-    specializationText: 'Our agency, Inex Labs, specializes in commerce engineering, creating high-performance online stores and providing full-service retail solutions. We build e-commerce platforms tailored to your sales goals to effectively increase conversions, enhance customer journeys, and drive growth. Our goal is to ensure your store becomes a powerful revenue engine.',
-    ctaText: 'BOOST YOUR SALES',
-    whySectionTitle: 'DRIVING REVENUE THROUGH SEAMLESS COMMERCE',
+    heroDescription: 'We build intelligent booking platforms and customer schedulers integrated with automated post-booking SMS confirmations, reminders, and follow-ups.',
+    specializationHeading: 'Custom Scheduler Development and Booking Automation Case Studies',
+    specializationText: 'Our agency, Inex Labs, specializes in booking system engineering, creating high-performance online schedulers and providing full-service booking automation. We build booking platforms tailored to your scheduling goals to effectively increase customer appointments, automate post-booking text sequences, and streamline operations. Our goal is to ensure your scheduler becomes a powerful revenue engine.',
+    ctaText: 'BOOST YOUR BOOKINGS',
+    whySectionTitle: 'DRIVING APPOINTMENTS THROUGH SEAMLESS SCHEDULING',
     steps: [
-      { num: '01', title: 'Conversion Optimization', description: 'We analyze user behavior and optimize the shopping journey—from discovery to checkout—ensuring the lowest friction and highest possible conversion rates.' },
-      { num: '02', title: 'Headless Integration', description: 'Decouple your frontend from the backend to provide lightning-fast, highly-customized commerce experiences across every device and channel.' },
-      { num: '03', title: 'Secure Payments', description: 'We integrate robust, PCI-compliant payment gateways that support multi-currency, local payment methods, and seamless one-click checkouts.' },
-      { num: '04', title: 'Global Logistics', description: 'Our platforms integrate with advanced shipping and inventory management systems, providing real-time tracking and efficient order fulfillment.' }
+      { num: '01', title: 'Scheduler Setup', description: 'We design and embed user-friendly schedulers that allow clients to book appointments 24/7 with zero friction.' },
+      { num: '02', title: 'Post-Booking Auto SMS', description: 'Instant text confirmations are dispatched immediately after booking, confirming dates, times, and next steps.' },
+      { num: '03', title: 'No-Show Reduction', description: 'Automated SMS reminder sequences are scheduled to go out 24 hours and 1 hour before appointments.' },
+      { num: '04', title: 'System Integrations', description: 'Connect your scheduling platform directly with Google Calendar, CRM databases, and payment processors.' }
     ],
     capabilities: [
-      { icon: 'Rocket', title: 'Commerce\nAudit', description: 'We audit your existing store for performance, SEO, and conversion bottlenecks, providing a strategic roadmap for growth.' },
-      { icon: 'Code2', title: 'Headless Commerce', description: 'We implement headless platforms using Shopify Plus or BigCommerce APIs, giving you complete frontend freedom and better performance.' },
-      { icon: 'Layout', title: 'Inventory Tracking', description: 'We build real-time inventory synchronization across multiple warehouses and sales channels, ensuring accurate stock levels at all times.' },
-      { icon: 'Shield', title: 'SEO & Marketing', description: 'Our e-commerce stores are built with advanced SEO features and marketing automation tools integrated to drive organic traffic and sales.' }
+      { icon: 'Smartphone', title: 'Post-Booking SMS', description: 'Deliver instant SMS confirmations and customized text reminders directly to the client\'s phone.' },
+      { icon: 'Settings', title: 'Custom Schedulers', description: 'We build tailor-made booking flows that match your business logic, services, staff availability, and locations.' },
+      { icon: 'Users', title: 'Calendar Syncing', description: 'Two-way synchronization across staff calendars (Google, Outlook) to eliminate double-bookings automatically.' },
+      { icon: 'Shield', title: 'Payment Integration', description: 'Collect deposits or full payments securely at the time of booking using PCI-compliant payment gateways.' }
     ],
     project: {
-      title: 'THE GOOD BURGER',
-      subtitle: 'LUXURY RETAIL',
-      description: 'A high-conversion storefront for a premium restaurant chain with seamless checkout and inventory management. This project highlights our ability to bridge complex physical logistics with a simple, high-fidelity digital shopping journey. The result was a platform that scaled effortlessly across multiple global markets and languages.',
+      title: 'CLEANZO',
+      subtitle: 'BOOKING AUTOMATION',
+      description: 'A high-conversion online booking scheduler and automated text dispatch system built for a premier cleaning service provider. This system syncs real-time cleaner availability, secures booking deposits, and dispatches automated SMS reminders, leading to a 35% reduction in appointment no-shows and a 50% increase in online bookings.',
       image: '/images/related/burg-thumb.png',
-      tag: 'LUXURY E-COMMERCE',
+      tag: 'BOOKING SYSTEMS',
       href: '#'
     },
     faqs: [
-      { q: "Which e-commerce platforms do you support?", a: "We specialize in Shopify Plus, BigCommerce, and custom headless solutions using Stripe and MedusaJS." },
-      { q: "How do you optimize for high conversion rates?", a: "We use a data-driven approach, focusing on site speed, friction-less checkout, and persuasive UX design patterns." },
-      { q: "Can you integrate custom payment gateways?", a: "Yes, we build secure integrations for all major providers including Stripe, Adyen, and specialized regional payment methods." },
-      { q: "Is headless commerce better for my business?", a: "If you need maximum performance and complete design freedom across multiple channels, headless is usually the superior choice." },
-      { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
+      { q: "Can we sync the booking system with our employees' personal calendars?", a: "Yes, our booking platforms support full two-way synchronization with Google Calendar, Outlook, and Apple Calendar to prevent double-booking." },
+      { q: "How do automated post-booking SMS messages work?", a: "The moment a client schedules an appointment, our system triggers an API call that dispatches an instant text confirmation. Reminder texts are automatically scheduled for the days and hours leading up to the slot." },
+      { q: "Can we collect deposits or full payments during booking?", a: "Absolutely. We integrate secure payment gateways like Stripe, PayPal, and Authorize.net to capture client deposits or full booking fees upfront." },
+      { q: "Is the scheduler mobile-friendly?", a: "Yes, all of our schedulers are built with mobile-first layouts, ensuring a frictionless booking experience on smartphones and tablets." },
+      { q: "What is the typical timeline for a booking system setup?", a: "Timelines vary depending on project complexity and scope. Typically, a focused scheduling and SMS integration engagement ranges from 3 to 5 weeks." }
     ]
   },
-  'saas-solutions': {
-    slug: 'saas-solutions',
-    title: 'SaaS\nSolutions',
-    heroImage: '/images/services/saas.png',
-    heroDescription: 'We architect and build scalable Software-as-a-Service platforms that solve complex business challenges. From multi-tenant infrastructure to flexible subscription management, we provide the technical foundation for your digital product.',
-    specializationHeading: 'SaaS Product and Scalable Platform Case Studies for Clients',
-    specializationText: 'Our agency, Inex Labs, specializes in SaaS product engineering, creating multi-tenant platforms and providing scalable digital solutions. We build architectures tailored to your growth strategy to effectively serve your global user base, enhance operational efficiency, and drive recurring revenue. Our goal is to ensure your SaaS becomes a powerful industry leader.',
-    ctaText: 'SCALE YOUR VISION',
-    whySectionTitle: 'THE POWER OF A SCALABLE SAAS MODEL',
+  'google-business': {
+    slug: 'google-business',
+    title: 'Google\nBusiness',
+    heroImage: '/images/services/seo.png',
+    heroDescription: 'We optimize your Google Business Profile (GMB) and automate review generation to place your local business at the very top of Google Maps and local search results.',
+    specializationHeading: 'Google Business Profile Optimization and Local SEO Case Studies',
+    specializationText: 'Our agency, Inex Labs, specializes in Google Business Profile (GMB) optimization and local search visibility. We construct bespoke systems that automate review generation, optimize local keywords, audit competitors, and maintain active GMB posts. Our goal is to ensure your business dominates the local Google 3-Pack and drives massive customer actions.',
+    ctaText: 'DOMINATE LOCAL SEARCH',
+    whySectionTitle: 'WHY DOES YOUR BUSINESS NEED GMB OPTIMIZATION?',
     steps: [
-      { num: '01', title: 'Multi-tenant Architecture', description: 'Serve thousands of customers from a single code base with isolated data environments, ensuring maximum resource efficiency and simplified maintenance.' },
-      { num: '02', title: 'Subscription Engines', description: 'Implement flexible pricing tiers, automated billing, and usage-based models that adapt to your customers\' needs and maximize your LTV.' },
-      { num: '03', title: 'Global Scalability', description: 'Our SaaS platforms are designed for high availability and low latency across the globe, leveraging edge computing and robust cloud infrastructure.' },
-      { num: '04', title: 'API-First Approach', description: 'Enable your customers and partners to build on top of your platform with comprehensive API ecosystems and developer tools.' }
+      { num: '01', title: 'GMB Optimization', description: 'Complete audit and configuration of your Google Business Profile to align with Google\'s ranking algorithms.' },
+      { num: '02', title: 'Review Generation', description: 'Automated request systems that systematically ask happy customers for 5-star reviews via text and email.' },
+      { num: '03', title: 'Profile Bettering', description: 'Continuous posting, photo uploads, Q&A management, and profile updates to keep your profile highly active and favored.' },
+      { num: '04', title: 'Competitor Auditing', description: 'Track and analyze local competitors to steal their search traffic and rank higher in the Google Maps 3-Pack.' }
     ],
     capabilities: [
-      { icon: 'Rocket', title: 'Product\nStrategy', description: 'We help you define your MVP, map the product roadmap, and identify the core value propositions that will drive SaaS growth.' },
-      { icon: 'Layout', title: 'Architecture Design', description: 'Our architects design multi-tenant systems with robust security, high performance, and seamless data isolation for every customer.' },
-      { icon: 'Monitor', title: 'Subscription Models', description: 'We implement complex billing logic and automated subscription management that scales with your user base and pricing experiments.' },
-      { icon: 'Settings', title: 'API Ecosystems', description: 'Extend your reach by building secure, well-documented REST or GraphQL APIs that allow for third-party integrations and developer innovation.' }
+      { icon: 'Globe', title: 'Local SEO Ranking', description: 'We optimize your business details, categories, and keywords to rank in the coveted local Google 3-Pack.' },
+      { icon: 'Users', title: 'Review Automation', description: 'Deploy systems that gather authentic 5-star customer reviews, significantly boosting your social proof and search CTR.' },
+      { icon: 'Activity', title: 'Active Profile Management', description: 'We handle updates, respond to questions, schedule regular photo uploads, and publish GMB updates to indicate fresh activity.' },
+      { icon: 'Monitor', title: 'Insights & Analytics', description: 'Monitor impressions, search queries, calls, and map directions to track the direct ROI of your local SEO efforts.' }
     ],
     project: {
-      title: 'SAASFORGE',
-      subtitle: 'SaaS PLATFORM',
-      description: 'A multi-tenant billing engine for subscription-based businesses with global reach. We built a high-scalability ledger system that handles millions of transactions daily with real-time accuracy and fraud prevention measures. The platform was meticulously optimized for enterprise-level reporting and financial compliance.',
+      title: 'MAPDOMINATOR',
+      subtitle: 'Local SEO & GMB Engine',
+      description: 'A comprehensive local search visibility and profile management campaign. We executed automated review generation campaigns and optimized the local business listings for a multi-location service firm. This strategy led to a 140% increase in phone calls and a 200% surge in Google Maps discovery impressions within 90 days.',
       image: '/images/related/saasforge-thumb.png',
-      tag: 'SaaS SOLUTIONS',
+      tag: 'LOCAL SEO',
       href: '#'
     },
     faqs: [
-      { q: "How do you handle multi-tenant data security?", a: "We implement robust data isolation layers at both the application and database levels to ensure customer privacy." },
-      { q: "Can the platform scale to millions of users?", a: "Yes, our SaaS architectures are built on top of auto-scaling cloud infrastructure designed for global growth." },
-      { q: "Do you support custom subscription models?", a: "We can implement anything from simple tiers to complex usage-based billing and enterprise contract management." },
-      { q: "Can we integrate third-party APIs into the SaaS?", a: "Absolutely. We build API-first platforms that are designed for seamless integration with external services." },
-      { q: "What is the typical timeline for a project?", a: "Timelines vary depending on project complexity and scope. Typically, a focused engagement ranges from 4 to 8 weeks, ensuring we maintain our high standard of boutique precision from discovery to launch." }
+      { q: "What is GMB optimization and why is it important?", a: "Google My Business (GMB) optimization involves fully configuring your profile with correct categories, descriptions, service areas, and attributes to help Google understand your business and rank you higher in local search results." },
+      { q: "How do you help get more 5-star Google reviews?", a: "We set up automated SMS and email sequences that message your clients right after a job is completed, prompting them to leave a review with a single, direct link." },
+      { q: "How long does it take to see results from GMB optimization?", a: "While some basic optimizations show results in a few weeks, dominating competitive local search queries and accumulating reviews typically takes 2 to 3 months of consistent effort." },
+      { q: "Do you handle profile monitoring and spam removal?", a: "Yes, we monitor your listing for fake reviews, report competitor keyword-stuffing violations, and manage user Q&As to protect your brand reputation." },
+      { q: "What is the typical timeline for an optimization setup?", a: "Initial setups and audit configurations take about 2 weeks. From there, we transition into ongoing profile management, posting, and automated review campaigns." }
     ]
   },
   'website-development': {
