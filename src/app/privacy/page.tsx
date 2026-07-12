@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Shield, MessageSquare, Share2, HelpCircle, Bell, Lock, Globe, Database, UserCheck } from "lucide-react";
+import { Shield, MessageSquare, Share2, HelpCircle, Bell, Lock, Globe, Database, UserCheck, CreditCard } from "lucide-react";
 
 export const metadata = {
   title: "Privacy Policy | Inex Labs",
@@ -134,13 +134,25 @@ export default function PrivacyPolicy() {
             </p>
           </Section>
 
+          <Section icon={CreditCard} title="09. Payment Processing & Merchant of Record">
+            <p>
+              Inex Labs utilizes third-party payment processing to ensure the highest standards of transactional security and compliance. All purchases, subscriptions, and financial transactions on our platform are securely processed by Lemon Squeezy, acting as our Merchant of Record (MoR).
+            </p>
+            <p>
+              When you initiate a purchase, you interact directly with the Lemon Squeezy checkout system. Lemon Squeezy is responsible for collecting payment details, processing the transaction, calculating and remitting applicable sales tax or VAT, and handling transaction compliance. Consequently, Lemon Squeezy processes your payment-related personal data, billing addresses, and payment details under its own privacy terms.
+            </p>
+            <p>
+              We recommend reviewing their legal agreements. For more detailed information on how Lemon Squeezy handles, stores, and protects your payment data, please refer to the <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4">Lemon Squeezy Privacy Policy</a>.
+            </p>
+          </Section>
+
         </div>
 
         {/* Footer Note */}
         <div className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-start gap-8">
           <div className="max-w-2xl">
             <p className="text-zinc-500 text-sm uppercase tracking-widest leading-loose">
-              Inex Labs reserves the right to update this policy as digital landscapes evolve. Users will be notified of significant changes via the email or phone number provided. This document was last audited and updated on May 17, 2026.
+              Inex Labs reserves the right to update this policy as digital landscapes evolve. Users will be notified of significant changes via the email or phone number provided. This document was last audited and updated on July 13, 2026.
             </p>
           </div>
           <div className="text-zinc-800 text-[8vw] font-black uppercase leading-none select-none">

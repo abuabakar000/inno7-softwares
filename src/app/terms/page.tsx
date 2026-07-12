@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Scale, MessageSquare, Smartphone, HelpCircle, Lock, UserCheck, AlertCircle, FileText } from "lucide-react";
+import { Scale, MessageSquare, Smartphone, HelpCircle, Lock, UserCheck, AlertCircle, FileText, CreditCard } from "lucide-react";
 
 export const metadata = {
   title: "Terms & Conditions | Inex Labs",
@@ -125,6 +125,32 @@ export default function TermsAndConditions() {
             </p>
           </Section>
 
+          <Section icon={CreditCard} title="08. Purchase & Refund Policy">
+            <p>
+              Inex Labs provides premium digital solutions, custom web design, and software development services. To ensure a seamless, secure, and compliant purchasing experience, all transactions conducted on or through our platform are handled by Lemon Squeezy, who acts as our Merchant of Record (MoR).
+            </p>
+            <p>
+              By making a purchase, you agree to pay the fees specified for the selected digital product, service subscription, or consulting package. Payments, billing details, and related compliance (including global sales taxes and VAT calculations) are managed by Lemon Squeezy, subject to their legal terms and conditions.
+            </p>
+            <p>
+              Refund eligibility varies based on the product or service type:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-zinc-400">
+              <li>
+                <strong>Digital Goods & Assets:</strong> For downloadable templates, design packs, or ready-made assets, we offer a 14-day refund window from the date of purchase, provided the product has not been fully utilized or permanently integrated into a commercial project.
+              </li>
+              <li>
+                <strong>SaaS & Subscriptions:</strong> Subscription fees are billed in advance. You can cancel your subscription at any time, which will prevent future billing. Refunds for active subscription cycles are reviewed on a case-by-case basis.
+              </li>
+              <li>
+                <strong>Custom Professional Services:</strong> Custom software engineering, boutique design, and consulting retainers are billed based on project milestones and deliverables. Once a milestone is approved or work is delivered, those specific service hours are non-refundable.
+              </li>
+            </ul>
+            <p>
+              To request a refund, cancellation, or for any billing inquiry, please reach out directly to our administration desk at <a href="mailto:office@inexlabs.com" className="text-white underline underline-offset-4">office@inexlabs.com</a> with your order details and transaction receipt.
+            </p>
+          </Section>
+
         </div>
 
         {/* Footer Note */}
@@ -134,7 +160,7 @@ export default function TermsAndConditions() {
               Contact:<br />
               <a href="mailto:office@inexlabs.com" className="text-white underline underline-offset-4">office@inexlabs.com</a><br />
               <a href="https://inexlabs.com" target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4">https://inexlabs.com</a><br /><br />
-              This document was last updated and verified on May 17, 2026. Inex Labs reserves the right to modify these terms at any time.
+              This document was last updated and verified on July 13, 2026. Inex Labs reserves the right to modify these terms at any time.
             </p>
           </div>
           <div className="text-zinc-800 text-[8vw] font-black uppercase leading-none select-none">
