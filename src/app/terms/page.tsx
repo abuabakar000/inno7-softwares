@@ -8,8 +8,8 @@ export const metadata = {
   description: "Terms and Conditions of Service and SMS Compliance framework for Inex Labs. Read about your communication options, user agreement, and data usage.",
 };
 
-const Section = ({ icon: Icon, title, children }: { icon: any, title: string, children: React.ReactNode }) => (
-  <div className="relative group p-8 md:p-16 rounded-[3rem] bg-white/[0.02] border border-white/5 hover:border-white/10 transition-all duration-700">
+const Section = ({ icon: Icon, title, id, children }: { icon: any, title: string, id?: string, children: React.ReactNode }) => (
+  <div id={id} className="relative group p-8 md:p-16 rounded-[3rem] bg-white/[0.02] border border-white/5 hover:border-white/10 transition-all duration-700">
     <div className="flex flex-col md:flex-row md:items-center gap-6 mb-10">
       <div className="w-16 h-16 rounded-2xl bg-white/[0.03] flex items-center justify-center text-white/40 group-hover:text-white group-hover:scale-110 transition-all duration-500 border border-white/5 shrink-0">
         <Icon strokeWidth={1} size={32} />
@@ -125,9 +125,9 @@ export default function TermsAndConditions() {
             </p>
           </Section>
 
-          <Section icon={CreditCard} title="08. Purchase & Refund Policy">
+          <Section id="refund-policy" icon={CreditCard} title="08. Purchase & Refund Policy">
             <p>
-              Inex Labs provides premium digital solutions, custom web design, and software development services. To ensure a seamless, secure, and compliant purchasing experience, all transactions conducted on or through our platform are handled by Lemon Squeezy, who acts as our Merchant of Record (MoR).
+              Payments are securely processed by Lemon Squeezy, our Merchant of Record. Inex Labs provides premium digital solutions, custom web design, and software development services. To ensure a seamless, secure, and compliant purchasing experience, all transactions conducted on or through our platform are managed through this framework.
             </p>
             <p>
               By making a purchase, you agree to pay the fees specified for the selected digital product, service subscription, or consulting package. Payments, billing details, and related compliance (including global sales taxes and VAT calculations) are managed by Lemon Squeezy, subject to their legal terms and conditions.

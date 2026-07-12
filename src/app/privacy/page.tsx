@@ -136,7 +136,7 @@ export default function PrivacyPolicy() {
 
           <Section icon={CreditCard} title="09. Payment Processing & Merchant of Record">
             <p>
-              Inex Labs utilizes third-party payment processing to ensure the highest standards of transactional security and compliance. All purchases, subscriptions, and financial transactions on our platform are securely processed by Lemon Squeezy, acting as our Merchant of Record (MoR).
+              Payments are securely processed by Lemon Squeezy, our Merchant of Record. Inex Labs utilizes third-party payment processing to ensure the highest standards of transactional security and compliance. All purchases, subscriptions, and financial transactions on our platform are managed through this framework.
             </p>
             <p>
               When you initiate a purchase, you interact directly with the Lemon Squeezy checkout system. Lemon Squeezy is responsible for collecting payment details, processing the transaction, calculating and remitting applicable sales tax or VAT, and handling transaction compliance. Consequently, Lemon Squeezy processes your payment-related personal data, billing addresses, and payment details under its own privacy terms.
