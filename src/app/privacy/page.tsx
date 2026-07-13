@@ -136,13 +136,16 @@ export default function PrivacyPolicy() {
 
           <Section icon={CreditCard} title="09. Payment Processing & Merchant of Record">
             <p>
-              Payments are securely processed by Lemon Squeezy, our Merchant of Record. Inex Labs utilizes third-party payment processing to ensure the highest standards of transactional security and compliance. All purchases, subscriptions, and financial transactions on our platform are managed through this framework.
+              Payments are securely processed by our authorized Merchant of Record (MoR) partners. Depending on the checkout channel or gateway selected during purchase, transactions are securely handled by Lemon Squeezy, Paddle, or Polar acting as our Merchant of Record. All purchases, subscriptions, and financial transactions on our platform are managed through these compliance frameworks.
             </p>
             <p>
-              When you initiate a purchase, you interact directly with the Lemon Squeezy checkout system. Lemon Squeezy is responsible for collecting payment details, processing the transaction, calculating and remitting applicable sales tax or VAT, and handling transaction compliance. Consequently, Lemon Squeezy processes your payment-related personal data, billing addresses, and payment details under its own privacy terms.
+              When you initiate a purchase, you interact directly with the checkout system of the designated Merchant of Record. The MoR partner is responsible for collecting billing identifiers, processing the transaction, calculating and remitting global sales tax/VAT, and managing order compliance. Consequently, they process your payment-related personal details under their respective privacy agreements.
             </p>
             <p>
-              We recommend reviewing their legal agreements. For more detailed information on how Lemon Squeezy handles, stores, and protects your payment data, please refer to the <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4">Lemon Squeezy Privacy Policy</a>.
+              We recommend reviewing the legal policies of the MoR partner processing your transaction: 
+              <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4 mx-1">Lemon Squeezy Privacy Policy</a>, 
+              <a href="https://paddle.com/privacy" target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4 mx-1">Paddle Privacy Policy</a>, or 
+              <a href="https://polar.sh/privacy" target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4 mx-1">Polar Privacy Policy</a>.
             </p>
           </Section>
 

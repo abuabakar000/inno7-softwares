@@ -50,7 +50,7 @@ export default function Footer() {
               <span className="text-zinc-800 hidden sm:inline">|</span>
               <Link href="/terms" className="hover:text-white transition-colors">TERMS & CONDITIONS</Link>
               <span className="text-zinc-800 hidden sm:inline">|</span>
-              <Link href="/terms#refund-policy" className="hover:text-white transition-colors">REFUND POLICY</Link>
+              <Link href="/refunds" className="hover:text-white transition-colors">REFUND POLICY</Link>
               <span className="text-zinc-800 hidden sm:inline">|</span>
               <Link href="/contact" className="hover:text-white transition-colors">CONTACT</Link>
             </div>

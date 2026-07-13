@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 import { Scale, MessageSquare, Smartphone, HelpCircle, Lock, UserCheck, AlertCircle, FileText, CreditCard } from "lucide-react";
 
 export const metadata = {
@@ -125,29 +126,15 @@ export default function TermsAndConditions() {
             </p>
           </Section>
 
-          <Section id="refund-policy" icon={CreditCard} title="08. Purchase & Refund Policy">
+          <Section icon={CreditCard} title="08. Purchase & Billing Policy">
             <p>
-              Payments are securely processed by Lemon Squeezy, our Merchant of Record. Inex Labs provides premium digital solutions, custom web design, and software development services. To ensure a seamless, secure, and compliant purchasing experience, all transactions conducted on or through our platform are managed through this framework.
+              Payments are securely processed by our authorized Merchant of Record (MoR) partners (including Lemon Squeezy, Paddle, or Polar, depending on the checkout gateway used). Inex Labs provides premium digital solutions, custom web design, and software development services. To ensure a seamless, secure, and compliant purchasing experience, all transactions conducted on or through our platform are managed through these frameworks.
             </p>
             <p>
-              By making a purchase, you agree to pay the fees specified for the selected digital product, service subscription, or consulting package. Payments, billing details, and related compliance (including global sales taxes and VAT calculations) are managed by Lemon Squeezy, subject to their legal terms and conditions.
+              By initiating a transaction, you agree to pay the fees associated with your chosen plan, subscription, or milestone. Billing information, recurring subscription renewals, and tax calculations are handled by our designated Merchant of Record partners subject to their respective legal terms.
             </p>
             <p>
-              Refund eligibility varies based on the product or service type:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-zinc-400">
-              <li>
-                <strong>Digital Goods & Assets:</strong> For downloadable templates, design packs, or ready-made assets, we offer a 14-day refund window from the date of purchase, provided the product has not been fully utilized or permanently integrated into a commercial project.
-              </li>
-              <li>
-                <strong>SaaS & Subscriptions:</strong> Subscription fees are billed in advance. You can cancel your subscription at any time, which will prevent future billing. Refunds for active subscription cycles are reviewed on a case-by-case basis.
-              </li>
-              <li>
-                <strong>Custom Professional Services:</strong> Custom software engineering, boutique design, and consulting retainers are billed based on project milestones and deliverables. Once a milestone is approved or work is delivered, those specific service hours are non-refundable.
-              </li>
-            </ul>
-            <p>
-              To request a refund, cancellation, or for any billing inquiry, please reach out directly to our administration desk at <a href="mailto:office@inexlabs.com" className="text-white underline underline-offset-4">office@inexlabs.com</a> with your order details and transaction receipt.
+              For detailed terms regarding refund eligibility, timelines, and how to request a refund, please refer to our dedicated <Link href="/refunds" className="text-white underline underline-offset-4">Refund Policy</Link>.
             </p>
           </Section>
 
